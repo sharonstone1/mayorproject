@@ -111,3 +111,13 @@ class CookingLessonBooking(models.Model):
     date = models.DateField()
     type = models.CharField(choices=LESSON_TYPE, max_length=10)
     time = models.CharField(choices=LESSON_TIME, max_length=10)
+
+
+class EventPreBooking(models.Model):
+    fullname = models.CharField(max_length=250, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    user = models.ForeignKey('auth.User', related_name='events', on_delete=models.CASCADE, blank=True, null=True)
+    phone_number = PhoneNumberField()
+    address = models.CharField(max_length=500)
+    date = models.DateField()
+    time = models.TimeField()
