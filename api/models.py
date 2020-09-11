@@ -77,5 +77,37 @@ class DeliveryOrderItem(models.Model):
     order = models.ForeignKey('DeliveryOrder', related_name='items', on_delete=models.CASCADE)
 
 
+class TableBooking(models.Model):
+    fullname = models.CharField(max_length=250, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    user = models.ForeignKey('auth.User', related_name='table_bookings', on_delete=models.CASCADE, blank=True, null=True)
+    phone_number = PhoneNumberField()
+    date = models.DateField()
+    time = models.TimeField()
+    guest_count = models.PositiveSmallIntegerField()
+    vip = models.BooleanField()
 
 
+class CookingLessonBooking(models.Model):
+    ONLINE = 'stream'
+    IN_PERSON = 'live'
+    LESSON_TYPE = (
+        (ONLINE, 'Cooking lesson live streaming'),
+        (IN_PERSON, 'At the restaurant'),
+    )
+
+    MORNING = 'morning'
+    AFTERNOON = 'afternoon'
+    LESSON_TIME = (
+        (MORNING, 'Starting at 8 o\'clock until lunch'),
+        (AFTERNOON, 'Starting at 15 o\'clock until dinner'),
+    )
+
+    fullname = models.CharField(max_length=250, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    user = models.ForeignKey('auth.User', related_name='cooking_lessons', on_delete=models.CASCADE, blank=True, null=True)
+    phone_number = PhoneNumberField()
+    address = models.CharField(max_length=500)
+    date = models.DateField()
+    type = models.CharField(choices=LESSON_TYPE, max_length=10)
+    time = models.CharField(choices=LESSON_TIME, max_length=10)
