@@ -36,7 +36,7 @@ class DeliveryOrderSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = DeliveryOrder
-        fields = ['url', 'id', 'date', 'time', 'user', 'items']
+        fields = ['url', 'id', 'user', 'fullname', 'email', 'address', 'phone_number', 'date', 'time', 'items']
 
     def create(self, validated_data):
         items_data = validated_data.pop('items')
