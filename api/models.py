@@ -59,3 +59,19 @@ class Dish(models.Model):
 
     class Meta:
         ordering = ['type']
+
+
+class DeliveryOrder(models.Model):
+    date = models.DateField()
+    time = models.TimeField()
+    user = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
+
+
+class DeliveryOrderItem(models.Model):
+    dish = models.ForeignKey('Dish', on_delete=models.CASCADE)
+    count = models.PositiveSmallIntegerField()
+    order = models.ForeignKey('DeliveryOrder', related_name='items', on_delete=models.CASCADE)
+
+
+
+
