@@ -62,9 +62,13 @@ class Dish(models.Model):
 
 
 class DeliveryOrder(models.Model):
+    fullname = models.CharField(max_length=250, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    user = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
+    phone_number = PhoneNumberField()
+    address = models.CharField(max_length=500)
     date = models.DateField()
     time = models.TimeField()
-    user = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
 
 
 class DeliveryOrderItem(models.Model):
