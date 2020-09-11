@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from phonenumber_field.modelfields import PhoneNumberField
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -48,7 +51,7 @@ class Dish(models.Model):
 
     title = models.CharField(max_length=250)
     price = models.FloatField()
-    description = models.TextField()
+    description = models.TextField(blank=True)
     type = models.CharField(choices=DISH_TYPES, max_length=10)
     day = models.CharField(choices=DAYS, max_length=2, default=EVERYDAY)
     serving_time = models.CharField(choices=SERVING_TIMES, max_length=10, default=LUNCH_AND_DINNER)
