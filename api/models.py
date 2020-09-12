@@ -10,13 +10,15 @@ class Dish(models.Model):
     # Dish types declaration
     STARTER = 'starter'
     MAIN = 'main'
-    DESERT = 'desert'
+    DESSERT = 'dessert'
     DAILY_SPECIAL = 'special'
+    SIDE = 'side'
     DISH_TYPES = (
         (STARTER, 'Appetizing starter'),
         (MAIN, 'Main course'),
-        (DESERT, 'Delicious desert'),
-        (DAILY_SPECIAL, 'Daily special')
+        (DESSERT, 'Delicious dessert'),
+        (DAILY_SPECIAL, 'Daily special'),
+        (SIDE, 'Sides')
     )
 
     # Days declaration

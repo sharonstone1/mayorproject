@@ -39,7 +39,7 @@ class DishViewSet(viewsets.ModelViewSet):
 
     @action(detail=False)
     def deserts(self, request, *args, **kwargs):
-        return self.get_dish_category(Dish.DESERT, Dish.LUNCH_AND_DINNER, request, args, kwargs)
+        return self.get_dish_category(Dish.DESSERT, Dish.LUNCH_AND_DINNER, request, args, kwargs)
 
     @action(detail=False)
     def lunch_daily_specials(self, request, *args, **kwargs):
@@ -48,6 +48,10 @@ class DishViewSet(viewsets.ModelViewSet):
     @action(detail=False)
     def dinner_daily_specials(self, request, *args, **kwargs):
         return self.get_dish_category(Dish.DAILY_SPECIAL, Dish.DINNER, request, args, kwargs)
+
+    @action(detail=False)
+    def sides(self, request, *args, **kwargs):
+        return self.get_dish_category(Dish.SIDE, Dish.LUNCH_AND_DINNER, request, args, kwargs)
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
