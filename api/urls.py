@@ -10,6 +10,8 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'orders', views.DeliveryOrderViewSet)
 router.register(r'orders-items', views.DeliveryOrderItemViewSet)
+router.register(r'table-booking', views.TableBookingViewSet)
+router.register(r'event-pre-booking', views.EventPreBookingViewSet)
 
 # # The API URLs are now determined automatically by the router.
 urlpatterns = [

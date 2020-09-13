@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from corsheaders.defaults import default_headers
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'api',
     'corsheaders',
+    'webpack_loader'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'restaurant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,9 +129,22 @@ STATIC_URL = '/static/'
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:63342"
+    "http://localhost:63342",
+    "http://localhost:63343"
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'x-ijt',
 ]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "frontend/dist"),
+]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
+    }
+}

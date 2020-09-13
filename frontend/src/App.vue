@@ -1,0 +1,649 @@
+<template>
+  <div id="app">
+    <Navbar :navigation="navigation"/>
+
+    <br>
+
+    <!--welcome page details-->
+    <Welcome title="The History of the restaurant" image="static/media/referenceboss.jpg" id="welcome">
+      <p>
+      Welcome to Aux delices de Sharon. The restaurant was set up by Marthe Coubard who is a student in
+      ICT at ARU .
+      Marthe chose the ICT background at ARU because she want to be a web developer. Thanks to this
+      background, she decided to set up her own web application.
+      Her web application is about restaurant. Marthe loves cooking, and sharing her secrets of cooking.
+      The love of cooking started since marthe was teenager.
+      Marthe's mother loves cooking Africa food, she shares her secret to marthe who decided to cook
+      European Food instead of Africa food because when marthe arrived at France, she fall in love with
+      the French Food.
+      Today, marthe decided to open a restaurant called Aux delices de Sharon, the restaurant made diverse
+      varities of Food from different countries in Europe such as French, Spanish, Italia etc.
+      To improve her image, the restaurant open a cooking class in which people can subscribe to learn how
+      to cook some courses and also teach people about the name of courses, the purpose is to share
+      marthe's cooking secret with her customers.
+      Through her Gallery page or restaurant service (lunch, dinner, menu),you can learn the name of
+      courses.
+      The restaurant offer a booking table, a visualization lunch, dinner or menu card into restaurant
+      field and delivery page . For any book for event or cooking class
+      please check in event field and cooking class to find any information that you need.
+      </p>
+    </Welcome>
+
+    <br>
+
+    <!--Lunch daily specials -->
+    <SpecialPresentation title="Lunch Dishes" :specials="lunchSpecials" id="lunch_presentation">
+      <p>
+        For every day in week, we offer an unique dish for Lunch. So if you book for table for monday for instance,
+        the restaurant will offer you the Monday dish day or the menu card on below
+        as your meal. Please find the name of the dish on footer of the dish's image and his price in pounds (£)
+      </p>
+    </SpecialPresentation>
+
+    <br>
+
+    <!--Dinner daily specials -->
+    <SpecialPresentation title="Dinner Dishes" :specials="dinnerSpecials" id="dinner_presentation">
+      <p>
+        For every day in week, we offer an unique dish for Lunch. So if you book for table for monday for instance,
+        the restaurant will offer you the Monday dish day or the menu card on below
+        as your meal. Please find the name of the dish on footer of the dish's image and his price in pounds (£)
+      </p>
+    </SpecialPresentation>
+
+    <br>
+
+    <!-- Dishes all the time on the menu card -->
+
+    <MenuPresentation title="The Menu Card Dishes" :restaurantMenu="restaurantMenu" id="menu">
+       <p>
+        Please have a look on our Menu card. Notice that our Menu card is available every day,
+        if you don't want any of our lunch or Dinner course, you can choose one of menu course plus any starter,
+        dessert and supplement course.
+      </p>
+    </MenuPresentation>
+
+    <br>
+
+    <!-- booking information-->
+    <TableBooking title="Booking for a table" id="table_booking">
+      <p>
+        Please, fill out this form if you want to book for a table or any other form of booking such as romantic
+        lunch or dinner.
+        Notice that the romantic lunch or dinner is our VIP service, so please indicate if you booking is VIP or a
+        simple table.
+        For any other booking for events please click on our events pre-booking to find any information about it.
+      </p>
+    </TableBooking>
+
+    <br>
+
+    <!--delivery for meal form-->
+    <DeliveryOrder title="Delivery form for Meals" id="delivery_order"
+      :restaurant-menu="restaurantMenu" :lunch-specials="lunchSpecials" :dinner-specials="dinnerSpecials"
+    >
+      <p>
+        Please, fill out this form for any kind of form of delivery (at restaurant or your place).
+        For any request please send us an email, we will be delight to answer you.
+        Notice that all payment will deal at the delivery.
+      </p>
+    </DeliveryOrder>
+
+    <br>
+
+    <!--events information-->
+    <div class="container" id="events_details">
+      <h3>Events details</h3>
+      <p>
+        Our restaurant offers divers services in events such as Company event or business event, proposal, wedding
+        and party such as birthday, celebration, anniversary etc. On below you will find more description about
+        each event and the form of pre-booking. For more information, please don't hesitate to contact us.
+      </p>
+      <br>
+      <div class="card-body">
+        <event-description title="Wedding" image="static/media/wedding-event.jpg">
+          Here there is one of the wedding we have organized in January. Notice that the courses we offer
+          for the wedding is different for those we pour in the restaurant every day. We cook the
+          customer's course
+          or offer the customer to choose one of the course in some of our restaurant booking. We can also
+          cook the most popular courses in the world
+          if the customer claim a request for that. We have a large staff team to you have a great wedding
+          event.
+          We also work in partnership with some decoration company if you need some idea in wedding
+          decoration.
+          The restaurant have a big garden available if you want to organize you wedding at the
+          restaurant. However, we will be delight
+          to make our cooking wedding in your choice place.
+        </event-description>
+
+        <event-description title="Party" image="static/media//party-event.jpg">
+          Here there is one of the wedding we have organized in January. Notice that
+          the courses we offer
+          for the wedding is different for those we pour in the restaurant every day. We cook the
+          customer's course
+          or offer the customer to choose one of the course in some of our restaurant booking. We can also
+          cook the most popular courses in the world
+          if the customer claim a request for that. We have a large staff team to you have a great wedding
+          event.
+          We also work in partnership with some decoration company if you need some idea in wedding
+          decoration.
+          The restaurant have a big garden available if you want to organize you wedding at the
+          restaurant. However, we will be delight
+          to make our cooking wedding in your choice place.
+        </event-description>
+
+        <event-description title="Proposal" image="static/media//proposal-event.jpg">
+          Here there is one of the wedding we have organized in January. Notice that the courses we offer
+          for the wedding is different for those we pour in the restaurant every day. We cook the
+          customer's course
+          or offer the customer to choose one of the course in some of our restaurant booking. We can also
+          cook the most popular courses in the world
+          if the customer claim a request for that. We have a large staff team to you have a great wedding
+          event.
+          We also work in partnership with some decoration company if you need some idea in wedding
+          decoration.
+          The restaurant have a big garden available if you want to organize you wedding at the
+          restaurant. However, we will be delight
+          to make our cooking wedding in your choice place.
+        </event-description>
+
+        <event-description title="Business Events" image="static/media//company-party.jpg">
+          Here there is one of the wedding we have organized in January. Notice that the courses we offer
+          for the wedding is different for those we pour in the restaurant every day. We cook the
+          customer's course
+          or offer the customer to choose one of the course in some of our restaurant booking. We can also
+          cook the most popular courses in the world
+          if the customer claim a request for that. We have a large staff team to you have a great wedding
+          event.
+          We also work in partnership with some decoration company if you need some idea in wedding
+          decoration.
+          The restaurant have a big garden available if you want to organize you wedding at the
+          restaurant. However, we will be delight
+          to make our cooking wedding in your choice place.
+        </event-description>
+      </div>
+
+      <br>
+
+      <EventPreBooking title="Pre-booking"></EventPreBooking>
+    </div>
+
+    <br>
+
+    <!--cooking class information-->
+    <div
+      class="container"
+      id="cooking_class"
+    >
+      <h3>Cooking Class</h3>
+      <p>
+        In order to be close to our customer, the restaurant decided to offer a cooking class for those who want
+        to learn how to make our course. we also offer onlive lesson for those who don't have time to come at
+        restaurant to learn.
+        To make some of our courses, we were inspired by some cooking book from France, Spain, Italic etc.
+        Apart from our cooking creation, we are also trying to imitate the way the best chief in the world make
+        their courses.
+      </p>
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="static/media//kitchen-class.jpg">
+          </div>
+          <div class="col-lg-6">
+            <img src="static/media//kitchen-class.jpg">
+          </div>
+        </div>
+        <br>
+
+        <h5>Cooking Books</h5>
+
+        <p> Here there is our library book inspiration. Those which we used to made most of our course</p>
+        <br>
+        <div class="row">
+          <div class="col-lg-6">
+            <p>Simplissime book is well-know in France for making a quick foods.</p>
+            <img src="static/media//cooking_book1.jpg">
+          </div>
+          <div class="col-lg-6">
+            <p>The Tapas foods is from spain. The spain food is well-know as a spicy food.</p>
+            <img src="static/media//cooking_book2.jpg">
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <p>The sous vide book is from France. It is another away to make food by using a spray.</p>
+            <img src="static/media//cooking_book3.jpg">
+          </div>
+          <div class="col-lg-6">
+            <p>This book is showed all kind of vacuum food people can make in the simple way and faster.</p>
+            <img src="static/media//cooking_book4.jpg">
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <form>
+        <div
+          class="form-group row"
+          id="enrolment"
+        >
+          <label
+            class="col-sm-2 col-form-label"
+            for="CandidateName"
+          >CandidateName</label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              id="CandidateName"
+              type="text"
+              value="Name"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="Email"
+          >Email</label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              id="Email"
+              placeholder="Email"
+              required
+              type="email"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="phonenumber"
+          >Phone Number</label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              id="phonenumber"
+              maxlength="14"
+              minlength="9"
+              placeholder="phone number"
+              required
+              size="20"
+              type="tel"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="address"
+          >Address</label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              id="address"
+              placeholder="address"
+              type="text"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="Date"
+          >Start date:</label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              id="Date"
+              max="2030-07-22"
+              min="2020-07-22"
+              name="date"
+              type="date"
+              value="2020-07-22"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="class-select"
+          >Choose your lesson:</label>
+          <div class="col-sm-10">
+            <select
+              id="class-select"
+              name="location"
+              class="form-control"
+            >
+              <option value="">
+                --Please choose an option--
+              </option>
+              <option value="online">
+                online
+              </option>
+              <option value="live">
+                live
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label"
+            for="lesson-select"
+          >Choose your time:</label>
+          <div class="col-sm-10">
+            <select
+              id="lesson-select"
+              name="location"
+              class="form-control"
+            >
+              <option value="">
+                --Please choose an option--
+              </option>
+              <option value="morning">
+                Morning
+              </option>
+              <option value="evening">
+                Evening
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <!--        <div class="card-footer">-->
+        <div class="form-group row">
+          <div class="col-sm-10 offset-sm-2">
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              subscribe
+            </button>
+          </div>
+        </div>
+        <!--        </div>-->
+      </form>
+    </div>
+
+    <br>
+
+    <hr>
+    <!--gallery information-->
+
+    <div
+      class="container"
+      id="Gallery_details"
+    >
+      <h4 id="gallery">
+        Gallery
+      </h4>
+      <p>
+        Please be free to have a look on our gallery page. Most of the course here are our creation cooking
+        ,they have not made by nobody in the restaurant world.
+      </p><br>
+
+      <div class="row">
+        <div
+          class="carousel slide col-8 offset-2"
+          data-ride="carousel"
+          id="carouselInterval"
+        >
+          <div class="carousel-inner">
+            <div
+              class="carousel-item active"
+              data-interval="10000"
+            >
+              <img
+                alt="burger no update"
+                class="d-block w-100"
+                src="static/media//imageplate5.jpg"
+              >
+            </div>
+
+            <div class="carousel-item">
+              <img
+                alt="steak poulet no update"
+                class="d-block w-100"
+                src="static/media//haricot-vert-aux-steak-de-poulet.jpg"
+              >
+            </div>
+
+            <div class="carousel-item">
+              <img
+                alt="image crevette no update"
+                class="d-block w-100"
+                src="static/media//legumes-vert-aux-crevettes.jpg"
+              >
+            </div>
+            <div class="carousel-item">
+              <img
+                alt="image poulet no update"
+                class="d-block w-100"
+                src="static/media//poulet-braise-aux-crepes.jpg"
+              >
+            </div>
+            <div class="carousel-item">
+              <img
+                alt="image frite no update"
+                class="d-block w-100"
+                src="static/media//frites-de-plaintain-aux-legumes-vert.jpg"
+              >
+            </div>
+          </div>
+
+          <a
+            class="carousel-control-prev"
+            data-slide="prev"
+            href="#carouselInterval"
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+              class="carousel-control-prev-icon"
+            />
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            data-slide="next"
+            href="#carouselInterval"
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+              class="carousel-control-next-icon"
+            />
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark font-weight-normal text-light pt-4">
+      <!-- Footer Links -->
+      <div class="container">
+        <!-- Grid row -->
+        <div class="row justify-content-between">
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <!-- Content -->
+            <h6 class="font-weight-bold text-uppercase mt-3 mb-4">
+              SHARON COOKING RESTAURANT
+            </h6>
+            <p>
+              Welcome AT Sharon Cooking Restaurant. The restaurant offer a large variety of European food.
+              Please find above the link of register yourself and earn 5% of reduction.
+            </p>
+          </div>
+          <!-- Grid column -->
+          <div class="col-md-4">
+            <!-- Links -->
+            <h6
+              class="text-uppercase font-weight-bold"
+              id="contact"
+            >
+              Contact
+            </h6>
+            <address>
+              12 Kent Way, Cambridge, CB4 2QY, UK
+              marthe.ekoule@gmail.com
+              + 07 40 37 53 994
+            </address>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to action -->
+      <ul class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+          <h5 class="mb-1">
+            Register for free
+          </h5>
+        </li>
+        <li class="list-inline-item">
+          <a
+            class="btn btn-danger btn-rounded"
+            href="register.html"
+            id="register"
+          >Sign up!</a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+</template>
+
+<script>
+import RestaurantApi from '@/RestaurantApi'
+
+import EventDescription from '@/components/EventDescription'
+import Navbar from '@/components/Navbar'
+import Welcome from '@/components/Welcome'
+import SpecialPresentation from '@/components/SpecialPresentation'
+import MenuPresentation from '@/components/MenuPresentation'
+import TableBooking from '@/components/TableBooking'
+import DeliveryOrder from '@/components/DeliveryOrder'
+import EventPreBooking from '@/components/EventPreBooking'
+
+export default {
+  name: 'App',
+  data: function () {
+    return {
+      navigation: [
+        { name: 'Home', id: '#welcome' },
+        {
+          name: 'Restaurant',
+          id: '',
+          children: [
+            { name: 'Lunch', id: '#lunch_presentation' },
+            { name: 'Dinner', id: '#dinner_presentation' },
+            { name: 'Menu', id: '#menu' },
+            { name: 'Booking', id: '#table_booking' },
+            { name: 'Delivery', id: '#delivery_order' }
+          ]
+        },
+        {
+          name: 'Events',
+          id: '',
+          children: [
+            { name: 'Services', id: '' },
+            { name: 'Pre-booking', id: '' }
+          ]
+        },
+        {
+          name: 'Cooking classes',
+          id: '',
+          children: [
+            { name: 'Information', id: '' },
+            { name: 'Enrolment', id: '' }
+          ]
+        },
+        { name: 'Gallery', id: '' },
+        { name: 'Contact', id: '' }
+      ],
+      deliveryBasket: [],
+      dishes: [],
+      lunchSpecials: [],
+      dinnerSpecials: [],
+      restaurantMenu: {}
+    }
+  },
+  mounted: function () {
+    const app = this
+
+    RestaurantApi.getDishes()
+      .then(function (response) {
+        const dishes = response.data
+
+        app.dishes = dishes
+
+        // All dishes available, filter them and add them to their binding
+        app.lunchSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'lunch')
+        app.dinnerSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'dinner')
+        app.restaurantMenu = {
+          starters: dishes.filter(dish => dish.type === 'starter'),
+          mains: dishes.filter(dish => dish.type === 'main'),
+          sides: dishes.filter(dish => dish.type === 'side'),
+          dessert: dishes.filter(dish => dish.type === 'dessert')
+        }
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  },
+  computed: {
+
+  },
+  methods: {
+
+  },
+  /* List of HTML components used to render the HTML */
+  components: {
+    EventPreBooking,
+    DeliveryOrder,
+    TableBooking,
+    MenuPresentation,
+    Welcome,
+    SpecialPresentation,
+    'event-description': EventDescription,
+    Navbar: Navbar
+  }
+}
+</script>
+
+<style lang="scss">
+//@import './variables.scss';
+//
+//*, *::before, *::after {
+//  box-sizing: border-box;
+//}
+//
+//#app {
+//  max-width: 400px;
+//  margin: 0 auto;
+//  line-height: 1.4;
+//  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//  color: $vue-blue;
+//}
+//
+//h1 {
+//  text-align: center;
+//}
+</style>

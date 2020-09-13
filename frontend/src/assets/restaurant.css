@@ -1,0 +1,18 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+p{
+    text-align: justify;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.navbar-brand{
+    margin-left: 15px;
+}
+.bg-body{
+    margin-left: 350px;
+    margin-top: 120px;
+    width: 650px;
+}
