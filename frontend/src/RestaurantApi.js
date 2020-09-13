@@ -17,6 +17,9 @@ export default {
   makeEventPreBooking: function (booking) {
     return client.post('/event-pre-booking/', booking)
   },
+  makeLessonBooking: function (booking) {
+    return client.post('/cooking-lessons/', booking)
+  },
   utils: {
     getDayDisplayName (day) {
       const dayToText = {

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking
+from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking, CookingLessonBooking
 
 
 class DishSerializer(serializers.HyperlinkedModelSerializer):
@@ -61,3 +61,10 @@ class EventPreBookingSerializer(serializers.HyperlinkedModelSerializer):
         model = EventPreBooking
         fields = ['url', 'id', 'user', 'fullname', 'email', 'phone_number', 'date', 'time', 'address']
 
+
+class CookingLessonBookingSerializer(serializers.HyperlinkedModelSerializer):
+    user = serializers.ReadOnlyField(source='user.username')
+
+    class Meta:
+        model = CookingLessonBooking
+        fields = ['url', 'id', 'user', 'fullname', 'email', 'phone_number', 'address', 'date', 'time', 'type']

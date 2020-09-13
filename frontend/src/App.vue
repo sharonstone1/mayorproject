@@ -171,10 +171,7 @@
     <br>
 
     <!--cooking class information-->
-    <div
-      class="container"
-      id="cooking_class"
-    >
+    <div class="container" id="cooking_class">
       <h3>Cooking Class</h3>
       <p>
         In order to be close to our customer, the restaurant decided to offer a cooking class for those who want
@@ -184,6 +181,7 @@
         Apart from our cooking creation, we are also trying to imitate the way the best chief in the world make
         their courses.
       </p>
+
       <div class="card-body ">
         <div class="row">
           <div class="col-lg-6">
@@ -200,181 +198,16 @@
         <p> Here there is our library book inspiration. Those which we used to made most of our course</p>
         <br>
         <div class="row">
-          <div class="col-lg-6">
-            <p>Simplissime book is well-know in France for making a quick foods.</p>
-            <img src="static/media//cooking_book1.jpg">
-          </div>
-          <div class="col-lg-6">
-            <p>The Tapas foods is from spain. The spain food is well-know as a spicy food.</p>
-            <img src="static/media//cooking_book2.jpg">
-          </div>
-        </div>
-        <br>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <p>The sous vide book is from France. It is another away to make food by using a spray.</p>
-            <img src="static/media//cooking_book3.jpg">
-          </div>
-          <div class="col-lg-6">
-            <p>This book is showed all kind of vacuum food people can make in the simple way and faster.</p>
-            <img src="static/media//cooking_book4.jpg">
+          <div class="col-lg-6" v-for="(book, index) in books" :key="index">
+            <p>{{book.description}}</p>
+            <img :src="book.img">
           </div>
         </div>
       </div>
       <br>
 
-      <form>
-        <div
-          class="form-group row"
-          id="enrolment"
-        >
-          <label
-            class="col-sm-2 col-form-label"
-            for="CandidateName"
-          >CandidateName</label>
-          <div class="col-sm-10">
-            <input
-              class="form-control"
-              id="CandidateName"
-              type="text"
-              value="Name"
-            >
-          </div>
-        </div>
+      <CookingClassBooking/>
 
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="Email"
-          >Email</label>
-          <div class="col-sm-10">
-            <input
-              class="form-control"
-              id="Email"
-              placeholder="Email"
-              required
-              type="email"
-            >
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="phonenumber"
-          >Phone Number</label>
-          <div class="col-sm-10">
-            <input
-              class="form-control"
-              id="phonenumber"
-              maxlength="14"
-              minlength="9"
-              placeholder="phone number"
-              required
-              size="20"
-              type="tel"
-            >
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="address"
-          >Address</label>
-          <div class="col-sm-10">
-            <input
-              class="form-control"
-              id="address"
-              placeholder="address"
-              type="text"
-            >
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="Date"
-          >Start date:</label>
-          <div class="col-sm-10">
-            <input
-              class="form-control"
-              id="Date"
-              max="2030-07-22"
-              min="2020-07-22"
-              name="date"
-              type="date"
-              value="2020-07-22"
-            >
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="class-select"
-          >Choose your lesson:</label>
-          <div class="col-sm-10">
-            <select
-              id="class-select"
-              name="location"
-              class="form-control"
-            >
-              <option value="">
-                --Please choose an option--
-              </option>
-              <option value="online">
-                online
-              </option>
-              <option value="live">
-                live
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label
-            class="col-sm-2 col-form-label"
-            for="lesson-select"
-          >Choose your time:</label>
-          <div class="col-sm-10">
-            <select
-              id="lesson-select"
-              name="location"
-              class="form-control"
-            >
-              <option value="">
-                --Please choose an option--
-              </option>
-              <option value="morning">
-                Morning
-              </option>
-              <option value="evening">
-                Evening
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <br>
-        <br>
-
-        <!--        <div class="card-footer">-->
-        <div class="form-group row">
-          <div class="col-sm-10 offset-sm-2">
-            <button
-              class="btn btn-primary"
-              type="submit"
-            >
-              subscribe
-            </button>
-          </div>
-        </div>
-        <!--        </div>-->
-      </form>
     </div>
 
     <br>
@@ -539,6 +372,7 @@ import MenuPresentation from '@/components/MenuPresentation'
 import TableBooking from '@/components/TableBooking'
 import DeliveryOrder from '@/components/DeliveryOrder'
 import EventPreBooking from '@/components/EventPreBooking'
+import CookingClassBooking from '@/components/CookingClassBooking'
 
 export default {
   name: 'App',
@@ -576,11 +410,28 @@ export default {
         { name: 'Gallery', id: '' },
         { name: 'Contact', id: '' }
       ],
-      deliveryBasket: [],
       dishes: [],
       lunchSpecials: [],
       dinnerSpecials: [],
-      restaurantMenu: {}
+      restaurantMenu: {},
+      books: [
+        {
+          description: 'Simplissime book is well-know in France for making a quick foods.',
+          img: 'static/media//cooking_book1.jpg'
+        },
+        {
+          description: 'The Tapas foods is from spain. The spain food is well-know as a spicy food.',
+          img: 'static/media//cooking_book2.jpg'
+        },
+        {
+          description: 'The sous vide book is from France. It is another away to make food by using a spray.',
+          img: 'static/media//cooking_book3.jpg'
+        },
+        {
+          description: 'This book is showed all kind of vacuum food people can make in the simple way and faster.',
+          img: 'static/media//cooking_book4.jpg'
+        }
+      ]
     }
   },
   mounted: function () {
@@ -614,6 +465,7 @@ export default {
   },
   /* List of HTML components used to render the HTML */
   components: {
+    CookingClassBooking,
     EventPreBooking,
     DeliveryOrder,
     TableBooking,
@@ -626,24 +478,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-//@import './variables.scss';
-//
-//*, *::before, *::after {
-//  box-sizing: border-box;
-//}
-//
-//#app {
-//  max-width: 400px;
-//  margin: 0 auto;
-//  line-height: 1.4;
-//  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//  color: $vue-blue;
-//}
-//
-//h1 {
-//  text-align: center;
-//}
+<style scoped>
+
 </style>

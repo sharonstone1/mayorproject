@@ -12,6 +12,7 @@ router.register(r'orders', views.DeliveryOrderViewSet)
 router.register(r'orders-items', views.DeliveryOrderItemViewSet)
 router.register(r'table-booking', views.TableBookingViewSet)
 router.register(r'event-pre-booking', views.EventPreBookingViewSet)
+router.register(r'cooking-lessons', views.CookingLessonBookingViewSet)
 
 # # The API URLs are now determined automatically by the router.
 urlpatterns = [

@@ -4,9 +4,9 @@ from rest_framework import viewsets
 from rest_framework import views
 from rest_framework.response import Response
 
-from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking
+from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking, CookingLessonBooking
 from api.serializers import DishSerializer, UserSerializer, GroupSerializer, DeliveryOrderSerializer, \
-    DeliveryOrderItemSerializer, TableBookingSerializer, EventPreBookingSerializer
+    DeliveryOrderItemSerializer, TableBookingSerializer, EventPreBookingSerializer, CookingLessonBookingSerializer
 from rest_framework.decorators import action
 from django.db.models import Q
 
@@ -100,4 +100,13 @@ class EventPreBookingViewSet(viewsets.ModelViewSet):
     """
     queryset = EventPreBooking.objects.all()
     serializer_class = EventPreBookingSerializer
+
+
+class CookingLessonBookingViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list` and `detail` actions.
+    """
+    queryset = CookingLessonBooking.objects.all()
+    serializer_class = CookingLessonBookingSerializer
+
 
