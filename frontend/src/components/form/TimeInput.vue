@@ -12,6 +12,8 @@
         class="form-control"
         :min="min"
         :max="max"
+        :value="value"
+        @input="$emit('input', $event.target.value)"
       >
     </div>
   </div>
@@ -20,7 +22,7 @@
 <script>
 export default {
   name: 'TimeInput',
-  props: ['label', 'id', 'min', 'max']
+  props: ['label', 'id', 'min', 'max', 'value']
 }
 </script>
 

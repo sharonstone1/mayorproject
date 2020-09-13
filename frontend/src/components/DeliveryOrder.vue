@@ -1,52 +1,51 @@
 <template>
-    <div class="container">
-      <h2>{{title}}</h2>
-      <slot></slot>
-      <form>
-        <TextInput
-          id="inputUserName"
-          label="Name"
-          placeholder="Name"
-          type="text"
-          v-model="form.fullname"
-        />
-        <TextInput
-          id="inputUserEmail"
-          label="Email"
-          placeholder="Email"
-          type="email"
-          v-model="form.email"
-        />
-        <TextInput
-          id="phone-input"
-          label="Telephone"
-          placeholder="Telephone number"
-          type="tel"
-          v-model="form.phone_number"
-        />
-        <TextInput
-          id="inputUserAddress"
-          label="Address"
-          placeholder="Address"
-          type="address"
-          v-model="form.address"
-        />
-        <DateInput
-          id="inputDate"
-          label="Start date:"
-          max="2030-07-22"
-          min="2020-07-22"
-          v-model="form.date"
-        />
-        <TimeInput
-          id="inputTime"
-          label="Time"
-          min="12:00"
-          max="23:59"
-          v-model="form.time"
-        />
-      </form>
-      <br>
+  <div class="container">
+    <h2>{{title}}</h2>
+    <slot></slot>
+    <form v-on:submit.prevent="submitForm">
+      <TextInput
+        id="inputUserName"
+        label="Name"
+        placeholder="Name"
+        type="text"
+        v-model="form.fullname"
+      />
+      <TextInput
+        id="inputUserEmail"
+        label="Email"
+        placeholder="Email"
+        type="email"
+        v-model="form.email"
+      />
+      <TextInput
+        id="phone-input"
+        label="Telephone"
+        placeholder="Telephone number"
+        type="tel"
+        v-model="form.phone_number"
+      />
+      <TextInput
+        id="inputUserAddress"
+        label="Address"
+        placeholder="Address"
+        type="address"
+        v-model="form.address"
+      />
+      <DateInput
+        id="inputDate"
+        label="Start date:"
+        max="2030-07-22"
+        min="2020-07-22"
+        v-model="form.date"
+      />
+      <TimeInput
+        id="inputTime"
+        label="Time"
+        min="12:00"
+        max="23:59"
+        v-model="form.time"
+      />
+
       <br>
 
       <h5>My order form</h5>
@@ -107,6 +106,7 @@
             >
           </div>
         </div>
+
         <div class="form-group row">
           <div class="offset-sm-3 col-sm-9">
             <button
@@ -119,6 +119,7 @@
           </div>
         </div>
       </div>
+
       <br>
 
       <table class="table table-bordered border-0">
@@ -144,22 +145,20 @@
         </tbody>
       </table>
 
-      <button
-        class="btn btn-primary form-control"
-        @click="submitForm"
-      >
+      <button class="btn btn-primary form-control">
         Order
       </button>
 
       <SuccessErrorAlert :error="error" :success="success"/>
-    </div>
+    </form>
+  </div>
 </template>
 
 <script>
 
-import TextInput from '@/components/form/TextInputTest'
-import DateInput from '@/components/form/DateInputTest'
-import TimeInput from '@/components/form/TimeInputTest'
+import TextInput from '@/components/form/TextInput'
+import DateInput from '@/components/form/DateInput'
+import TimeInput from '@/components/form/TimeInput'
 import RestaurantApi from '@/RestaurantApi'
 import _ from 'lodash'
 import FormMixin from '@/mixins/FormMixin'

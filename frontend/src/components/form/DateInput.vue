@@ -11,6 +11,7 @@
         name="date"
         class="form-control"
         :value="value"
+        @input="$emit('input', $event.target.value)"
         :min="min"
         :max="max"
       >

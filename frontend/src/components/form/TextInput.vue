@@ -10,6 +10,8 @@
         class="form-control"
         :id="id"
         :placeholder="placeholder"
+        :value="value"
+        @input="$emit('input', $event.target.value)"
       >
     </div>
   </div>
@@ -18,7 +20,7 @@
 <script>
 export default {
   name: 'TextInput',
-  props: ['label', 'id', 'type', 'placeholder']
+  props: ['label', 'id', 'type', 'placeholder', 'value']
 }
 </script>
 

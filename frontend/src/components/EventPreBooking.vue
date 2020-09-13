@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInputTest'
-import DateInput from '@/components/form/DateInputTest'
-import TimeInput from '@/components/form/TimeInputTest'
+import TextInput from '@/components/form/TextInput'
+import DateInput from '@/components/form/DateInput'
+import TimeInput from '@/components/form/TimeInput'
 import RestaurantApi from '@/RestaurantApi'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
 import FormMixin from '@/mixins/FormMixin'

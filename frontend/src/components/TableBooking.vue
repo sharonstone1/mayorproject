@@ -48,11 +48,11 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInputTest'
-import DateInput from '@/components/form/DateInputTest'
-import TimeInput from '@/components/form/TimeInputTest'
-import NumberInput from '@/components/form/NumberInputTest'
-import CheckboxInput from '@/components/form/CheckboxInputTest'
+import TextInput from '@/components/form/TextInput'
+import DateInput from '@/components/form/DateInput'
+import TimeInput from '@/components/form/TimeInput'
+import NumberInput from '@/components/form/NumberInput'
+import CheckboxInput from '@/components/form/CheckboxInput'
 import RestaurantApi from '@/RestaurantApi'
 import FormMixin from '@/mixins/FormMixin'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
