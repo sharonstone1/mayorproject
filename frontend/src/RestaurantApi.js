@@ -1,7 +1,10 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: '/api'
+  baseURL: '/api',
+  xsrfCookieName: 'csrftoken',
+  xsrfHeaderName: 'X-CSRFToken',
+  withCredentials: true
 })
 
 export default {
@@ -19,6 +22,15 @@ export default {
   },
   makeLessonBooking: function (booking) {
     return client.post('/cooking-lessons/', booking)
+  },
+  login: function (credentials) {
+    return client.post('/auth/login/', credentials)
+  },
+  logout: function () {
+    return client.post('/auth/logout/')
+  },
+  register: function (registration) {
+    return client.post('/auth/register/', registration)
   },
   utils: {
     getDayDisplayName (day) {
