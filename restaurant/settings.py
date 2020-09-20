@@ -168,5 +168,6 @@ REST_REGISTRATION = {
     'LOGIN_AUTHENTICATE_SESSION': True,
     'REGISTER_SERIALIZER_CLASS': 'api.registration.serializers.UserRegistrationSerializer',
     'REGISTER_OUTPUT_SERIALIZER_CLASS': 'api.registration.serializers.UserRegistrationOutputSerializer',
-    'USER_LOGIN_FIELDS': ['username']
+    'USER_LOGIN_FIELDS': ['username'],
+    'PROFILE_SERIALIZER_CLASS': 'api.serializers.ProfileUserSerializer'
 }

@@ -236,7 +236,6 @@ class CookingLessonBookingSerializer(BookingSerializerMixin, serializers.Hyperli
 
 
 
-
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     # delivery_orders = serializers.ReadOnlyField()
     table_bookings = TableBookingSerializer(many=True, read_only=True)
@@ -244,6 +243,24 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'id', 'username', 'first_name', 'last_name', 'email', 'table_bookings']
+
+
+class ProfileUserSerializer(serializers.HyperlinkedModelSerializer):
+    table_bookings = TableBookingSerializer(many=True, read_only=True)
+    delivery_orders = DeliveryOrderSerializer(many=True, read_only=True)
+    cooking_lessons = CookingLessonBookingSerializer(many=True, read_only=True)
+    events = EventPreBookingSerializer(many=True, read_only=True)
+    is_staff = serializers.ReadOnlyField()
+
+    class Meta:
+        model = User
+        fields = ['url', 'username', 'first_name', 'last_name', 'email', 'is_staff',
+                  'table_bookings',
+                  'delivery_orders',
+                  'cooking_lessons',
+                  'events'
+        ]
+
 
 
 class LoginSerializer(serializers.Serializer):
