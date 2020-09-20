@@ -16,4 +16,7 @@ router.register(r'cooking-lessons', views.CookingLessonBookingViewSet)
 # # The API URLs are now determined automatically by the router.
 urlpatterns = [
     path('', include(router.urls)),
+    # path(r'auth/login', views.Login.as_view()),
+    # path(r'auth/logout', views.Logout.as_view()),
+    path(r'auth/', include('api.registration.urls')),
 ]

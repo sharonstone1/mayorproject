@@ -22,3 +22,7 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('', IndexTemplateView.as_view(), name="entry-point"),
 ]
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls')),
+]

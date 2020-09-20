@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,9 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'phonenumber_field',
-    'api',
     'corsheaders',
-    'webpack_loader'
+    'webpack_loader',
+    'rest_registration'
 ]
 
 MIDDLEWARE = [
@@ -147,4 +148,25 @@ WEBPACK_LOADER = {
         'BUNDLE_DIR_NAME': 'dist/',
         'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
+
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_ENABLED': False,
+    'RESET_PASSWORD_VERIFICATION_ENABLED': False,
+    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
+    'LOGIN_AUTHENTICATE_SESSION': True,
+    'REGISTER_SERIALIZER_CLASS': 'api.registration.serializers.UserRegistrationSerializer',
+    'REGISTER_OUTPUT_SERIALIZER_CLASS': 'api.registration.serializers.UserRegistrationOutputSerializer',
+    'USER_LOGIN_FIELDS': ['username']
 }
