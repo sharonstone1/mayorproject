@@ -66,7 +66,7 @@ class Dish(models.Model):
 class DeliveryOrder(models.Model):
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    user = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
     phone_number = PhoneNumberField()
     address = models.CharField(max_length=500)
     date = models.DateField()
@@ -82,7 +82,7 @@ class DeliveryOrderItem(models.Model):
 class TableBooking(models.Model):
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    user = models.ForeignKey('auth.User', related_name='table_bookings', on_delete=models.CASCADE, blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='table_bookings', on_delete=models.CASCADE, blank=True, null=True)
     phone_number = PhoneNumberField()
     date = models.DateField()
     time = models.TimeField()
@@ -107,7 +107,7 @@ class CookingLessonBooking(models.Model):
 
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    user = models.ForeignKey('auth.User', related_name='cooking_lessons', on_delete=models.CASCADE, blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='cooking_lessons', on_delete=models.CASCADE, blank=True, null=True)
     phone_number = PhoneNumberField()
     address = models.CharField(max_length=500)
     date = models.DateField()
@@ -118,7 +118,7 @@ class CookingLessonBooking(models.Model):
 class EventPreBooking(models.Model):
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    user = models.ForeignKey('auth.User', related_name='events', on_delete=models.CASCADE, blank=True, null=True)
+    owner = models.ForeignKey('auth.User', related_name='events', on_delete=models.CASCADE, blank=True, null=True)
     phone_number = PhoneNumberField()
     address = models.CharField(max_length=500)
     date = models.DateField()
