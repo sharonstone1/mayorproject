@@ -32,6 +32,9 @@ export default {
   register: function (registration) {
     return client.post('/auth/register/', registration)
   },
+  profile: function () {
+    return client.get('/auth/profile/')
+  },
   utils: {
     getDayDisplayName (day) {
       const dayToText = {
