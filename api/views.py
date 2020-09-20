@@ -1,14 +1,72 @@
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render
-from rest_framework import viewsets
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect
+from rest_framework import viewsets, status, permissions
 from rest_framework import views
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking, CookingLessonBooking
-from api.serializers import DishSerializer, UserSerializer, GroupSerializer, DeliveryOrderSerializer, \
-    DeliveryOrderItemSerializer, TableBookingSerializer, EventPreBookingSerializer, CookingLessonBookingSerializer
-from rest_framework.decorators import action
+from api.permissions import BookingPermission
+from api.serializers import DishSerializer, UserSerializer, DeliveryOrderSerializer, \
+    DeliveryOrderItemSerializer, TableBookingSerializer, EventPreBookingSerializer, CookingLessonBookingSerializer, \
+    LoginSerializer
+from rest_framework.decorators import action, api_view
 from django.db.models import Q
+from django.contrib.auth import authenticate, login, logout
+
+
+class BookingMixin:
+    permission_classes = [BookingPermission]
+
+    def perform_create(self, serializer):
+        # Pass the user to the serializer if it isn't anonymous
+        owner = None if self.request.user.is_anonymous else self.request.user
+        serializer.save(owner=owner)
+
+    def get_queryset(self):
+        """
+        Filter for the user if it is not staff
+        """
+        user = self.request.user
+        if user.is_staff:
+            return self.queryset
+        return self.queryset.filter(owner=user)
+
+
+
+class Login(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    @method_decorator(csrf_protect)
+    def post(self, request, format=None):
+        serializer = LoginSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        # Extract the username and password
+        username = serializer.validated_data['username']
+        password = serializer.validated_data['password']
+
+        # Try to authenticate the user
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            # the password verified for the user
+            if user.is_active:
+                login(request._request, user)
+                return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
+
+
+
+class Logout(APIView):
+    def post(self, request, format=None):
+        logout(request._request)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
+
 
 # Create your views here.
 class DishViewSet(viewsets.ModelViewSet):
@@ -17,6 +75,7 @@ class DishViewSet(viewsets.ModelViewSet):
     """
     queryset = Dish.objects.all()
     serializer_class = DishSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_dish_category(self, dish_type, serving_time, request, *args, **kwargs):
         starters = Dish.objects.filter(Q(type=dish_type) & Q(serving_time=serving_time))
@@ -54,7 +113,7 @@ class DishViewSet(viewsets.ModelViewSet):
         return self.get_dish_category(Dish.SIDE, Dish.LUNCH_AND_DINNER, request, args, kwargs)
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
@@ -78,7 +137,7 @@ class DeliveryOrderItemViewSet(viewsets.ModelViewSet):
     serializer_class = DeliveryOrderItemSerializer
 
 
-class TableBookingViewSet(viewsets.ModelViewSet):
+class TableBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
@@ -86,7 +145,7 @@ class TableBookingViewSet(viewsets.ModelViewSet):
     serializer_class = TableBookingSerializer
 
 
-class EventPreBookingViewSet(viewsets.ModelViewSet):
+class EventPreBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
@@ -94,7 +153,7 @@ class EventPreBookingViewSet(viewsets.ModelViewSet):
     serializer_class = EventPreBookingSerializer
 
 
-class CookingLessonBookingViewSet(viewsets.ModelViewSet):
+class CookingLessonBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
