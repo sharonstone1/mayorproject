@@ -9,6 +9,7 @@
         placeholder="Name"
         type="text"
         v-model="form.fullname"
+        v-show="userLogged == false"
       />
       <TextInput
         id="inputUserEmail"
@@ -16,6 +17,7 @@
         placeholder="Email"
         type="email"
         v-model="form.email"
+        v-show="userLogged == false"
       />
       <TextInput
         id="phone-input"
@@ -164,6 +166,7 @@ import RestaurantApi from '@/RestaurantApi'
 import _ from 'lodash'
 import FormMixin from '@/mixins/FormMixin'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import EventBus from '@/EventBus'
 
 export default {
   name: 'DeliveryOrder',
@@ -175,7 +178,8 @@ export default {
         dishType: '',
         dish: '',
         count: 0
-      }
+      },
+      userLogged: false
     }
   },
   computed: {
@@ -271,6 +275,19 @@ export default {
     DateInput,
     TimeInput,
     SuccessErrorAlert
+  },
+  mounted () {
+    const app = this
+    EventBus.on(EventBus.LOGIN, function () {
+      app.userLogged = true
+      app.form.username = ''
+      app.form.email = ''
+    })
+    EventBus.on(EventBus.LOGOUT, function () {
+      app.userLogged = false
+      app.form.username = ''
+      app.form.email = ''
+    })
   }
 }
 </script>

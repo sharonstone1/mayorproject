@@ -1,4 +1,6 @@
 <template>
+
+  <div>
     <!--    Nav bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="#">
@@ -44,24 +46,67 @@
         </div>
 
         <!-- Login and registration links are always here -->
-        <div class="navbar-nav ml-auto">
-          <a
-            class="nav-item nav-link"
-            href="login.html"
-          >Login</a>
-          <a
-            class="nav-item nav-link"
-            href="register.html"
-          >Sign up</a>
+        <div class="navbar-nav ml-auto"  v-show="userLogged == false">
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal"  href="#login">
+            Login
+          </a>
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#registerModal" href="#register">
+            Sign up
+          </a>
         </div>
+        <div class="navbar-nav ml-auto"  v-show="userLogged == true">
+          <a class="nav-item nav-link" href="#logout" @click="logout">
+            Logout
+          </a>
+          <a class="nav-item nav-link" href="#profile">
+            Profile
+          </a>
+        </div>
+
       </div>
     </nav>
+
+<!--    Login Modal -->
+    <Login modal-id="loginModal"/>
+    <UserRegistration modal-id="registerModal"/>
+  </div>
+
 </template>
 
 <script>
+import Login from '@/components/Login'
+import UserRegistration from '@/components/UserRegistration'
+import RestaurantApi from '@/RestaurantApi'
+import EventBus from '@/EventBus'
 export default {
   name: 'Navbar',
-  props: ['navigation']
+  components: { UserRegistration, Login },
+  props: ['navigation'],
+  data () {
+    return {
+      userLogged: false
+    }
+  },
+  methods: {
+    logout () {
+      RestaurantApi.logout()
+        .then(function (response) {
+          EventBus.emit(EventBus.LOGOUT)
+        })
+        .catch(function (error) {
+          console.log('failure while logging out: ' + error)
+        })
+    }
+  },
+  mounted () {
+    const app = this
+    EventBus.on(EventBus.LOGIN, function () {
+      app.userLogged = true
+    })
+    EventBus.on(EventBus.LOGOUT, function () {
+      app.userLogged = false
+    })
+  }
 }
 </script>
 

@@ -6,10 +6,12 @@
       <form v-on:submit.prevent="submitForm">
         <TextInput id="inputName" label="Name" placeholder="name" type="name"
           v-model="form.fullname"
+          v-show="userLogged == false"
         />
 
         <TextInput id="inputEmail" label="Email" placeholder="Email" type="email"
           v-model="form.email"
+          v-show="userLogged == false"
         />
 
         <TextInput id="inputtelephone" label="Telephone" placeholder="Telephone" type="tel"
@@ -56,11 +58,17 @@ import CheckboxInput from '@/components/form/CheckboxInput'
 import RestaurantApi from '@/RestaurantApi'
 import FormMixin from '@/mixins/FormMixin'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import EventBus from '@/EventBus'
 
 export default {
   name: 'TableBooking',
   props: ['title'],
   mixins: [FormMixin],
+  data: function () {
+    return {
+      userLogged: false
+    }
+  },
   components: {
     SuccessErrorAlert,
     CheckboxInput,
@@ -84,7 +92,22 @@ export default {
         vip: false
       }
     }
+  },
+
+  mounted () {
+    const app = this
+    EventBus.on(EventBus.LOGIN, function () {
+      app.userLogged = true
+      app.form.username = ''
+      app.form.email = ''
+    })
+    EventBus.on(EventBus.LOGOUT, function () {
+      app.userLogged = false
+      app.form.username = ''
+      app.form.email = ''
+    })
   }
+
 }
 </script>
 

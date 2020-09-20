@@ -9,10 +9,12 @@
 
         <TextInput id='inputUserNameEvent' type="text" label="Name" placeholder="Enter your name"
           v-model="form.fullname"
+          v-show="userLogged == false"
         />
 
         <TextInput id="inputUserEmailEvent" label="Email" placeholder="" type="email"
            v-model="form.email"
+           v-show="userLogged == false"
         />
 
         <TextInput id="inputPhoneEvent" label="Phone number" placeholder="" type="tel"
@@ -55,10 +57,16 @@ import TimeInput from '@/components/form/TimeInput'
 import RestaurantApi from '@/RestaurantApi'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
 import FormMixin from '@/mixins/FormMixin'
+import EventBus from '@/EventBus'
 
 export default {
   name: 'EventPreBooking',
   mixins: [FormMixin],
+  data: function () {
+    return {
+      userLogged: false
+    }
+  },
   components: { SuccessErrorAlert, TimeInput, DateInput, TextInput },
   props: ['title'],
   methods: {
@@ -75,6 +83,19 @@ export default {
     makeFormRequest (form) {
       return RestaurantApi.makeEventPreBooking(form)
     }
+  },
+  mounted () {
+    const app = this
+    EventBus.on(EventBus.LOGIN, function () {
+      app.userLogged = true
+      app.form.username = ''
+      app.form.email = ''
+    })
+    EventBus.on(EventBus.LOGOUT, function () {
+      app.userLogged = false
+      app.form.username = ''
+      app.form.email = ''
+    })
   }
 }
 </script>

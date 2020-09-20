@@ -1,10 +1,14 @@
 <template>
   <form v-on:submit.prevent="submitForm">
     <TextInput type="text" id="CandidateName" placeholder="Your name" label="Candidate name"
-      v-model="form.fullname"/>
+      v-model="form.fullname"
+      v-show="userLogged == false"
+    />
 
     <TextInput type="email" id="CandidateEmail" placeholder="Your email" label="Email"
-      v-model="form.email"/>
+      v-model="form.email"
+      v-show="userLogged == false"
+    />
 
     <TextInput type="tel" id="CandidatePhone" placeholder="Your phone number" label="Phone number"
       v-model="form.phone_number"/>
@@ -37,6 +41,7 @@ import FormMixin from '@/mixins/FormMixin'
 import DateInput from '@/components/form/DateInput'
 import SelectInput from '@/components/form/SelectInput'
 import RestaurantApi from '@/RestaurantApi'
+import EventBus from '@/EventBus'
 
 export default {
   name: 'CookingClassBooking',
@@ -51,7 +56,9 @@ export default {
       classTime: {
         morning: 'Starting at 8 o\'clock until lunch',
         afternoon: 'Starting at 15 o\'clock until dinner'
-      }
+      },
+
+      userLogged: false
     }
   },
   methods: {
@@ -69,7 +76,22 @@ export default {
     makeFormRequest (form) {
       return RestaurantApi.makeLessonBooking(form)
     }
+  },
+
+  mounted () {
+    const app = this
+    EventBus.on(EventBus.LOGIN, function () {
+      app.userLogged = true
+      app.form.username = ''
+      app.form.email = ''
+    })
+    EventBus.on(EventBus.LOGOUT, function () {
+      app.userLogged = false
+      app.form.username = ''
+      app.form.email = ''
+    })
   }
+
 }
 </script>
 
