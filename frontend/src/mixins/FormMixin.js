@@ -31,8 +31,7 @@ export default {
       const app = this
       this.makeFormRequest(this.form)
         .then(function (response) {
-          app.form = app.defaultForm()
-          app.success = 'Thank you for your booking'
+          app.onFormSubmissionSuccess(response)
         })
         .catch(function (error) {
           if (error.response) {
@@ -58,6 +57,10 @@ export default {
     makeFormRequest (form) {
       console.assert('This must be implemented by the parent')
       return {}
+    },
+    onFormSubmissionSuccess (response) {
+      this.form = this.defaultForm()
+      this.success = 'Thank you for your booking'
     }
   }
 }
