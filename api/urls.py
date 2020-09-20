@@ -7,7 +7,6 @@ from api import views
 router = DefaultRouter()
 router.register(r'dishes', views.DishViewSet)
 router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 router.register(r'orders', views.DeliveryOrderViewSet)
 router.register(r'orders-items', views.DeliveryOrderItemViewSet)
 router.register(r'table-booking', views.TableBookingViewSet)

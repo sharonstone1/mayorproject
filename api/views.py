@@ -62,15 +62,7 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = UserSerializer
 
 
-class GroupViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    This viewset automatically provides `list` and `detail` actions.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-
-
-class DeliveryOrderViewSet(viewsets.ModelViewSet):
+class DeliveryOrderViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """

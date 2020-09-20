@@ -6,19 +6,7 @@ from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, Eve
 class DishSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Dish
-        fields = ['url', 'id', 'title', 'price', 'description', 'type', 'day', 'serving_time']
-
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'id', 'username', 'first_name', 'last_name', 'email', 'password']
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'id', 'name', 'permissions']
+        fields = ['url', 'title', 'price', 'description', 'type', 'day', 'serving_time']
 
 
 class DeliveryOrderItemSerializer(serializers.HyperlinkedModelSerializer):
