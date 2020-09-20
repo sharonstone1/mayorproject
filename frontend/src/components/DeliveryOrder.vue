@@ -45,112 +45,113 @@
         max="23:59"
         v-model="form.time"
       />
+    </form>
 
-      <br>
+    <br>
 
-      <h5>My order form</h5>
+    <h5>My order form</h5>
 
-      <div class="form">
-        <div class="form-group row">
-          <label
-            class="col-form-label col-sm-3"
-            for="courseTypeSelect"
-          >Course Type</label>
-          <div class="col-sm-9">
-            <select
-              class="form-control"
-              id="courseTypeSelect"
-              name="course type"
-              v-model="selection.dishType"
-              :disabled="deliveryItemReadOnly"
+    <div class="form">
+      <div class="form-group row">
+        <label
+          class="col-form-label col-sm-3"
+          for="courseTypeSelect"
+        >Course Type</label>
+        <div class="col-sm-9">
+          <select
+            class="form-control"
+            id="courseTypeSelect"
+            name="course type"
+            v-model="selection.dishType"
+            :disabled="deliveryItemReadOnly"
+          >
+            <option
+              v-for="(menu, type, index) in deliveryMenu"
+              :value="type"
+              :key="'order-dish-type-' + index"
             >
-              <option
-                v-for="(menu, type, index) in deliveryMenu"
-                :value="type"
-                :key="'order-dish-type-' + index"
-              >
-                {{ type }}
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-form-label col-sm-3">Course</label>
-          <div class="col-sm-9">
-            <select
-              class="form-control"
-              name="course"
-              v-model="selection.dish"
-              :disabled="deliveryItemReadOnly"
-            >
-              <option
-                :value="index"
-                v-for="(menu, index) in deliveryMenu[selection.dishType]"
-                :key="'order-dish-select-' + index"
-              >
-                {{ menu.title }}
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-form-label col-sm-3">Count</label>
-          <div class="col-sm-9">
-            <input
-              class="form-control"
-              type="number"
-              v-model="selection.count"
-              :readonly="deliveryItemReadOnly"
-            >
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="offset-sm-3 col-sm-9">
-            <button
-              class="btn btn-primary form-control"
-              @click="addDeliveryItem"
-              :disabled="!deliveryItemReady"
-            >
-              Add
-            </button>
-          </div>
+              {{ type }}
+            </option>
+          </select>
         </div>
       </div>
 
-      <br>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-3">Course</label>
+        <div class="col-sm-9">
+          <select
+            class="form-control"
+            name="course"
+            v-model="selection.dish"
+            :disabled="deliveryItemReadOnly"
+          >
+            <option
+              :value="index"
+              v-for="(menu, index) in deliveryMenu[selection.dishType]"
+              :key="'order-dish-select-' + index"
+            >
+              {{ menu.title }}
+            </option>
+          </select>
+        </div>
+      </div>
 
-      <table class="table table-bordered border-0">
-        <thead>
-        <tr>
-          <th>My command</th>
-          <th>quantities</th>
-          <th>prices</th>
-          <th/>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="(item, index) in form.items" :key="'order-item-' + index">
-          <td>{{ item.dish.title }}</td>
-          <td>{{ item.count }}</td>
-          <td>{{ item.dish.price * item.count }}</td>
-          <td>
-            <button @click="removeDeliveryItem(index)">
-              Remove
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-3">Count</label>
+        <div class="col-sm-9">
+          <input
+            class="form-control"
+            type="number"
+            v-model="selection.count"
+            :readonly="deliveryItemReadOnly"
+          >
+        </div>
+      </div>
 
-      <button class="btn btn-primary form-control">
-        Order
-      </button>
+      <div class="form-group row">
+        <div class="offset-sm-3 col-sm-9">
+          <button
+            class="btn btn-primary form-control"
+            @click="addDeliveryItem"
+            :disabled="!deliveryItemReady"
+            formaction=""
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
 
-      <SuccessErrorAlert :error="error" :success="success"/>
-    </form>
+    <br>
+
+    <table class="table table-bordered border-0">
+      <thead>
+      <tr>
+        <th>My command</th>
+        <th>quantities</th>
+        <th>prices</th>
+        <th/>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="(item, index) in form.items" :key="'order-item-' + index">
+        <td>{{ item.dish.title }}</td>
+        <td>{{ item.count }}</td>
+        <td>{{ item.dish.price * item.count }}</td>
+        <td>
+          <button @click="removeDeliveryItem(index)">
+            Remove
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-primary form-control" @click="submitForm">
+      Order
+    </button>
+
+    <SuccessErrorAlert :error="error" :success="success"/>
   </div>
 </template>
 
