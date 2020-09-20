@@ -258,6 +258,10 @@ export default {
       // send the order to the rest API
       return RestaurantApi.makeDeliveryOrder(order)
     },
+    onFormSubmissionSuccess (response) {
+      EventBus.emit(EventBus.DELIVERY_ORDER, response.data)
+      FormMixin.methods.onFormSubmissionSuccess.call(this, response)
+    },
     addDeliveryItem () {
       // retrieve the dish
       const selection = this.selection

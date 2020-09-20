@@ -82,6 +82,10 @@ export default {
     },
     makeFormRequest (form) {
       return RestaurantApi.makeEventPreBooking(form)
+    },
+    onFormSubmissionSuccess (response) {
+      EventBus.emit(EventBus.EVENT_BOOKING, response.data)
+      FormMixin.methods.onFormSubmissionSuccess.call(this, response)
     }
   },
   mounted () {

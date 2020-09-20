@@ -29,6 +29,30 @@ export default {
         .catch(function (error) {
           console.log('Failed at fetching user profile: ' + error)
         })
+    },
+    onTableBooking (booking) {
+      if (!this.profile || !this.userLogged) {
+        return
+      }
+      this.profile.table_bookings.push(booking)
+    },
+    onDeliveryOrder (order) {
+      if (!this.profile || !this.userLogged) {
+        return
+      }
+      this.profile.delivery_orders.push(order)
+    },
+    onEventBooking (booking) {
+      if (!this.profile || !this.userLogged) {
+        return
+      }
+      this.profile.events.push(booking)
+    },
+    onCookingLessonBooking (booking) {
+      if (!this.profile || !this.userLogged) {
+        return
+      }
+      this.profile.cooking_lessons.push(booking)
     }
   },
   mounted () {
@@ -45,6 +69,10 @@ export default {
       app.profile = null
       app.userLogged = false
     })
+    EventBus.on(EventBus.TABLE_BOOKING, this.onTableBooking)
+    EventBus.on(EventBus.DELIVERY_ORDER, this.onDeliveryOrder)
+    EventBus.on(EventBus.EVENT_BOOKING, this.onEventBooking)
+    EventBus.on(EventBus.COOKING_LESSON_BOOKING, this.onCookingLessonBooking)
 
     // Fetch the user profile
     app.fetchUserProfile()

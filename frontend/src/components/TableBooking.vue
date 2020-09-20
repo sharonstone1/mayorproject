@@ -91,9 +91,12 @@ export default {
         guest_count: 1,
         vip: false
       }
+    },
+    onFormSubmissionSuccess (response) {
+      EventBus.emit(EventBus.TABLE_BOOKING, response.data)
+      FormMixin.methods.onFormSubmissionSuccess.call(this, response)
     }
   },
-
   mounted () {
     const app = this
     EventBus.on(EventBus.LOGIN, function () {

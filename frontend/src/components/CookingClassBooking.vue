@@ -75,6 +75,10 @@ export default {
     },
     makeFormRequest (form) {
       return RestaurantApi.makeLessonBooking(form)
+    },
+    onFormSubmissionSuccess (response) {
+      EventBus.emit(EventBus.COOKING_LESSON_BOOKING, response.data)
+      FormMixin.methods.onFormSubmissionSuccess.call(this, response)
     }
   },
 
