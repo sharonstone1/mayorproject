@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <Navbar :navigation="navigation"/>
-
-    <br>
+    <Navbar :navigation="navigation"/><br>
 
     <!--welcome page details-->
     <Welcome title="The History of the restaurant" image="static/media/referenceboss.jpg" id="welcome">
@@ -188,7 +186,7 @@
             <img src="static/media//kitchen-class.jpg">
           </div>
           <div class="col-lg-6">
-            <img src="static/media//kitchen-class.jpg">
+            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>
           </div>
         </div>
         <br>
@@ -214,96 +212,7 @@
 
     <hr>
     <!--gallery information-->
-
-    <div
-      class="container"
-      id="Gallery_details"
-    >
-      <h4 id="gallery">
-        Gallery
-      </h4>
-      <p>
-        Please be free to have a look on our gallery page. Most of the course here are our creation cooking
-        ,they have not made by nobody in the restaurant world.
-      </p><br>
-
-      <div class="row">
-        <div
-          class="carousel slide col-8 offset-2"
-          data-ride="carousel"
-          id="carouselInterval"
-        >
-          <div class="carousel-inner">
-            <div
-              class="carousel-item active"
-              data-interval="10000"
-            >
-              <img
-                alt="burger no update"
-                class="d-block w-100"
-                src="static/media//imageplate5.jpg"
-              >
-            </div>
-
-            <div class="carousel-item">
-              <img
-                alt="steak poulet no update"
-                class="d-block w-100"
-                src="static/media//haricot-vert-aux-steak-de-poulet.jpg"
-              >
-            </div>
-
-            <div class="carousel-item">
-              <img
-                alt="image crevette no update"
-                class="d-block w-100"
-                src="static/media//legumes-vert-aux-crevettes.jpg"
-              >
-            </div>
-            <div class="carousel-item">
-              <img
-                alt="image poulet no update"
-                class="d-block w-100"
-                src="static/media//poulet-braise-aux-crepes.jpg"
-              >
-            </div>
-            <div class="carousel-item">
-              <img
-                alt="image frite no update"
-                class="d-block w-100"
-                src="static/media//frites-de-plaintain-aux-legumes-vert.jpg"
-              >
-            </div>
-          </div>
-
-          <a
-            class="carousel-control-prev"
-            data-slide="prev"
-            href="#carouselInterval"
-            role="button"
-          >
-            <span
-              aria-hidden="true"
-              class="carousel-control-prev-icon"
-            />
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            data-slide="next"
-            href="#carouselInterval"
-            role="button"
-          >
-            <span
-              aria-hidden="true"
-              class="carousel-control-next-icon"
-            />
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
+    <Gallery/>
     <br>
     <hr>
 
@@ -352,7 +261,8 @@
         <li class="list-inline-item">
           <a
             class="btn btn-danger btn-rounded"
-            href="register.html"
+            data-toggle="modal" data-target="#registerModal"
+             href="#register"
             id="register"
           >Sign up!</a>
         </li>
@@ -373,6 +283,7 @@ import TableBooking from '@/components/TableBooking'
 import DeliveryOrder from '@/components/DeliveryOrder'
 import EventPreBooking from '@/components/EventPreBooking'
 import CookingClassBooking from '@/components/CookingClassBooking'
+import Gallery from '@/components/Gallery'
 
 export default {
   name: 'App',
@@ -465,6 +376,7 @@ export default {
   },
   /* List of HTML components used to render the HTML */
   components: {
+    Gallery,
     CookingClassBooking,
     EventPreBooking,
     DeliveryOrder,
