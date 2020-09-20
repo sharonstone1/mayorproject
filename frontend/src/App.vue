@@ -2,6 +2,8 @@
   <div id="app">
     <Navbar :navigation="navigation"/><br>
 
+    <Profile :dishes="dishes"/>
+
     <!--welcome page details-->
     <Welcome title="The History of the restaurant" image="static/media/referenceboss.jpg" id="welcome">
       <p>
@@ -186,7 +188,7 @@
             <img src="static/media//kitchen-class.jpg">
           </div>
           <div class="col-lg-6">
-            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>
+<!--            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>-->
           </div>
         </div>
         <br>
@@ -284,6 +286,7 @@ import DeliveryOrder from '@/components/DeliveryOrder'
 import EventPreBooking from '@/components/EventPreBooking'
 import CookingClassBooking from '@/components/CookingClassBooking'
 import Gallery from '@/components/Gallery'
+import Profile from '@/components/Profile'
 
 export default {
   name: 'App',
@@ -376,6 +379,7 @@ export default {
   },
   /* List of HTML components used to render the HTML */
   components: {
+    Profile,
     Gallery,
     CookingClassBooking,
     EventPreBooking,

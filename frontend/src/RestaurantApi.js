@@ -35,6 +35,9 @@ export default {
   profile: function () {
     return client.get('/auth/profile/')
   },
+  client: function () {
+    return client
+  },
   utils: {
     getDayDisplayName (day) {
       const dayToText = {

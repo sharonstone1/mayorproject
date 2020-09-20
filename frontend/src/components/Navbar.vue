@@ -69,7 +69,6 @@
 <!--    Login Modal -->
     <Login modal-id="loginModal"/>
     <UserRegistration modal-id="registerModal"/>
-    <Profile/>
   </div>
 
 </template>
@@ -79,10 +78,9 @@ import Login from '@/components/Login'
 import UserRegistration from '@/components/UserRegistration'
 import RestaurantApi from '@/RestaurantApi'
 import EventBus from '@/EventBus'
-import Profile from '@/components/Profile'
 export default {
   name: 'Navbar',
-  components: { Profile, UserRegistration, Login },
+  components: { UserRegistration, Login },
   props: ['navigation'],
   data () {
     return {
