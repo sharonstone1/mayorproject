@@ -2,29 +2,35 @@
   <div v-if="profile">
     <div class="container">
       <h1>Welcome {{profile.username}}</h1>
+<!--booking details-->
 
-      <h2>Bookings</h2>
-      <table v-if="profile.table_bookings.length !== 0" width="100%">
-        <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Guests</th>
-          <th>Type</th>
-          <th></th>
-        </tr>
-        <template v-for="booking in profile.table_bookings">
-          <tr :key="booking.url">
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time }}</td>
-            <td>{{ booking.guest_count }}</td>
-            <td>{{ booking.vip ? "VIP" : "Standard" }}</td>
-            <td><button @click="removeTableBooking(booking)">Cancel</button></td>
+      <div v-if="profile.table_bookings.length > 0">
+        <h2>Bookings</h2>
+        <table width="100%" border="1px solid black" >
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Guests</th>
+            <th>Type</th>
+            <th></th>
           </tr>
-        </template>
-      </table>
+          <template v-for="booking in profile.table_bookings">
+            <tr :key="booking.url">
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.time }}</td>
+              <td>{{ booking.guest_count }}</td>
+              <td>{{ booking.vip ? "VIP" : "Standard" }}</td>
+              <td><button @click="removeTableBooking(booking)">Cancel</button></td>
+            </tr>
+          </template>
+        </table>
+      </div>
+      <br>
 
+<!--delivery information-->
       <h2>Delivery</h2>
-      <table v-if="profile.delivery_orders.length !== 0" width="100%">
+      <div v-if="profile.delivery_orders.length !== 0">
+      <table  width="100%" border="1px solid black">
         <tr>
           <th>Info</th>
           <th>Details</th>
@@ -41,7 +47,7 @@
               </ul>
             </td>
             <td>
-              <table>
+              <table class="border" border="1px solid black">
                 <tr>
                   <th>Dish</th>
                   <th>Price</th>
@@ -62,6 +68,53 @@
           </tr>
         </template>
       </table>
+     </div>
+      <br>
+<!--      cooking lessons details-->
+
+      <div v-if="profile.cooking_lessons.length > 0">
+        <h2>Cooking Lessons</h2>
+        <table width="100%" border="1px solid black" >
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Type</th>
+            <th></th>
+          </tr>
+          <template v-for="lesson in profile.cooking_lessons">
+            <tr :key="lesson.url">
+              <td>{{ lesson.date }}</td>
+              <td>{{ lesson.time }}</td>
+              <td>{{ lesson.type }}</td>
+              <td><button @click="removeCookingLesson(lesson)">Cancel</button></td>
+            </tr>
+          </template>
+        </table>
+      </div>
+      <br>
+
+<!--      events details-->
+
+      <div v-if="profile.events.length > 0">
+        <h2>My pre-booking Events</h2>
+        <table width="100%" border="1px solid black" >
+          <tr>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th></th>
+          </tr>
+          <template v-for="event in profile.events">
+            <tr :key="event.url">
+              <td>{{ event.address }}</td>
+              <td>{{ event.date }}</td>
+              <td>{{ event.time }}</td>
+              <td><button @click="removeEventPreBooking(event)">Cancel</button></td>
+            </tr>
+          </template>
+        </table>
+      </div>
+      <br>
 
     </div>
   </div>
@@ -78,6 +131,7 @@ export default {
     return {
       userLogged: false,
       profile: null
+
     }
   },
   methods: {
@@ -150,11 +204,38 @@ export default {
       }
       this.profile.events.push(booking)
     },
+    removeEventPreBooking (event) {
+      const app = this
+      RestaurantApi.client().delete(event.url)
+        .then(function (response) {
+          console.log('event pre-booking deleted: ' + response.data)
+          const eventsBooking = app.profile.events
+          const index = eventsBooking.indexOf(event)
+          eventsBooking.splice(index, 1)
+        })
+        .catch(function (error) {
+          console.log('failed to delete event pre-booking: ' + error)
+        })
+    },
+
     onCookingLessonBooking (booking) {
       if (!this.profile || !this.userLogged) {
         return
       }
       this.profile.cooking_lessons.push(booking)
+    },
+    removeCookingLesson (lesson) {
+      const app = this
+      RestaurantApi.client().delete(lesson.url)
+        .then(function (response) {
+          console.log('lesson deleted: ' + response.data)
+          const lessons = app.profile.cooking_lessons
+          const index = lessons.indexOf(lesson)
+          lessons.splice(index, 1)
+        })
+        .catch(function (error) {
+          console.log('failed to delete lesson: ' + error)
+        })
     },
     getDishDetail (url) {
       if (this.dishes) {

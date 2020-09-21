@@ -2,7 +2,7 @@
 
   <div>
     <!--    Nav bar-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">
         <img alt="Aux delices de sharon" height="34" src="static/media/logorestaurant.jpg" width="38">
       </a>

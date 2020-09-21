@@ -1,6 +1,6 @@
 <template>
-  <div class="card" id="pre_booking">
-    <div class="card-header">
+  <div class="card">
+     <div class="card-header">
       <h4>{{title}}</h4>
     </div>
 
@@ -32,15 +32,13 @@
         <TimeInput id="inputTimeEvent" label="Time" min="12:00" max="20:00"
            v-model="form.time"
         />
-
       </div>
       <br>
-
       <div class="card-footer">
         <div class="form-group row">
           <div class="offset-sm-2">
             <button class="btn btn-primary" type="submit">
-              Prebook
+              Event pre-booking
             </button>
           </div>
         </div>

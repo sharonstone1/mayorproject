@@ -37,7 +37,7 @@
         <div class="form-group row">
           <div class="col-sm-10 offset-sm-2">
             <button class="btn btn-primary" type="submit">
-              reserve table
+              Booking table
             </button>
           </div>
         </div>

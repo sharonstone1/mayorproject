@@ -93,7 +93,7 @@
 
     <!--events information-->
     <div class="container" id="events_details">
-      <h3>Events details</h3>
+      <h3 id="events_information">Events details</h3>
       <p>
         Our restaurant offers divers services in events such as Company event or business event, proposal, wedding
         and party such as birthday, celebration, anniversary etc. On below you will find more description about
@@ -165,14 +165,14 @@
 
       <br>
 
-      <EventPreBooking title="Pre-booking"></EventPreBooking>
+      <EventPreBooking title="Pre-booking" id="event_enrollment"></EventPreBooking>
     </div>
 
     <br>
 
     <!--cooking class information-->
     <div class="container" id="cooking_class">
-      <h3>Cooking Class</h3>
+      <h3 id="cooking_class_information">Cooking Class</h3>
       <p>
         In order to be close to our customer, the restaurant decided to offer a cooking class for those who want
         to learn how to make our course. we also offer onlive lesson for those who don't have time to come at
@@ -206,7 +206,7 @@
       </div>
       <br>
 
-      <CookingClassBooking/>
+      <CookingClassBooking id="cooking_class_enrolment"/>
 
     </div>
 
@@ -238,10 +238,7 @@
           <!-- Grid column -->
           <div class="col-md-4">
             <!-- Links -->
-            <h6
-              class="text-uppercase font-weight-bold"
-              id="contact"
-            >
+            <h6 class="text-uppercase font-weight-bold" id="contact">
               Contact
             </h6>
             <address>
@@ -254,6 +251,7 @@
       </div>
 
       <!-- Call to action -->
+      <div class="">
       <ul class="list-unstyled list-inline text-center py-2">
         <li class="list-inline-item">
           <h5 class="mb-1">
@@ -261,14 +259,16 @@
           </h5>
         </li>
         <li class="list-inline-item">
-          <a
-            class="btn btn-danger btn-rounded"
+
+            <a class="btn btn-danger btn-rounded"
             data-toggle="modal" data-target="#registerModal"
-             href="#register"
-            id="register"
-          >Sign up!</a>
+             href="#UserRegistration"
+            id="register">
+            Sign up!</a>
+
         </li>
       </ul>
+    </div>
     </footer>
   </div>
 </template>
@@ -309,20 +309,20 @@ export default {
           name: 'Events',
           id: '',
           children: [
-            { name: 'Services', id: '' },
-            { name: 'Pre-booking', id: '' }
+            { name: 'Services', id: '#events_information' },
+            { name: 'Pre-booking', id: '#event_enrollment' }
           ]
         },
         {
           name: 'Cooking classes',
           id: '',
           children: [
-            { name: 'Information', id: '' },
-            { name: 'Enrolment', id: '' }
+            { name: 'Information', id: '#cooking_class_information' },
+            { name: 'Enrolment', id: '#cooking_class_enrolment' }
           ]
         },
-        { name: 'Gallery', id: '' },
-        { name: 'Contact', id: '' }
+        { name: 'Gallery', id: '#Gallery_details' },
+        { name: 'Contact', id: '#contact' }
       ],
       dishes: [],
       lunchSpecials: [],
