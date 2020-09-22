@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking, CookingLessonBooking
-from api.permissions import BookingPermission
+from api.permissions import BookingPermission, IsAdminUserOrReadOnly
 from api.serializers import DishSerializer, UserSerializer, DeliveryOrderSerializer, \
     DeliveryOrderItemSerializer, TableBookingSerializer, EventPreBookingSerializer, CookingLessonBookingSerializer, \
     LoginSerializer
@@ -75,7 +75,7 @@ class DishViewSet(viewsets.ModelViewSet):
     """
     queryset = Dish.objects.all()
     serializer_class = DishSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAdminUserOrReadOnly]
 
     def get_dish_category(self, dish_type, serving_time, request, *args, **kwargs):
         starters = Dish.objects.filter(Q(type=dish_type) & Q(serving_time=serving_time))

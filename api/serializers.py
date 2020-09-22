@@ -79,7 +79,8 @@ class BookingSerializerMixin:
 class DishSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Dish
-        fields = ['url', 'title', 'price', 'description', 'type', 'day', 'serving_time']
+        fields = ['url', 'title', 'price', 'description', 'type', 'day', 'serving_time', 'image']
+        # fields = ['url', 'title', 'price', 'description', 'type', 'day', 'serving_time']
 
 
 class DeliveryOrderItemSerializer(serializers.HyperlinkedModelSerializer):

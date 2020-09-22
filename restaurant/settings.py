@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'corsheaders',
     'webpack_loader',
-    'rest_registration'
+    'rest_registration',
+    'django_cleanup.apps.CleanupConfig'
 ]
 
 MIDDLEWARE = [
@@ -171,3 +172,6 @@ REST_REGISTRATION = {
     'USER_LOGIN_FIELDS': ['username'],
     'PROFILE_SERIALIZER_CLASS': 'api.serializers.ProfileUserSerializer'
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
