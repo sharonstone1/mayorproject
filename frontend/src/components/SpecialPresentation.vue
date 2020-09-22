@@ -4,12 +4,12 @@
     <slot></slot>
     <!-- List of daily specials presented in cards -->
     <div class="row">
-      <div class="col-lg-3" v-for="(dish) in specials" :key="`dish-${dish.id}`">
+      <div class="col-xl-3 col-lg-4 col-md-6" v-for="(dish) in specials" :key="`dish-${dish.id}`">
         <!-- Card-->
-        <div class="card">
+        <div class="card mb-3">
           <div class="card-header"> {{ getDayDisplayName(dish.day) }} </div>
           <div class="card-body">
-            <img :src="`foo.jpg + ${dish.image}`" data-toggle="modal" :data-target="`#modal-${dish.id}`">
+            <img :src="dish.image" data-toggle="modal" :data-target="`#modal-${dish.id}`">
           </div>
           <div class="card-footer">
             {{ dish.title }}
