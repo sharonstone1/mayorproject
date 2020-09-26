@@ -35,6 +35,23 @@ export default {
   profile: function () {
     return client.get('/auth/profile/')
   },
+  getTableBookings (queryParameters = {}) {
+    const query = this.makeQueryString(queryParameters)
+    return client.get('/table-booking/' + query)
+  },
+  makeQueryString (queryParameters) {
+    let query = ''
+    for (const [key, value] of Object.entries(queryParameters)) {
+      if (query !== '') {
+        query += '&'
+      }
+      query += `${key}=${value}`
+    }
+    if (query !== '') {
+      query = '?' + query
+    }
+    return query
+  },
   client: function () {
     return client
   },

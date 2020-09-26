@@ -11,118 +11,135 @@
               </button>
             </div>
 
-            <!--booking details-->
-            <div v-if="profile.table_bookings.length > 0">
-              <h2>Bookings</h2>
-              <table width="100%" border="1px solid black" >
-                <tr>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Guests</th>
-                  <th>Type</th>
-                  <th></th>
-                </tr>
-                <template v-for="booking in profile.table_bookings">
-                  <tr :key="booking.url">
-                    <td>{{ booking.date }}</td>
-                    <td>{{ booking.time }}</td>
-                    <td>{{ booking.guest_count }}</td>
-                    <td>{{ booking.vip ? "VIP" : "Standard" }}</td>
-                    <td><button @click="removeTableBooking(booking)">Cancel</button></td>
-                  </tr>
-                </template>
-              </table>
-            </div>
-            <br>
-
-            <!--delivery information-->
-            <h2>Delivery</h2>
-            <div v-if="profile.delivery_orders.length !== 0">
-            <table  width="100%" border="1px solid black">
-              <tr>
-                <th>Info</th>
-                <th>Details</th>
-                <th></th>
-              </tr>
-              <template v-for="order in profile.delivery_orders">
-                <tr :key="order.url">
-                  <td>
-                    <ul>
-                      <li>Date: {{order.date}}</li>
-                      <li>Time: {{order.time}}</li>
-                      <li>Address: {{order.address}}</li>
-                      <li>Total Price: {{getOrderTotalPrice(order)}}
-                    </ul>
-                  </td>
-                  <td>
-                    <table class="border" border="1px solid black">
-                      <tr>
-                        <th>Dish</th>
-                        <th>Price</th>
-                        <th>Count</th>
-                        <th></th>
+            <div class="modal-body">
+              <!--booking details-->
+              <div v-if="profile.table_bookings.length > 0">
+                <h2>Bookings</h2>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time</th>
+                      <th scope="col">Guests</th>
+                      <th scope="col">Type</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template v-for="booking in profile.table_bookings">
+                      <tr :key="booking.url">
+                        <td>{{ booking.date }}</td>
+                        <td>{{ booking.time }}</td>
+                        <td>{{ booking.guest_count }}</td>
+                        <td>{{ booking.vip ? "VIP" : "Standard" }}</td>
+                        <td><button @click="removeTableBooking(booking)" class="btn btn-warning">Cancel</button></td>
                       </tr>
-                      <template v-for="item in order.items">
-                        <tr :key="item.url">
-                          <td>{{ getDishName(item.dish) }}</td>
-                          <td>{{ getDishPrice(item.dish) }}</td>
-                          <td>{{item.count}}</td>
-                          <td><button @click="removeDeliveryItem(order,item)">Remove</button></td>
-                        </tr>
-                      </template>
-                    </table>
-                  </td>
-                  <td><button @click="removeDelivery(order)">Cancel</button></td>
-                </tr>
-              </template>
-            </table>
-           </div>
-            <br>
+                    </template>
+                  </tbody>
+                </table>
+              </div>
 
-            <!--      cooking lessons details-->
-            <div v-if="profile.cooking_lessons.length > 0">
-              <h2>Cooking Lessons</h2>
-              <table width="100%" border="1px solid black" >
-                <tr>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Type</th>
-                  <th></th>
-                </tr>
-                <template v-for="lesson in profile.cooking_lessons">
-                  <tr :key="lesson.url">
-                    <td>{{ lesson.date }}</td>
-                    <td>{{ lesson.time }}</td>
-                    <td>{{ lesson.type }}</td>
-                    <td><button @click="removeCookingLesson(lesson)">Cancel</button></td>
+              <!--delivery information-->
+              <h2>Delivery</h2>
+              <div v-if="profile.delivery_orders.length !== 0">
+              <table  class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Info</th>
+                    <th scope="col">Details</th>
+                    <th scope="col"></th>
                   </tr>
-                </template>
+                </thead>
+                <tbody>
+                  <template v-for="order in profile.delivery_orders">
+                    <tr :key="order.url">
+                      <td>
+                        <ul>
+                          <li>Date: {{order.date}}</li>
+                          <li>Time: {{order.time}}</li>
+                          <li>Address: {{order.address}}</li>
+                          <li>Total Price: {{getOrderTotalPrice(order)}}
+                        </ul>
+                      </td>
+                      <td>
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Dish</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Count</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <template v-for="item in order.items">
+                              <tr :key="item.url">
+                                <td>{{ getDishName(item.dish) }}</td>
+                                <td>{{ getDishPrice(item.dish) }}</td>
+                                <td>{{item.count}}</td>
+                                <td><button @click="removeDeliveryItem(order,item)" class="btn btn-warning">Remove</button></td>
+                              </tr>
+                            </template>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td><button @click="removeDelivery(order)" class="btn btn-warning">Cancel</button></td>
+                    </tr>
+                  </template>
+                </tbody>
               </table>
-            </div>
-            <br>
+             </div>
 
-            <!--      events details-->
-            <div v-if="profile.events.length > 0">
-              <h2>My pre-booking Events</h2>
-              <table width="100%" border="1px solid black" >
-                <tr>
-                  <th>Address</th>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th></th>
-                </tr>
-                <template v-for="event in profile.events">
-                  <tr :key="event.url">
-                    <td>{{ event.address }}</td>
-                    <td>{{ event.date }}</td>
-                    <td>{{ event.time }}</td>
-                    <td><button @click="removeEventPreBooking(event)">Cancel</button></td>
-                  </tr>
-                </template>
-              </table>
-            </div>
-            <br>
+              <!--      cooking lessons details-->
+              <div v-if="profile.cooking_lessons.length > 0">
+                <h2>Cooking Lessons</h2>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time</th>
+                      <th scope="col">Type</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template v-for="lesson in profile.cooking_lessons">
+                      <tr :key="lesson.url">
+                        <td>{{ lesson.date }}</td>
+                        <td>{{ lesson.time }}</td>
+                        <td>{{ lesson.type }}</td>
+                        <td><button @click="removeCookingLesson(lesson)" class="btn btn-warning">Cancel</button></td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </div>
 
+              <!--      events details-->
+              <div v-if="profile.events.length > 0">
+                <h2>My pre-booking Events</h2>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Address</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <template v-for="event in profile.events">
+                      <tr :key="event.url">
+                        <td>{{ event.address }}</td>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.time }}</td>
+                        <td><button @click="removeEventPreBooking(event)" class="btn btn-warning">Cancel</button></td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -155,6 +172,7 @@ export default {
           if (!app.userLogged) {
             EventBus.emit(EventBus.LOGIN, { source: app })
           }
+          EventBus.emit(EventBus.PROFILE_FETCHED, app.profile)
           app.userLogged = true
         })
         .catch(function (error) {

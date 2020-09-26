@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div class="container" v-for="(dishCategory, categoryName) in dishes" :key="categoryName">
-      <a class="nav-item nav-link" data-toggle="modal" :data-target="`#modalId-${dishCategory.name}`" :href="`#${dishCategory.name}`">
-          {{dishCategory.name}}
-      </a>
-
+    <div v-for="(dishCategory, categoryName) in dishes" :key="categoryName">
       <div class="modal fade" :id="`modalId-${dishCategory.name}`" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
           <div class="modal-content">
@@ -16,51 +12,51 @@
             </div>
 
             <div class="card  mb-3" v-for="(dish, index) in dishCategory.items" :key="dish.url" >
-              <form @submit.prevent="updateForm(dish)">
+        <form @submit.prevent="updateForm(dish)">
 
-                <div class="card-body">
+          <div class="card-body">
 
-                  <TextInput :id="`titleInput-${index}-${dishCategory.name}`" type="text" v-model="dish.title" label="Title"/>
+            <TextInput :id="`titleInput-${index}-${dishCategory.name}`" type="text" v-model="dish.title" label="Title"/>
 
-                  <TextArea :id="`descriptionInput-${index}-${dishCategory.name}`" v-model="dish.description" label="Description"/>
+            <TextArea :id="`descriptionInput-${index}-${dishCategory.name}`" v-model="dish.description" label="Description"/>
 
-                  <NumberInput :id="`priceInput-${index}-${dishCategory.name}`" label="Price" min="1" max="5000" v-model="dish.price"/>
+            <NumberInput :id="`priceInput-${index}-${dishCategory.name}`" label="Price" min="1" max="5000" v-model="dish.price"/>
 
-                  <SelectInput :id="`typeInput-${index}-${dishCategory.name}`" label="Type" :options="types" v-model="dish.type"/>
+            <SelectInput :id="`typeInput-${index}-${dishCategory.name}`" label="Type" :options="types" v-model="dish.type"/>
 
-                  <SelectInput :id="`dayInput-${index}-${dishCategory.name}`" label="Day" :options="days" v-model="dish.day"/>
+            <SelectInput :id="`dayInput-${index}-${dishCategory.name}`" label="Day" :options="days" v-model="dish.day"/>
 
-                  <SelectInput :id="`servingTimeInput-${index}-${dishCategory.name}`" label="Serving Time" :options="servingTimes" v-model="dish.serving_time"/>
+            <SelectInput :id="`servingTimeInput-${index}-${dishCategory.name}`" label="Serving Time" :options="servingTimes" v-model="dish.serving_time"/>
 
-                  <div class="form-group row">
-                    <label :for="`imageInput-${index}-${dishCategory.name}`" class="col-sm-2 col-form-label">
-                      Image
-                    </label>
-                    <div class="col-sm-10">
-                      <input type="file" :id="`imageInput-${index}-${dishCategory.name}`" accept="image/jpeg, image/png" multiple="false"
-                             @change="selectFile(dish, $event.target.files[0])" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-footer">
-                  <div class="form-group row">
-                    <div class="col-sm-10 offset-sm-2">
-                      <button class="btn btn-primary" type="submit">
-                        Update
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
+            <div class="form-group row">
+              <label :for="`imageInput-${index}-${dishCategory.name}`" class="col-sm-2 col-form-label">
+                Image
+              </label>
+              <div class="col-sm-10">
+                <input type="file" :id="`imageInput-${index}-${dishCategory.name}`" accept="image/jpeg, image/png" multiple="false"
+                       @change="selectFile(dish, $event.target.files[0])" />
+              </div>
             </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="form-group row">
+              <div class="col-sm-10 offset-sm-2">
+                <button class="btn btn-primary" type="submit">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        </div>
 
           </div>
         </div>
       </div>
-
     </div>
   </div>
+
 </template>
 
 <script>
@@ -69,6 +65,7 @@ import TextInput from '@/components/form/TextInput'
 import TextArea from '@/components/form/TextArea'
 import NumberInput from '@/components/form/NumberInput'
 import SelectInput from '@/components/form/SelectInput'
+import EventBus from '@/EventBus'
 
 export default {
   name: 'AdminDish',
@@ -129,6 +126,12 @@ export default {
         for (const dish of response.data) {
           app.dishes[dish.type].items.push(dish)
         }
+
+        const adminDish = []
+        for (const key in app.dishes) {
+          adminDish.push(app.dishes[key].name)
+        }
+        EventBus.emit(EventBus.ADMIN_DISH_AVAILABLE, adminDish)
       })
       .catch(function (error) {
         console.log('failed to get dishes: ' + error)
@@ -162,7 +165,7 @@ export default {
         }
       )
         .then(function (response) {
-          console.log('dish updated!')
+          EventBus.emit(EventBus.DISHES_UPDATES)
         })
         .catch(function (error) {
           console.log('failure during dish update: ' + error)

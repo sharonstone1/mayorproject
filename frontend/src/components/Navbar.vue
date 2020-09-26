@@ -55,10 +55,25 @@
           </a>
         </div>
         <div class="navbar-nav ml-auto"  v-show="userLogged == true">
+
+          <!-- Dish administration -->
+          <div class="nav-item dropdown" v-show="adminDish.length != 0 && isStaff">
+            <a class="nav-link dropdown-toggle"  data-toggle="dropdown">
+              Edit Dishes
+            </a>
+            <div class="dropdown-menu">
+                <a v-for="dishCategory in adminDish" :key="`navbar-${dishCategory}`"
+                  class="dropdown-item"
+                   data-toggle="modal" :data-target="`#modalId-${dishCategory}`" :href="`#${dishCategory}`">
+                  {{dishCategory}}
+                </a>
+            </div>
+          </div>
+
           <a class="nav-item nav-link" href="#logout" @click="logout">
             Logout
           </a>
-          <a class="nav-item nav-link" href="#profile">
+          <a class="nav-item nav-link" href="#profile" data-toggle="modal" data-target="#modalId-profile">
             Profile
           </a>
         </div>
@@ -67,6 +82,7 @@
     </nav>
 
 <!--    Login Modal -->
+    <AdminDish/>
     <Login modal-id="loginModal"/>
     <UserRegistration modal-id="registerModal"/>
   </div>
@@ -78,13 +94,16 @@ import Login from '@/components/Login'
 import UserRegistration from '@/components/UserRegistration'
 import RestaurantApi from '@/RestaurantApi'
 import EventBus from '@/EventBus'
+import AdminDish from '@/components/AdminDish'
 export default {
   name: 'Navbar',
-  components: { UserRegistration, Login },
+  components: { AdminDish, UserRegistration, Login },
   props: ['navigation'],
   data () {
     return {
-      userLogged: false
+      userLogged: false,
+      isStaff: false,
+      adminDish: []
     }
   },
   methods: {
@@ -105,6 +124,12 @@ export default {
     })
     EventBus.on(EventBus.LOGOUT, function () {
       app.userLogged = false
+    })
+    EventBus.on(EventBus.ADMIN_DISH_AVAILABLE, function (dishes) {
+      app.adminDish = dishes
+    })
+    EventBus.on(EventBus.PROFILE_FETCHED, function (profile) {
+      app.isStaff = profile.is_staff
     })
   }
 }

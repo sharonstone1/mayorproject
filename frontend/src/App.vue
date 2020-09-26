@@ -2,6 +2,10 @@
   <div id="app">
     <Navbar :navigation="navigation"/><br>
 
+<!--    <AdminDish/>-->
+
+    <AdminTableBooking/>
+
     <Profile :dishes="dishes"/>
 
     <!--welcome page details-->
@@ -188,7 +192,7 @@
             <img src="static/media//kitchen-class.jpg">
           </div>
           <div class="col-lg-6">
-<!--            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>-->
+            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>
           </div>
         </div>
         <br>
@@ -287,6 +291,9 @@ import EventPreBooking from '@/components/EventPreBooking'
 import CookingClassBooking from '@/components/CookingClassBooking'
 import Gallery from '@/components/Gallery'
 import Profile from '@/components/Profile'
+import EventBus from '@/EventBus'
+import AdminDish from '@/components/AdminDish'
+import AdminTableBooking from '@/components/admin/AdminTableBooking'
 
 export default {
   name: 'App',
@@ -348,37 +355,44 @@ export default {
       ]
     }
   },
+  methods: {
+    fetchDishes () {
+      const app = this
+      RestaurantApi.getDishes()
+        .then(function (response) {
+          const dishes = response.data
+
+          app.dishes = dishes
+
+          // All dishes available, filter them and add them to their binding
+          app.lunchSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'lunch')
+          app.dinnerSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'dinner')
+          app.restaurantMenu = {
+            starters: dishes.filter(dish => dish.type === 'starter'),
+            mains: dishes.filter(dish => dish.type === 'main'),
+            sides: dishes.filter(dish => dish.type === 'side'),
+            dessert: dishes.filter(dish => dish.type === 'dessert')
+          }
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    }
+  },
   mounted: function () {
+    this.fetchDishes()
     const app = this
-
-    RestaurantApi.getDishes()
-      .then(function (response) {
-        const dishes = response.data
-
-        app.dishes = dishes
-
-        // All dishes available, filter them and add them to their binding
-        app.lunchSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'lunch')
-        app.dinnerSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'dinner')
-        app.restaurantMenu = {
-          starters: dishes.filter(dish => dish.type === 'starter'),
-          mains: dishes.filter(dish => dish.type === 'main'),
-          sides: dishes.filter(dish => dish.type === 'side'),
-          dessert: dishes.filter(dish => dish.type === 'dessert')
-        }
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    EventBus.on(EventBus.DISHES_UPDATES, function () {
+      app.fetchDishes()
+    })
   },
   computed: {
 
   },
-  methods: {
-
-  },
   /* List of HTML components used to render the HTML */
   components: {
+    AdminTableBooking,
+    AdminDish,
     Profile,
     Gallery,
     CookingClassBooking,

@@ -2,7 +2,8 @@ from django.contrib.auth.models import User, Group
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from rest_framework import viewsets, status, permissions
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import viewsets, status, permissions, filters
 from rest_framework import views
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
@@ -127,6 +128,10 @@ class DeliveryOrderViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     queryset = DeliveryOrder.objects.all()
     serializer_class = DeliveryOrderSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ['date']
+    ordering_fields = ['date', 'time']
+    ordering = ['date', 'time']
 
 
 class DeliveryOrderItemViewSet(viewsets.ModelViewSet):
@@ -143,6 +148,10 @@ class TableBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     queryset = TableBooking.objects.all()
     serializer_class = TableBookingSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ['date']
+    ordering_fields = ['date', 'time']
+    ordering = ['date', 'time']
 
 
 class EventPreBookingViewSet(BookingMixin, viewsets.ModelViewSet):
@@ -151,6 +160,10 @@ class EventPreBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     queryset = EventPreBooking.objects.all()
     serializer_class = EventPreBookingSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ['date']
+    ordering_fields = ['date', 'time']
+    ordering = ['date', 'time']
 
 
 class CookingLessonBookingViewSet(BookingMixin, viewsets.ModelViewSet):
@@ -159,5 +172,9 @@ class CookingLessonBookingViewSet(BookingMixin, viewsets.ModelViewSet):
     """
     queryset = CookingLessonBooking.objects.all()
     serializer_class = CookingLessonBookingSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ['date']
+    ordering_fields = ['date', 'time']
+    ordering = ['date', 'time']
 
 

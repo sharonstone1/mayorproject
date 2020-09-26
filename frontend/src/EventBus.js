@@ -17,7 +17,10 @@ const EventBus = {
   TABLE_BOOKING: 'user-table-booking',
   DELIVERY_ORDER: 'user-delivery-order',
   COOKING_LESSON_BOOKING: 'user-cooking-lesson-booking',
-  EVENT_BOOKING: 'user-event-booking'
+  EVENT_BOOKING: 'user-event-booking',
+  ADMIN_DISH_AVAILABLE: 'admin-dish-available',
+  PROFILE_FETCHED: 'profile-fetched',
+  DISHES_UPDATES: 'admin-has-updated-dishes'
 }
 
 export default EventBus
