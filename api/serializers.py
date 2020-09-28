@@ -85,7 +85,7 @@ class DishSerializer(serializers.HyperlinkedModelSerializer):
 class DeliveryOrderItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DeliveryOrderItem
-        fields = ['url', 'dish', 'count']
+        fields = ['url', 'dish', 'count', 'order']
 
 
 class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
