@@ -160,7 +160,6 @@ export default {
     return {
       userLogged: false,
       profile: null
-
     }
   },
   methods: {
@@ -247,7 +246,6 @@ export default {
           console.log('failed to delete event pre-booking: ' + error)
         })
     },
-
     onCookingLessonBooking (booking) {
       if (!this.profile || !this.userLogged) {
         return

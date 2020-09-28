@@ -1,10 +1,19 @@
 <template>
   <div id="app">
+    <PortalTarget name="modalsContainer" multiple class="container"></PortalTarget>
+
     <Navbar :navigation="navigation"/><br>
 
 <!--    <AdminDish/>-->
 
     <AdminTableBooking/>
+    <AdminDelivery :dishes="dishes" :restaurant-menu="restaurantMenu" :lunch-specials="lunchSpecials" :dinner-specials="dinnerSpecials"/>
+    <AdminCookingLesson/>
+    <AdminEvents/>
+
+    <Portal to="modalsContainer">
+      <div>Hello World!</div>
+    </Portal>
 
     <Profile :dishes="dishes"/>
 
@@ -192,7 +201,7 @@
             <img src="static/media//kitchen-class.jpg">
           </div>
           <div class="col-lg-6">
-            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>
+<!--            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>-->
           </div>
         </div>
         <br>
@@ -274,6 +283,7 @@
       </ul>
     </div>
     </footer>
+
   </div>
 </template>
 
@@ -292,8 +302,11 @@ import CookingClassBooking from '@/components/CookingClassBooking'
 import Gallery from '@/components/Gallery'
 import Profile from '@/components/Profile'
 import EventBus from '@/EventBus'
-import AdminDish from '@/components/AdminDish'
 import AdminTableBooking from '@/components/admin/AdminTableBooking'
+import AdminDelivery from '@/components/admin/AdminDelivery'
+import { Portal, PortalTarget } from 'portal-vue'
+import AdminCookingLesson from '@/components/admin/AdminCookingLesson'
+import AdminEvents from '@/components/admin/AdminEvents'
 
 export default {
   name: 'App',
@@ -391,8 +404,10 @@ export default {
   },
   /* List of HTML components used to render the HTML */
   components: {
+    AdminEvents,
+    AdminCookingLesson,
+    AdminDelivery,
     AdminTableBooking,
-    AdminDish,
     Profile,
     Gallery,
     CookingClassBooking,
@@ -403,7 +418,9 @@ export default {
     Welcome,
     SpecialPresentation,
     'event-description': EventDescription,
-    Navbar: Navbar
+    Navbar: Navbar,
+    PortalTarget,
+    Portal
   }
 }
 </script>

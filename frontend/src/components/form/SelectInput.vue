@@ -4,21 +4,27 @@
       {{ label }}
     </label>
     <div class="col-sm-10">
-        <select :id="id" :name="id" class="form-control"
-                :value="value"
-                @input="$emit('input', $event.target.value)">
-          <option v-for="(text, key) in options" :value="key" :key="key">
-            {{text}}
-          </option>
-        </select>
+      <VSelect :id="id" :options="options" v-model="value"/>
     </div>
   </div>
 </template>
 
 <script>
+import VSelect from '@/components/form/VSelect'
 export default {
   name: 'SelectInput',
-  props: ['label', 'id', 'options', 'value']
+  components: { VSelect },
+  props: {
+    label: String,
+    id: String,
+    options: Object,
+    value: String
+  },
+  watch: {
+    value (newValue) {
+      this.$emit('input', newValue)
+    }
+  }
 }
 </script>
 

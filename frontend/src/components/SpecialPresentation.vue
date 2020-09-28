@@ -4,12 +4,12 @@
     <slot></slot>
     <!-- List of daily specials presented in cards -->
     <div class="row">
-      <div class="col-xl-3 col-lg-4 col-md-6" v-for="(dish) in specials" :key="`dish-${dish.id}`">
+      <div class="col-xl-3 col-lg-4 col-md-6" v-for="(dish) in specials" :key="`dish-${dish.url}`">
         <!-- Card-->
         <div class="card mb-3">
           <div class="card-header"> {{ getDayDisplayName(dish.day) }} </div>
           <div class="card-body">
-            <img :src="dish.image" data-toggle="modal" :data-target="`#modal-${dish.id}`">
+            <img :src="dish.image" data-toggle="modal" :data-target="`#modal-${getId(dish)}`">
           </div>
           <div class="card-footer">
             {{ dish.title }}
@@ -19,7 +19,7 @@
         </div>
 
         <!-- Modal associated with the card-->
-        <div class="modal fade" :id="`modal-${dish.id}`" role="dialog" tabindex="-1">
+        <div class="modal fade" :id="`modal-${getId(dish)}`" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -45,12 +45,16 @@
 <script>
 
 import RestaurantApi from '@/RestaurantApi'
+import IdGenerator from '@/IdGenerator'
 
 export default {
   name: 'SpecialPresentation',
   props: ['specials', 'title'],
   methods: {
-    getDayDisplayName: RestaurantApi.utils.getDayDisplayName
+    getDayDisplayName: RestaurantApi.utils.getDayDisplayName,
+    getId (dish) {
+      return IdGenerator.fromURL(dish.url)
+    }
   }
 }
 </script>

@@ -23,6 +23,9 @@ export default {
   makeLessonBooking: function (booking) {
     return client.post('/cooking-lessons/', booking)
   },
+  addOrderItem (item) {
+    return client.post('/orders-items/', item)
+  },
   login: function (credentials) {
     return client.post('/auth/login/', credentials)
   },
@@ -38,6 +41,18 @@ export default {
   getTableBookings (queryParameters = {}) {
     const query = this.makeQueryString(queryParameters)
     return client.get('/table-booking/' + query)
+  },
+  getDeliveryOrders (queryParameters = {}) {
+    const query = this.makeQueryString(queryParameters)
+    return client.get('/orders/' + query)
+  },
+  getLessonBookings (queryParameters = {}) {
+    const query = this.makeQueryString(queryParameters)
+    return client.get('/cooking-lessons/' + query)
+  },
+  getEventBookings (queryParameters = {}) {
+    const query = this.makeQueryString(queryParameters)
+    return client.get('/event-pre-booking/' + query)
   },
   makeQueryString (queryParameters) {
     let query = ''
@@ -68,6 +83,16 @@ export default {
         '*': 'Everyday'
       }
       return dayToText[day]
+    }
+  },
+  options: {
+    classTypes: {
+      stream: 'Live streaming',
+      live: 'At the restaurant'
+    },
+    classTime: {
+      morning: '8 o\'clock until lunch',
+      afternoon: '15 o\'clock until dinner'
     }
   }
 }
