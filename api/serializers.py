@@ -88,11 +88,16 @@ class DeliveryOrderItemSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'dish', 'count', 'order']
 
 
+class DeliveryOrderItemCreateSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DeliveryOrderItem
+        fields = ['url', 'dish', 'count']
+
 class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
     owner = serializers.HyperlinkedRelatedField(read_only=True, view_name='user-detail')
     fullname = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
     email = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
-    items = DeliveryOrderItemSerializer(many=True)
+    items = DeliveryOrderItemCreateSerializer(many=True)
 
     class Meta:
         model = DeliveryOrder
