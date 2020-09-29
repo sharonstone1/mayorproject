@@ -28,3 +28,7 @@ body {
   height: 80px;
   visibility: hidden;
 }
+
+.modal-workaround {
+    position: unset;
+}
