@@ -1,42 +1,31 @@
 <template>
-    <div class="modal fade" :id="modalId" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Create an account</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form v-on:submit.prevent="submitForm">
-            <div class="modal-body">
-              <TextInput label="User name" id="registerUserName" placeholder="Your username" type="text"
-                 v-model="form.username"/>
+  <Modal title="Create an account" :modal-id="modalId">
+    <form v-on:submit.prevent="submitForm" id="userRegistrationForm">
+      <TextInput label="User name" placeholder="Your username" type="text"
+         v-model="form.username"/>
 
-              <TextInput label="Email" id="registerEmail" placeholder="Your email" type="text"
-                 v-model="form.email"/>
+      <TextInput label="Email" placeholder="Your email" type="email"
+         v-model="form.email"/>
 
-              <TextInput label="Password" id="registerPassword" placeholder="Your password" type="password"
-                         v-model="form.password"/>
+      <TextInput label="Password" placeholder="Your password" type="password"
+                 v-model="form.password"/>
 
-              <TextInput label="Password Confirmation" id="lregisterPasswordConfirmation" placeholder="Password confirmation" type="password"
-                         v-model="form.password_confirm"/>
+      <TextInput label="Password Confirmation" placeholder="Password confirmation" type="password"
+                 v-model="form.password_confirm"/>
 
-              <TextInput label="First Name" id="registerFirstName" placeholder="Your first name" type="text"
-                 v-model="form.first_name"/>
+      <TextInput label="First Name" placeholder="Your first name" type="text"
+         v-model="form.first_name"/>
 
-              <TextInput label="Last Name" id="registerLastName" placeholder="Your last name" type="text"
-                 v-model="form.last_name"/>
+      <TextInput label="Last Name" placeholder="Your last name" type="text"
+         v-model="form.last_name"/>
 
-              <SuccessErrorAlert :error="error" :success="success"/>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">register</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+      <SuccessErrorAlert :error="error" :success="success"/>
+    </form>
+
+    <template v-slot:footer>
+      <button type="submit" class="btn btn-primary" form="userRegistrationForm">register</button>
+    </template>
+  </Modal>
 </template>
 
 <script>
@@ -45,11 +34,12 @@ import TextInput from '@/components/form/TextInput'
 import RestaurantApi from '@/RestaurantApi'
 import $ from 'jquery'
 import EventBus from '@/EventBus'
+import Modal from '@/components/Modal'
 
 export default {
   name: 'UserRegistration',
   props: ['modalId'],
-  components: { TextInput },
+  components: { Modal, TextInput },
   mixins: [FormMixin],
   methods: {
     defaultForm () {

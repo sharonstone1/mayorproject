@@ -46,18 +46,17 @@
         </div>
 
         <!-- Login and registration links are always here -->
-        <div class="navbar-nav ml-auto"  v-show="userLogged == false">
-          <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal"  href="#login">
-            Login
-          </a>
-          <a class="nav-item nav-link" data-toggle="modal" data-target="#registerModal" href="#register">
-            Sign up
-          </a>
-        </div>
-        <div class="navbar-nav ml-auto"  v-show="userLogged == true">
+        <div v-if="userLogged == false" class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login</a>
+          <Login modal-id="loginModal"/>
 
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#registerModal" href="#">Sign up</a>
+          <UserRegistration modal-id="registerModal"/>
+        </div>
+
+        <div v-else class="navbar-nav ml-auto">
           <!-- Dish administration -->
-          <div class="nav-item dropdown" v-show="adminDish.length != 0 && isStaff">
+          <div class="nav-item dropdown" v-if="adminDish.length != 0 && isStaff">
             <a class="nav-link dropdown-toggle"  data-toggle="dropdown">
               Edit Dishes
             </a>
@@ -83,8 +82,6 @@
 
 <!--    Login Modal -->
     <AdminDish/>
-    <Login modal-id="loginModal"/>
-    <UserRegistration modal-id="registerModal"/>
   </div>
 
 </template>

@@ -11,10 +11,6 @@
     <AdminCookingLesson/>
     <AdminEvents/>
 
-    <Portal to="modalsContainer">
-      <div>Hello World!</div>
-    </Portal>
-
     <Profile :dishes="dishes"/>
 
     <!--welcome page details-->

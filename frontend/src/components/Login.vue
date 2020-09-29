@@ -1,43 +1,33 @@
 <template>
-    <div class="modal fade" :id="modalId" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form v-on:submit.prevent="submitForm">
-            <div class="modal-body">
-              <TextInput label="User name" id="loginUserName" placeholder="Your username" type="text"
-                 v-model="form.login"/>
+  <Modal title="Login" :modalId="modalId">
+    <form v-on:submit.prevent="submitForm" id="loginForm">
+        <TextInput label="User name" placeholder="Your username" type="text"
+           v-model="form.login"/>
 
-              <TextInput label="Password" id="loginPassword" placeholder="Your password" type="password"
-                         v-model="form.password"/>
+        <TextInput label="Password" placeholder="Your password" type="password"
+                   v-model="form.password"/>
 
-              <SuccessErrorAlert :error="error" :success="success"/>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+        <SuccessErrorAlert :error="error" :success="success"/>
+    </form>
+
+    <template v-slot:footer>
+      <button type="submit" class="btn btn-primary" form="loginForm">Login</button>
+    </template>
+  </Modal>
 </template>
 
 <script>
 import FormMixin from '@/mixins/FormMixin'
 import TextInput from '@/components/form/TextInput'
 import RestaurantApi from '@/RestaurantApi'
+import Modal from '@/components/Modal'
 import $ from 'jquery'
 import EventBus from '@/EventBus'
 
 export default {
   name: 'Login',
   props: ['modalId'],
-  components: { TextInput },
+  components: { TextInput, Modal },
   mixins: [FormMixin],
   methods: {
     defaultForm () {
