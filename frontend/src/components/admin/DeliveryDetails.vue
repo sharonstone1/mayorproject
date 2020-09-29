@@ -83,7 +83,7 @@ export default {
       const app = this
       RestaurantApi.addOrderItem({
         order: this.order.url,
-        dish: item.dish,
+        dish: item.dish.url,
         count: item.count
       })
         .then(function (response) {

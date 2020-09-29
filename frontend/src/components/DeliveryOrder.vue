@@ -53,76 +53,14 @@
 
     <h5>My order form</h5>
 
-    <div class="form">
-      <div class="form-group row">
-        <label
-          class="col-form-label col-sm-3"
-          for="courseTypeSelect"
-        >Course Type</label>
-        <div class="col-sm-9">
-          <select
-            class="form-control"
-            id="courseTypeSelect"
-            name="course type"
-            v-model="selection.dishType"
-            :disabled="deliveryItemReadOnly"
-          >
-            <option
-              v-for="(menu, type, index) in deliveryMenu"
-              :value="type"
-              :key="'order-dish-type-' + index"
-            >
-              {{ type }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <label class="col-form-label col-sm-3">Course</label>
-        <div class="col-sm-9">
-          <select
-            class="form-control"
-            name="course"
-            v-model="selection.dish"
-            :disabled="deliveryItemReadOnly"
-          >
-            <option
-              :value="index"
-              v-for="(menu, index) in deliveryMenu[selection.dishType]"
-              :key="'order-dish-select-' + index"
-            >
-              {{ menu.title }}
-            </option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <label class="col-form-label col-sm-3">Count</label>
-        <div class="col-sm-9">
-          <input
-            class="form-control"
-            type="number"
-            v-model="selection.count"
-            :readonly="deliveryItemReadOnly"
-          >
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="offset-sm-3 col-sm-9">
-          <button
-            class="btn btn-primary form-control"
-            @click="addDeliveryItem"
-            :disabled="!deliveryItemReady"
-            formaction=""
-          >
-            Add
-          </button>
-        </div>
-      </div>
-    </div>
+    <OrderItemSelection
+      :date="form.date"
+      :time="form.time"
+      :restaurant-menu="restaurantMenu"
+      :dinner-specials="dinnerSpecials"
+      :lunch-specials="lunchSpecials"
+      @item-add="addDeliveryItem($event)"
+    />
 
     <br>
 
@@ -167,6 +105,7 @@ import _ from 'lodash'
 import FormMixin from '@/mixins/FormMixin'
 import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
 import EventBus from '@/EventBus'
+import OrderItemSelection from '@/components/admin/OrderItemSelection'
 
 export default {
   name: 'DeliveryOrder',
@@ -180,59 +119,6 @@ export default {
         count: 0
       },
       userLogged: false
-    }
-  },
-  computed: {
-    deliveryItemReadOnly () {
-      console.log('delivery item check')
-      return this.form.date === '' || this.form.time === ''
-    },
-    deliveryMenu () {
-      // There's no type to select if the day and time have not been selected
-      if (this.deliveryItemReadOnly) {
-        return {}
-      }
-
-      // First we add elements from the menu
-      const menu = {}
-      for (const [key, value] of Object.entries(this.restaurantMenu)) {
-        menu[key] = value
-      }
-
-      // Then we add elements from the specials if available
-
-      // First we retrieve the day of the week
-      const weekdays = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
-      const date = new Date(this.form.date)
-      const day = weekdays[date.getDay()]
-
-      // Second, we identify the type of specials served at the time
-      // selected by the user
-      let specials = null
-      if (this.form.time < '17:00') {
-        specials = this.lunchSpecials
-      } else {
-        specials = this.dinnerSpecials
-      }
-
-      // Finally, if a special is served at that time we add
-      // the special to the list of types
-      for (const special of specials) {
-        if (special.day === day) {
-          if (!menu['Daily specials']) {
-            menu['Daily specials'] = []
-          }
-          menu['Daily specials'].push(special)
-        }
-      }
-
-      return menu
-    },
-    deliveryItemReady () {
-      return !this.deliveryItemReadOnly &&
-        this.selection.count > 0 &&
-        this.selection.dish !== '' &&
-        this.selection.dishType !== ''
     }
   },
   methods: {
@@ -262,19 +148,16 @@ export default {
       EventBus.emit(EventBus.DELIVERY_ORDER, response.data)
       FormMixin.methods.onFormSubmissionSuccess.call(this, response)
     },
-    addDeliveryItem () {
+    addDeliveryItem (item) {
       // retrieve the dish
-      const selection = this.selection
-      this.form.items.push({
-        dish: this.deliveryMenu[selection.dishType][selection.dish],
-        count: this.selection.count
-      })
+      this.form.items.push(item)
     },
     removeDeliveryItem (index) {
       this.form.items.splice(index, 1)
     }
   },
   components: {
+    OrderItemSelection,
     TextInput,
     DateInput,
     TimeInput,

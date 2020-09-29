@@ -119,8 +119,10 @@ export default {
       const result = {}
 
       if (this.selection.dishType) {
+        let index = 0
         for (const course of this.deliveryMenu[this.selection.dishType]) {
-          result[course.url] = course.title
+          result[index] = course.title
+          index++
         }
       }
 
@@ -136,7 +138,10 @@ export default {
   methods: {
     addDeliveryItem () {
       console.log('Add delivery item: ' + this.selection)
-      this.$emit('item-add', this.selection)
+      this.$emit('item-add', {
+        count: this.selection.count,
+        dish: this.deliveryMenu[this.selection.dishType][this.selection.dish]
+      })
       this.selection = {
         count: 1,
         dish: null,
