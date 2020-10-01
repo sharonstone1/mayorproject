@@ -56,9 +56,7 @@
     <OrderItemSelection
       :date="form.date"
       :time="form.time"
-      :restaurant-menu="restaurantMenu"
-      :dinner-specials="dinnerSpecials"
-      :lunch-specials="lunchSpecials"
+      :menus="menus"
       @item-add="addDeliveryItem($event)"
     />
 
@@ -79,7 +77,7 @@
         <td>{{ item.count }}</td>
         <td>{{ item.dish.price * item.count }}</td>
         <td>
-          <button @click="removeDeliveryItem(index)">
+          <button @click="removeDeliveryItem(index)" class="btn btn-primary">
             Remove
           </button>
         </td>
@@ -97,19 +95,19 @@
 
 <script>
 
-import TextInput from '@/components/form/TextInput'
-import DateInput from '@/components/form/DateInput'
-import TimeInput from '@/components/form/TimeInput'
+import TextInput from '@/components/common/form/TextInput'
+import DateInput from '@/components/common/form/DateInput'
+import TimeInput from '@/components/common/form/TimeInput'
 import RestaurantApi from '@/RestaurantApi'
 import _ from 'lodash'
 import FormMixin from '@/mixins/FormMixin'
-import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import SuccessErrorAlert from '@/components/common/form/SuccessErrorAlert'
 import EventBus from '@/EventBus'
-import OrderItemSelection from '@/components/admin/OrderItemSelection'
+import OrderItemSelection from '@/components/common/OrderItemSelection'
 
 export default {
   name: 'DeliveryOrder',
-  props: ['restaurantMenu', 'lunchSpecials', 'dinnerSpecials', 'title'],
+  props: ['menus', 'title'],
   mixins: [FormMixin],
   data () {
     return {

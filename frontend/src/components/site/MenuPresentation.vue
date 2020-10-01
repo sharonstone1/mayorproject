@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import MenuCard from '@/components/MenuCard'
+import MenuCard from '@/components/site/MenuCard'
 
 export default {
   name: 'MenuPresentation',

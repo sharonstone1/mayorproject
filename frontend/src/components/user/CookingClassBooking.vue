@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInput'
+import TextInput from '@/components/common/form/TextInput'
 import FormMixin from '@/mixins/FormMixin'
-import DateInput from '@/components/form/DateInput'
-import SelectInput from '@/components/form/SelectInput'
+import DateInput from '@/components/common/form/DateInput'
+import SelectInput from '@/components/common/form/SelectInput'
 import RestaurantApi from '@/RestaurantApi'
 import EventBus from '@/EventBus'
 

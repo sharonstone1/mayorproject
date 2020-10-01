@@ -36,9 +36,7 @@
     <OrderItemSelection
       :time="order.time"
       :date="order.date"
-      :dinner-specials="dinnerSpecials"
-      :lunch-specials="lunchSpecials"
-      :restaurant-menu="restaurantMenu"
+      :menus="menus"
       @item-add="onItemAdded($event)"
     />
   </div>
@@ -46,12 +44,12 @@
 
 <script>
 import RestaurantApi from '@/RestaurantApi'
-import OrderItemSelection from '@/components/admin/OrderItemSelection'
+import OrderItemSelection from '@/components/common/OrderItemSelection'
 
 export default {
   name: 'DeliveryDetails',
   components: { OrderItemSelection },
-  props: ['order', 'items', 'dishes', 'dinnerSpecials', 'lunchSpecials', 'restaurantMenu'],
+  props: ['order', 'items', 'menus'],
   data: function () {
     return {
     }
@@ -97,7 +95,7 @@ export default {
   computed: {
     dishesName () {
       const result = {}
-      for (const dish of this.dishes) {
+      for (const dish of this.menus.dishes) {
         result[dish.url] = dish.title
       }
       return result

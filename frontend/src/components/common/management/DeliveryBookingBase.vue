@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-    <input type="date" v-model="date">
-
     <form v-for="(order,index) in deliveryOrders"
           :id="`form-${order.url}`"
           :key="`form-${order.url}`"
           @submit.prevent="updateOrder(order,index)"
     ></form>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-sm table-responsive">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -54,48 +52,30 @@
            title="Delivery details"
            :key="`key-modal-${order.url}`"
     >
-      <DeliveryDetails :order="order" :items="order.items" :dishes="dishes" :dinnerSpecials="dinnerSpecials" :lunchSpecials="lunchSpecials" :restaurantMenu="restaurantMenu"/>
+      <DeliveryDetails :order="order" :items="order.items" :menus="menus"/>
     </Modal>
   </div>
 </template>
 
 <script>
 import RestaurantApi from '@/RestaurantApi'
-import DeliveryDetails from '@/components/admin/DeliveryDetails'
-import Modal from '@/components/Modal'
+import DeliveryDetails from '@/components/common/management/DeliveryDetails'
+import Modal from '@/components/common/Modal'
 import IdGenerator from '@/IdGenerator'
 
 export default {
   name: 'AdminDelivery',
   props: {
-    dishes: Object,
-    dinnerSpecials: Object,
-    lunchSpecials: Object,
-    restaurantMenu: Object
+    menus: Object,
+    deliveryOrders: []
   },
   components: { Modal, DeliveryDetails },
-  data () {
-    return {
-      date: (new Date()).toISOString().substring(0, 10),
-      deliveryOrders: []
-    }
-  },
   methods: {
-    fetchDeliveryOrders () {
-      const app = this
-      RestaurantApi.getDeliveryOrders({ date: this.date })
-        .then(function (response) {
-          app.deliveryOrders = response.data
-        })
-    },
     updateOrder (deliveryOrder, index) {
-      const app = this
       const client = RestaurantApi.client()
       client.put(deliveryOrder.url, deliveryOrder)
         .then(function (response) {
-          if (response.data.date !== app.date) {
-            app.removeOrderFromView(index)
-          }
+          // TODO: Inform parent that the order has been changed
         })
         .catch(function (error) {
           console.log(`failure ${error} while updating resource: ${deliveryOrder.url}`)
@@ -116,14 +96,6 @@ export default {
     },
     getModalId (order) {
       return IdGenerator.fromURL(order.url, 'modal-details')
-    }
-  },
-  mounted () {
-    this.fetchDeliveryOrders()
-  },
-  watch: {
-    date (newDate, oldDate) {
-      this.fetchDeliveryOrders()
     }
   }
 }

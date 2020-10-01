@@ -50,14 +50,14 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInput'
-import DateInput from '@/components/form/DateInput'
-import TimeInput from '@/components/form/TimeInput'
-import NumberInput from '@/components/form/NumberInput'
-import CheckboxInput from '@/components/form/CheckboxInput'
+import TextInput from '@/components/common/form/TextInput'
+import DateInput from '@/components/common/form/DateInput'
+import TimeInput from '@/components/common/form/TimeInput'
+import NumberInput from '@/components/common/form/NumberInput'
+import CheckboxInput from '@/components/common/form/CheckboxInput'
 import RestaurantApi from '@/RestaurantApi'
 import FormMixin from '@/mixins/FormMixin'
-import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import SuccessErrorAlert from '@/components/common/form/SuccessErrorAlert'
 import EventBus from '@/EventBus'
 
 export default {

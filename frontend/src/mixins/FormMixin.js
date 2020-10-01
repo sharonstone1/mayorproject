@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import SuccessErrorAlert from '@/components/common/form/SuccessErrorAlert'
 
 export default {
   components: { SuccessErrorAlert },

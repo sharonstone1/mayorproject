@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import VSelect from '@/components/form/VSelect'
+import VSelect from '@/components/common/form/VSelect'
 export default {
   name: 'SelectInput',
   components: { VSelect },

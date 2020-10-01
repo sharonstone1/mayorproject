@@ -87,11 +87,11 @@
 </template>
 
 <script>
-import Login from '@/components/Login'
-import UserRegistration from '@/components/UserRegistration'
+import Login from '@/components/user/Login'
+import UserRegistration from '@/components/user/UserRegistration'
 import RestaurantApi from '@/RestaurantApi'
 import EventBus from '@/EventBus'
-import AdminDish from '@/components/AdminDish'
+import AdminDish from '@/components/admin/AdminDish'
 export default {
   name: 'Navbar',
   components: { AdminDish, UserRegistration, Login },

@@ -30,11 +30,11 @@
 
 <script>
 import FormMixin from '@/mixins/FormMixin'
-import TextInput from '@/components/form/TextInput'
+import TextInput from '@/components/common/form/TextInput'
 import RestaurantApi from '@/RestaurantApi'
 import $ from 'jquery'
 import EventBus from '@/EventBus'
-import Modal from '@/components/Modal'
+import Modal from '@/components/common/Modal'
 
 export default {
   name: 'UserRegistration',

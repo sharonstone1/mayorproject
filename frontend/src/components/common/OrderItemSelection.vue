@@ -43,16 +43,14 @@
 </template>
 
 <script>
-import VSelect from '@/components/form/VSelect'
+import VSelect from '@/components/common/form/VSelect'
 export default {
   name: 'OrderItemSelection',
   components: { VSelect },
   props: {
     date: String,
     time: String,
-    lunchSpecials: Object,
-    dinnerSpecials: Object,
-    restaurantMenu: Object
+    menus: Object
   },
   data: function () {
     return {
@@ -75,7 +73,7 @@ export default {
 
       // First we add elements from the menu
       const menu = {}
-      for (const [key, value] of Object.entries(this.restaurantMenu)) {
+      for (const [key, value] of Object.entries(this.menus.restaurantMenu)) {
         menu[key] = value
       }
 
@@ -90,9 +88,9 @@ export default {
       // selected by the user
       let specials = null
       if (this.time < '17:00') {
-        specials = this.lunchSpecials
+        specials = this.menus.lunchSpecials
       } else {
-        specials = this.dinnerSpecials
+        specials = this.menus.dinnerSpecials
       }
 
       // Finally, if a special is served at that time we add

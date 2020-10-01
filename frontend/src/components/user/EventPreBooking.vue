@@ -49,11 +49,11 @@
 </template>
 
 <script>
-import TextInput from '@/components/form/TextInput'
-import DateInput from '@/components/form/DateInput'
-import TimeInput from '@/components/form/TimeInput'
+import TextInput from '@/components/common/form/TextInput'
+import DateInput from '@/components/common/form/DateInput'
+import TimeInput from '@/components/common/form/TimeInput'
 import RestaurantApi from '@/RestaurantApi'
-import SuccessErrorAlert from '@/components/form/SuccessErrorAlert'
+import SuccessErrorAlert from '@/components/common/form/SuccessErrorAlert'
 import FormMixin from '@/mixins/FormMixin'
 import EventBus from '@/EventBus'
 

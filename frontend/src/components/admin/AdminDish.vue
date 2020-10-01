@@ -61,10 +61,10 @@
 
 <script>
 import RestaurantApi from '@/RestaurantApi'
-import TextInput from '@/components/form/TextInput'
-import TextArea from '@/components/form/TextArea'
-import NumberInput from '@/components/form/NumberInput'
-import SelectInput from '@/components/form/SelectInput'
+import TextInput from '@/components/common/form/TextInput'
+import TextArea from '@/components/common/form/TextArea'
+import NumberInput from '@/components/common/form/NumberInput'
+import SelectInput from '@/components/common/form/SelectInput'
 import EventBus from '@/EventBus'
 
 export default {

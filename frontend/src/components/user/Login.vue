@@ -18,9 +18,9 @@
 
 <script>
 import FormMixin from '@/mixins/FormMixin'
-import TextInput from '@/components/form/TextInput'
+import TextInput from '@/components/common/form/TextInput'
 import RestaurantApi from '@/RestaurantApi'
-import Modal from '@/components/Modal'
+import Modal from '@/components/common/Modal'
 import $ from 'jquery'
 import EventBus from '@/EventBus'
 

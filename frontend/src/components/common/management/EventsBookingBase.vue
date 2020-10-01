@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <input type="date" v-model="date">
-
     <form v-for="booking in bookings"
           :id="getFormId(booking)"
           :key="getFormId(booking)"
@@ -9,7 +7,7 @@
           hidden
     ></form>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-responsive">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -41,9 +39,6 @@
               <button class="btn btn-warning" @click="deleteBooking(booking, index)">Cancel</button>
             </td>
           </tr>
-          <tr :key="booking.url + 'toto'">
-            <td>HELLO WORLD</td>
-          </tr>
         </template>
       </tbody>
     </table>
@@ -55,23 +50,10 @@ import RestaurantApi from '@/RestaurantApi'
 
 export default {
   name: 'AdminEvents',
-  data () {
-    return {
-      date: (new Date()).toISOString().substring(0, 10),
-      bookings: []
-    }
+  props: {
+    bookings: []
   },
   methods: {
-    fetchBookings () {
-      const app = this
-      RestaurantApi.getEventBookings({ date: this.date })
-        .then(function (response) {
-          app.bookings = response.data
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    },
     updateBooking (booking) {
       RestaurantApi.client().put(booking.url, booking)
         .then(function (response) {
@@ -93,14 +75,6 @@ export default {
     },
     getFormId (booking) {
       return `admin-form-event-update-${booking.url}`
-    }
-  },
-  mounted () {
-    this.fetchBookings()
-  },
-  watch: {
-    date () {
-      this.fetchBookings()
     }
   }
 }

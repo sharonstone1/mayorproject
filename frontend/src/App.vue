@@ -6,12 +6,14 @@
 
 <!--    <AdminDish/>-->
 
-    <AdminTableBooking/>
-    <AdminDelivery :dishes="dishes" :restaurant-menu="restaurantMenu" :lunch-specials="lunchSpecials" :dinner-specials="dinnerSpecials"/>
-    <AdminCookingLesson/>
-    <AdminEvents/>
+    <div v-if="false">
+      <AdminTableBooking/>
+      <AdminDelivery :menus="menus"/>
+      <AdminCookingLesson/>
+      <AdminEvents/>
+    </div>
 
-    <Profile :dishes="dishes"/>
+    <Profile :menus="menus"/>
 
     <!--welcome page details-->
     <Welcome title="The History of the restaurant" image="static/media/referenceboss.jpg" id="welcome">
@@ -41,7 +43,7 @@
     <br>
 
     <!--Lunch daily specials -->
-    <SpecialPresentation title="Lunch Dishes" :specials="lunchSpecials" id="lunch_presentation">
+    <SpecialPresentation title="Lunch Dishes" :specials="menus.lunchSpecials" id="lunch_presentation">
       <p>
         For every day in week, we offer an unique dish for Lunch. So if you book for table for monday for instance,
         the restaurant will offer you the Monday dish day or the menu card on below
@@ -52,7 +54,7 @@
     <br>
 
     <!--Dinner daily specials -->
-    <SpecialPresentation title="Dinner Dishes" :specials="dinnerSpecials" id="dinner_presentation">
+    <SpecialPresentation title="Dinner Dishes" :specials="menus.dinnerSpecials" id="dinner_presentation">
       <p>
         For every day in week, we offer an unique dish for Lunch. So if you book for table for monday for instance,
         the restaurant will offer you the Monday dish day or the menu card on below
@@ -64,7 +66,7 @@
 
     <!-- Dishes all the time on the menu card -->
 
-    <MenuPresentation title="The Menu Card Dishes" :restaurantMenu="restaurantMenu" id="menu">
+    <MenuPresentation title="The Menu Card Dishes" :restaurantMenu="menus.restaurantMenu" id="menu">
        <p>
         Please have a look on our Menu card. Notice that our Menu card is available every day,
         if you don't want any of our lunch or Dinner course, you can choose one of menu course plus any starter,
@@ -88,9 +90,7 @@
     <br>
 
     <!--delivery for meal form-->
-    <DeliveryOrder title="Delivery form for Meals" id="delivery_order"
-      :restaurant-menu="restaurantMenu" :lunch-specials="lunchSpecials" :dinner-specials="dinnerSpecials"
-    >
+    <DeliveryOrder title="Delivery form for Meals" id="delivery_order" :menus="menus">
       <p>
         Please, fill out this form for any kind of form of delivery (at restaurant or your place).
         For any request please send us an email, we will be delight to answer you.
@@ -286,23 +286,23 @@
 <script>
 import RestaurantApi from '@/RestaurantApi'
 
-import EventDescription from '@/components/EventDescription'
-import Navbar from '@/components/Navbar'
-import Welcome from '@/components/Welcome'
-import SpecialPresentation from '@/components/SpecialPresentation'
-import MenuPresentation from '@/components/MenuPresentation'
-import TableBooking from '@/components/TableBooking'
-import DeliveryOrder from '@/components/DeliveryOrder'
-import EventPreBooking from '@/components/EventPreBooking'
-import CookingClassBooking from '@/components/CookingClassBooking'
-import Gallery from '@/components/Gallery'
-import Profile from '@/components/Profile'
+import EventDescription from '@/components/site/EventDescription'
+import Navbar from '@/components/site/Navbar'
+import Welcome from '@/components/site/Welcome'
+import SpecialPresentation from '@/components/site/SpecialPresentation'
+import MenuPresentation from '@/components/site/MenuPresentation'
+import TableBooking from '@/components/user/TableBooking'
+import DeliveryOrder from '@/components/user/DeliveryOrder'
+import EventPreBooking from '@/components/user/EventPreBooking'
+import CookingClassBooking from '@/components/user/CookingClassBooking'
+import Gallery from '@/components/site/Gallery'
+import Profile from '@/components/user/Profile'
 import EventBus from '@/EventBus'
-import AdminTableBooking from '@/components/admin/AdminTableBooking'
-import AdminDelivery from '@/components/admin/AdminDelivery'
-import { Portal, PortalTarget } from 'portal-vue'
-import AdminCookingLesson from '@/components/admin/AdminCookingLesson'
-import AdminEvents from '@/components/admin/AdminEvents'
+import AdminTableBooking from '@/components/common/management/TableBookingBase'
+import AdminDelivery from '@/components/common/management/DeliveryBookingBase'
+import { PortalTarget } from 'portal-vue'
+import AdminCookingLesson from '@/components/common/management/CookingLessonBase'
+import AdminEvents from '@/components/common/management/EventsBookingBase'
 
 export default {
   name: 'App',
@@ -340,10 +340,12 @@ export default {
         { name: 'Gallery', id: '#Gallery_details' },
         { name: 'Contact', id: '#contact' }
       ],
-      dishes: [],
-      lunchSpecials: [],
-      dinnerSpecials: [],
-      restaurantMenu: {},
+      menus: {
+        dishes: [],
+        lunchSpecials: [],
+        dinnerSpecials: [],
+        restaurantMenu: {}
+      },
       books: [
         {
           description: 'Simplissime book is well-know in France for making a quick foods.',
@@ -371,12 +373,12 @@ export default {
         .then(function (response) {
           const dishes = response.data
 
-          app.dishes = dishes
+          app.menus.dishes = dishes
 
           // All dishes available, filter them and add them to their binding
-          app.lunchSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'lunch')
-          app.dinnerSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'dinner')
-          app.restaurantMenu = {
+          app.menus.lunchSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'lunch')
+          app.menus.dinnerSpecials = dishes.filter(dish => dish.type === 'special' && dish.serving_time === 'dinner')
+          app.menus.restaurantMenu = {
             starters: dishes.filter(dish => dish.type === 'starter'),
             mains: dishes.filter(dish => dish.type === 'main'),
             sides: dishes.filter(dish => dish.type === 'side'),
@@ -415,8 +417,7 @@ export default {
     SpecialPresentation,
     'event-description': EventDescription,
     Navbar: Navbar,
-    PortalTarget,
-    Portal
+    PortalTarget
   }
 }
 </script>
