@@ -72,7 +72,12 @@ export default {
     menus: Array,
     portalTarget: String
   },
-  components: { Modal, DeliveryDetails, Portal, PortalTarget },
+  components: {
+    Modal,
+    DeliveryDetails,
+    Portal,
+    PortalTarget // eslint-disable-line vue/no-unused-components
+  },
   methods: {
     updateOrder (deliveryOrder, index) {
       const client = RestaurantApi.client()
