@@ -73,8 +73,10 @@ export default {
 
       // First we add elements from the menu
       const menu = {}
-      for (const [key, value] of Object.entries(this.menus.restaurantMenu)) {
-        menu[key] = value
+      if (this.menus.restaurantMenu) {
+        for (const [key, value] of Object.entries(this.menus.restaurantMenu)) {
+          menu[key] = value
+        }
       }
 
       // Then we add elements from the specials if available
@@ -95,12 +97,14 @@ export default {
 
       // Finally, if a special is served at that time we add
       // the special to the list of types
-      for (const special of specials) {
-        if (special.day === day) {
-          if (!menu['Daily specials']) {
-            menu['Daily specials'] = []
+      if (specials) {
+        for (const special of specials) {
+          if (special.day === day) {
+            if (!menu['Daily specials']) {
+              menu['Daily specials'] = []
+            }
+            menu['Daily specials'].push(special)
           }
-          menu['Daily specials'].push(special)
         }
       }
 
@@ -133,6 +137,14 @@ export default {
         this.selection.dishType !== null
     }
   },
+  watch: {
+    courseTypeSelect () {
+      this.updateDishTypeSelection()
+    },
+    courseSelect () {
+      this.updateDishSelection()
+    }
+  },
   methods: {
     addDeliveryItem () {
       console.log('Add delivery item: ' + this.selection)
@@ -145,7 +157,26 @@ export default {
         dish: null,
         dishType: null
       }
+    },
+    updateDishTypeSelection () {
+      const keys = Object.keys(this.courseTypeSelect)
+      if (keys.length) {
+        this.selection.dishType = keys[0]
+      } else {
+        this.selection.dishType = null
+      }
+    },
+    updateDishSelection () {
+      const keys = Object.keys(this.courseSelect)
+      if (keys.length) {
+        this.selection.dish = keys[0]
+      } else {
+        this.selection.dish = null
+      }
     }
+  },
+  mounted () {
+    this.updateDishTypeSelection()
   }
 }
 </script>

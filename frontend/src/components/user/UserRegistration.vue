@@ -63,7 +63,8 @@ export default {
       }
       RestaurantApi.login(credentials)
         .then(function (response) {
-          $(`#${app.modalId} .close`).click()
+          const clickModal = $(`#${app.modalId} .close`)
+          clickModal.click()
           EventBus.emit(EventBus.LOGIN)
         })
         .catch(function (error) {

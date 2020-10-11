@@ -8,7 +8,7 @@
 
       <div v-if="profile.delivery_orders.length > 0">
         <h2>Delivery</h2>
-        <AdminDelivery :menus="menus" :delivery-orders="profile.delivery_orders"/>
+        <AdminDelivery :bookings="profile.delivery_orders" :menus="menus" portal-target="profileDeliveryOrderModals"/>
       </div>
 
       <div v-if="profile.cooking_lessons.length > 0">
@@ -22,6 +22,8 @@
       </div>
 
     </Modal>
+
+    <PortalTarget name="profileDeliveryOrderModals" multiple="true"/>
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import AdminTableBooking from '@/components/common/management/TableBookingBase'
 import AdminDelivery from '@/components/common/management/DeliveryBookingBase'
 import AdminCookingLesson from '@/components/common/management/CookingLessonBase'
 import AdminEvents from '@/components/common/management/EventsBookingBase'
+import { Portal, PortalTarget } from 'portal-vue'
 
 export default {
   name: 'Profile',
@@ -42,7 +45,9 @@ export default {
     Modal,
     AdminTableBooking,
     AdminCookingLesson,
-    AdminEvents
+    AdminEvents,
+    PortalTarget,
+    Portal // eslint-disable-line vue/no-unused-components
   },
   data () {
     return {

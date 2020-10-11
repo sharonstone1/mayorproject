@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <form v-for="(item,index) in items"
-          :id="`form-${item.url}`"
-          :key="`form-${item.url}`"
+          :id="$id('item-' + index)"
+          :key="$id('item-' + index)"
           @submit.prevent="updateItem(item,index)"
           hidden
     ></form>
@@ -20,9 +20,9 @@
         <template v-for="(item, index) in items">
           <tr :key="item.url">
             <td>{{ dishesName[item.dish] }}</td>
-            <td><input type="number" v-model="item.count" :form="`form-${item.url}`"></td>
+            <td><input type="number" v-model="item.count" :form="$id('item-' + index)"></td>
             <td>
-              <button class="btn btn-primary" :form="`form-${item.url}`">Update</button>
+              <button class="btn btn-primary" :form="$id('item-' + index)">Update</button>
             </td>
             <td>
               <button class="btn btn-warning" @click="removeItem(item, index)">Remove</button>
@@ -95,6 +95,10 @@ export default {
   computed: {
     dishesName () {
       const result = {}
+      if (!this.menus.dishes) {
+        return result
+      }
+
       for (const dish of this.menus.dishes) {
         result[dish.url] = dish.title
       }

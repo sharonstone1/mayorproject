@@ -1,5 +1,5 @@
 <template>
-  <Modal title="Login" :modalId="modalId">
+  <Modal title="Login" :modalId="modalId" key="loginModal">
     <form v-on:submit.prevent="submitForm" id="loginForm">
         <TextInput label="User name" placeholder="Your username" type="text"
            v-model="form.login"/>
@@ -40,7 +40,8 @@ export default {
       return RestaurantApi.login(form)
     },
     onFormSubmissionSuccess (response) {
-      $(`#${this.modalId} .close`).click()
+      const clickModal = $(`#${this.modalId} .close`)
+      clickModal.click()
       EventBus.emit(EventBus.LOGIN)
       this.form = this.defaultForm()
     }

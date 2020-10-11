@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <form v-for="(order,index) in deliveryOrders"
-          :id="`form-${order.url}`"
+    <form v-for="(order,index) in bookings"
+          :id="$id('order-' + index)"
           :key="`form-${order.url}`"
           @submit.prevent="updateOrder(order,index)"
     ></form>
@@ -20,12 +20,12 @@
         </tr>
       </thead>
       <tbody>
-        <template v-for="(order, index) in deliveryOrders">
+        <template v-for="(order, index) in bookings">
           <tr :key="order.url">
             <td>{{ order.fullname }}</td>
-            <td><input type="date" v-model="order.date" :form="`form-${order.url}`"></td>
-            <td><input type="time" v-model="order.time" :form="`form-${order.url}`"></td>
-            <td><input type="text" v-model="order.address" :form="`form-${order.url}`"></td>
+            <td><input type="date" v-model="order.date" :form="$id('order-' + index)"></td>
+            <td><input type="time" v-model="order.time" :form="$id('order-' + index)"></td>
+            <td><input type="text" v-model="order.address" :form="$id('order-' + index)"></td>
             <td>
               <ul>
                 <li>{{ order.phone_number }}</li>
@@ -33,10 +33,10 @@
               </ul>
             </td>
             <td>
-              <button class="btn btn-secondary" data-toggle="modal" :data-target="`#${getModalId(order)}`">Details</button>
+              <button class="btn btn-secondary" data-toggle="modal" :data-target="$idRef('modal-' + index)" :href="$idRef('modal-' + index)">Details</button>
             </td>
             <td>
-              <button class="btn btn-primary" :form="`form-${order.url}`">Update</button>
+              <button class="btn btn-primary" :form="$id('order-' + index)">Update</button>
             </td>
             <td>
               <button class="btn btn-warning" @click="cancelOrder(order, index)">Cancel</button>
@@ -46,14 +46,15 @@
       </tbody>
     </table>
 
-    <Modal v-for="(order) in deliveryOrders"
-           :modal-id="getModalId(order)"
-           extra-class="modal-xl"
-           title="Delivery details"
-           :key="`key-modal-${order.url}`"
-    >
-      <DeliveryDetails :order="order" :items="order.items" :menus="menus"/>
-    </Modal>
+    <Portal v-for="(order, index) in bookings" :key="$id('portal-' + index)" :to="portalTarget" :order="index">
+      <Modal :modal-id="$id('modal-' + index)"
+             extra-class="modal-xl"
+             title="Delivery details"
+             :key="$id('modal-' + index)"
+      >
+        <DeliveryDetails :order="order" :items="order.items" :menus="menus"/>
+      </Modal>
+    </Portal>
   </div>
 </template>
 
@@ -62,20 +63,22 @@ import RestaurantApi from '@/RestaurantApi'
 import DeliveryDetails from '@/components/common/management/DeliveryDetails'
 import Modal from '@/components/common/Modal'
 import IdGenerator from '@/IdGenerator'
+import { Portal, PortalTarget } from 'portal-vue'
 
 export default {
   name: 'AdminDelivery',
   props: {
-    menus: Object,
-    deliveryOrders: []
+    bookings: Array,
+    menus: Array,
+    portalTarget: String
   },
-  components: { Modal, DeliveryDetails },
+  components: { Modal, DeliveryDetails, Portal, PortalTarget },
   methods: {
     updateOrder (deliveryOrder, index) {
       const client = RestaurantApi.client()
       client.put(deliveryOrder.url, deliveryOrder)
         .then(function (response) {
-          // TODO: Inform parent that the order has been changed
+          deliveryOrder = response.data()
         })
         .catch(function (error) {
           console.log(`failure ${error} while updating resource: ${deliveryOrder.url}`)
@@ -92,7 +95,7 @@ export default {
         })
     },
     removeOrderFromView (index) {
-      this.deliveryOrders.splice(index, 1)
+      this.bookings.splice(index, 1)
     },
     getModalId (order) {
       return IdGenerator.fromURL(order.url, 'modal-details')

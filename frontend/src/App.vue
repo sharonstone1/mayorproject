@@ -1,19 +1,6 @@
 <template>
   <div id="app">
-    <PortalTarget name="modalsContainer" multiple class="container"></PortalTarget>
-
-    <Navbar :navigation="navigation"/><br>
-
-<!--    <AdminDish/>-->
-
-    <div v-if="false">
-      <AdminTableBooking/>
-      <AdminDelivery :menus="menus"/>
-      <AdminCookingLesson/>
-      <AdminEvents/>
-    </div>
-
-    <Profile :menus="menus"/>
+    <Navbar :navigation="navigation" :menus="menus"/><br>
 
     <!--welcome page details-->
     <Welcome title="The History of the restaurant" image="static/media/referenceboss.jpg" id="welcome">
@@ -84,6 +71,7 @@
         Notice that the romantic lunch or dinner is our VIP service, so please indicate if you booking is VIP or a
         simple table.
         For any other booking for events please click on our events pre-booking to find any information about it.
+        The time to booking must be between 12 to 23pm. And the date must be the current day, not the day before. Thank you!
       </p>
     </TableBooking>
 
@@ -92,9 +80,11 @@
     <!--delivery for meal form-->
     <DeliveryOrder title="Delivery form for Meals" id="delivery_order" :menus="menus">
       <p>
-        Please, fill out this form for any kind of form of delivery (at restaurant or your place).
-        For any request please send us an email, we will be delight to answer you.
+        Please, fill out this form. To indicate your way of delivery (at restaurant or your place), you must call us.
+        For any request please send us an email or call us, we will be delight to answer you.
         Notice that all payment will deal at the delivery.
+        Notice also that, the time to book of delivery must between 12 to 16pm or 19 to 23:59 pm.
+        The date must be the current day. Thank you!
       </p>
     </DeliveryOrder>
 
@@ -110,7 +100,7 @@
       </p>
       <br>
       <div class="card-body">
-        <event-description title="Wedding" image="static/media/wedding-event.jpg">
+        <EventDescription title="Wedding" image="static/media/wedding-event.jpg">
           Here there is one of the wedding we have organized in January. Notice that the courses we offer
           for the wedding is different for those we pour in the restaurant every day. We cook the
           customer's course
@@ -123,9 +113,9 @@
           The restaurant have a big garden available if you want to organize you wedding at the
           restaurant. However, we will be delight
           to make our cooking wedding in your choice place.
-        </event-description>
+        </EventDescription>
 
-        <event-description title="Party" image="static/media//party-event.jpg">
+        <EventDescription title="Party" image="static/media//party-event.jpg">
           Here there is one of the wedding we have organized in January. Notice that
           the courses we offer
           for the wedding is different for those we pour in the restaurant every day. We cook the
@@ -139,9 +129,9 @@
           The restaurant have a big garden available if you want to organize you wedding at the
           restaurant. However, we will be delight
           to make our cooking wedding in your choice place.
-        </event-description>
+        </EventDescription>
 
-        <event-description title="Proposal" image="static/media//proposal-event.jpg">
+        <EventDescription title="Proposal" image="static/media//proposal-event.jpg">
           Here there is one of the wedding we have organized in January. Notice that the courses we offer
           for the wedding is different for those we pour in the restaurant every day. We cook the
           customer's course
@@ -154,9 +144,9 @@
           The restaurant have a big garden available if you want to organize you wedding at the
           restaurant. However, we will be delight
           to make our cooking wedding in your choice place.
-        </event-description>
+        </EventDescription>
 
-        <event-description title="Business Events" image="static/media//company-party.jpg">
+        <EventDescription title="Business Events" image="static/media//company-party.jpg">
           Here there is one of the wedding we have organized in January. Notice that the courses we offer
           for the wedding is different for those we pour in the restaurant every day. We cook the
           customer's course
@@ -169,11 +159,11 @@
           The restaurant have a big garden available if you want to organize you wedding at the
           restaurant. However, we will be delight
           to make our cooking wedding in your choice place.
-        </event-description>
+        </EventDescription>
       </div>
 
       <br>
-
+      <p> Notice that, to book for an event, the time must be between 14 to 18pm and the date must be 14 day before.</p>
       <EventPreBooking title="Pre-booking" id="event_enrollment"></EventPreBooking>
     </div>
 
@@ -214,7 +204,7 @@
         </div>
       </div>
       <br>
-
+      <p> Notice that, to booking for a lesson, you must apply three day before</p>
       <CookingClassBooking id="cooking_class_enrolment"/>
 
     </div>
@@ -271,7 +261,7 @@
 
             <a class="btn btn-danger btn-rounded"
             data-toggle="modal" data-target="#registerModal"
-             href="#UserRegistration"
+             href="#registerModal"
             id="register">
             Sign up!</a>
 
@@ -296,13 +286,8 @@ import DeliveryOrder from '@/components/user/DeliveryOrder'
 import EventPreBooking from '@/components/user/EventPreBooking'
 import CookingClassBooking from '@/components/user/CookingClassBooking'
 import Gallery from '@/components/site/Gallery'
-import Profile from '@/components/user/Profile'
 import EventBus from '@/EventBus'
-import AdminTableBooking from '@/components/common/management/TableBookingBase'
-import AdminDelivery from '@/components/common/management/DeliveryBookingBase'
-import { PortalTarget } from 'portal-vue'
-import AdminCookingLesson from '@/components/common/management/CookingLessonBase'
-import AdminEvents from '@/components/common/management/EventsBookingBase'
+import $ from 'jquery'
 
 export default {
   name: 'App',
@@ -363,7 +348,8 @@ export default {
           description: 'This book is showed all kind of vacuum food people can make in the simple way and faster.',
           img: 'static/media//cooking_book4.jpg'
         }
-      ]
+      ],
+      api: RestaurantApi
     }
   },
   methods: {
@@ -384,6 +370,7 @@ export default {
             sides: dishes.filter(dish => dish.type === 'side'),
             dessert: dishes.filter(dish => dish.type === 'dessert')
           }
+          EventBus.emit(EventBus.MENUS_UPDATED, app.menus)
         })
         .catch(function (error) {
           console.log(error)
@@ -402,11 +389,6 @@ export default {
   },
   /* List of HTML components used to render the HTML */
   components: {
-    AdminEvents,
-    AdminCookingLesson,
-    AdminDelivery,
-    AdminTableBooking,
-    Profile,
     Gallery,
     CookingClassBooking,
     EventPreBooking,
@@ -415,9 +397,23 @@ export default {
     MenuPresentation,
     Welcome,
     SpecialPresentation,
-    'event-description': EventDescription,
-    Navbar: Navbar,
-    PortalTarget
+    EventDescription,
+    Navbar
+  },
+  created () {
+    // Fix scrolling when one modal overlays another and is closed
+    $(document).on('hidden.bs.modal', '.modal', function () {
+      $('.modal:visible').length && $(document.body).addClass('modal-open')
+    })
+
+    // Adjust the zIndex when one modal overlays another
+    $(document).on('show.bs.modal', '.modal', function () {
+      const zIndex = 1040 + (10 * $('.modal:visible').length)
+      $(this).css('z-index', zIndex)
+      setTimeout(function () {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack')
+      }, 0)
+    })
   }
 }
 </script>
