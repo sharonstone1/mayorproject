@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'phonenumber_field',
-    'corsheaders',
     'webpack_loader',
     'rest_registration',
     'django_cleanup.apps.CleanupConfig'
@@ -65,7 +64,7 @@ ROOT_URLCONF = 'restaurant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # Templates are in the templates folder
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,21 +129,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:63342",
-    "http://localhost:63343"
-]
-
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'x-ijt',
-]
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
     os.path.join(BASE_DIR, "frontend/dist"),
 ]
 
+# Configuration of the webpack loader plugin, it monitors the file webpack-stats.json present in the frontend.
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'dist/',
@@ -154,15 +144,19 @@ WEBPACK_LOADER = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework.authentication.BasicAuthentication',
+        # We only support Session authentication. If we had to support other type of
+        # client we would have to support a token base authentication.
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
+        # By default, user must be authenticated to access resources in the web server.
         'rest_framework.permissions.IsAuthenticated',
     )
 }
 
-
+# Configuration of the rest_registration plugin
+# There is no verification of the email and reset of the password at this time.
+# Authentication creates a local session.
 REST_REGISTRATION = {
     'REGISTER_VERIFICATION_ENABLED': False,
     'RESET_PASSWORD_VERIFICATION_ENABLED': False,
@@ -174,5 +168,6 @@ REST_REGISTRATION = {
     'PROFILE_SERIALIZER_CLASS': 'api.serializers.ProfileUserSerializer'
 }
 
+# Path for dishes pictures uploaded by an administrator
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

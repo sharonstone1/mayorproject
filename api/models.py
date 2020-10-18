@@ -3,17 +3,18 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from phonenumber_field.modelfields import PhoneNumberField
-from django.utils.translation import gettext_lazy as _
 
 
 def dish_image_name(instance, filename):
+    """Create a unique name for the image associated to a dish"""
     extension = filename.split(".")[-1]
     name = f"dishes/images/{uuid.uuid4()}.{extension}"
     return name
 
+
 # Create your models here.
 class Dish(models.Model):
-
+    """Model for the dishes served in the restaurant"""
     # Dish types declaration
     STARTER = 'starter'
     MAIN = 'main'
@@ -58,6 +59,7 @@ class Dish(models.Model):
         (LUNCH_AND_DINNER, 'Lunch and Dinner')
     )
 
+    # Fields of the model
     title = models.CharField(max_length=250)
     price = models.FloatField()
     description = models.TextField(blank=True)
@@ -71,6 +73,9 @@ class Dish(models.Model):
 
 
 class DeliveryOrder(models.Model):
+    """Model for a delivery order"""
+    # The fields fullname and email are mandatory if the owner field is null.
+    # This allow an unregistered user to pass a delivery order
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='delivery_orders', on_delete=models.CASCADE, blank=True, null=True)
@@ -81,12 +86,17 @@ class DeliveryOrder(models.Model):
 
 
 class DeliveryOrderItem(models.Model):
+    """Item associated to a delivery order"""
+    # The model references the Dish and the order as foreign keys.
     dish = models.ForeignKey('Dish', on_delete=models.CASCADE)
     count = models.PositiveSmallIntegerField()
     order = models.ForeignKey('DeliveryOrder', related_name='items', on_delete=models.CASCADE)
 
 
 class TableBooking(models.Model):
+    """Model for a delivery order"""
+    # The fields fullname and email are mandatory if the owner field is null.
+    # This allow an unregistered user to pass a delivery order
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='table_bookings', on_delete=models.CASCADE, blank=True, null=True)
@@ -98,6 +108,9 @@ class TableBooking(models.Model):
 
 
 class CookingLessonBooking(models.Model):
+    """Model for a delivery order"""
+
+    # Constants defining the type of lesson
     ONLINE = 'stream'
     IN_PERSON = 'live'
     LESSON_TYPE = (
@@ -105,6 +118,7 @@ class CookingLessonBooking(models.Model):
         (IN_PERSON, 'At the restaurant'),
     )
 
+    # Session time
     MORNING = 'morning'
     AFTERNOON = 'afternoon'
     LESSON_TIME = (
@@ -112,6 +126,8 @@ class CookingLessonBooking(models.Model):
         (AFTERNOON, 'Starting at 15 o\'clock until dinner'),
     )
 
+    # The fields fullname and email are mandatory if the owner field is null.
+    # This allow an unregistered user to pass a delivery order
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='cooking_lessons', on_delete=models.CASCADE, blank=True, null=True)
@@ -123,6 +139,9 @@ class CookingLessonBooking(models.Model):
 
 
 class EventPreBooking(models.Model):
+    """Model for an event pre booking"""
+    # The fields fullname and email are mandatory if the owener field is null.
+    # This allow an unregistered user to pass a delivery order
     fullname = models.CharField(max_length=250, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     owner = models.ForeignKey('auth.User', related_name='events', on_delete=models.CASCADE, blank=True, null=True)

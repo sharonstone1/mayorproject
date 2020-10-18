@@ -11,6 +11,3 @@ def login(request, *args, **kwargs):
     The request is forwarded to rest-framework-registration login
     """
     return framework_login(request, *args, **kwargs)
-    # if request.method == 'POST':
-    #     return framework_login(request, *args, **kwargs)
-

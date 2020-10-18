@@ -20,11 +20,11 @@ from frontend_django.views import IndexTemplateView
 from restaurant import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    path('', IndexTemplateView.as_view(), name="entry-point"),
+    path('admin/', admin.site.urls),            # Django's admin website
+    path('api/', include('api.urls')),          # REST API
+    path('', IndexTemplateView.as_view(), name="entry-point"),  # Entry to the SPA
 ]
 
 urlpatterns += [
-    path('api-auth/', include('rest_framework.urls')),
+    path('api-auth/', include('rest_framework.urls')),          # DRF login
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

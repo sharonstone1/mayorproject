@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from rest_framework import serializers
 from api.models import Dish, DeliveryOrder, DeliveryOrderItem, TableBooking, EventPreBooking, CookingLessonBooking
 import datetime
@@ -11,7 +11,6 @@ class ReadWriteSerializerMethodField(serializers.Field):
        - get_{field_name}: to return the representation
        - set_{field_name}: to set the internal value
     """
-
     def __init__(self, **kwargs):
         kwargs['source'] = '*'
         self.deserializer_field = kwargs.pop('deserializer_field')
@@ -37,7 +36,7 @@ class ReadWriteSerializerMethodField(serializers.Field):
 
 class BookingSerializerMixin:
     """
-    Mixin that correctly serialize the fullname for Booking elements:
+    Mixin that correctly serialize the fullname of the user for Booking elements:
     Any type of booking can be made by an anonymous but in such case, the fields
     username and email must be filled. If it is not the case then an error is raised.
     Similarly, if the booking has been made by a registered users, the email and fullname
@@ -77,23 +76,30 @@ class BookingSerializerMixin:
 
 
 class DishSerializer(serializers.HyperlinkedModelSerializer):
+    """Serialization of the Dish model"""
     class Meta:
         model = Dish
         fields = ['url', 'title', 'price', 'description', 'type', 'day', 'serving_time', 'image']
 
 
 class DeliveryOrderItemSerializer(serializers.HyperlinkedModelSerializer):
+    """Serialization of an item of a delivery order"""
     class Meta:
         model = DeliveryOrderItem
         fields = ['url', 'dish', 'count', 'order']
 
 
 class DeliveryOrderItemCreateSerializer(serializers.HyperlinkedModelSerializer):
+    """Serialization of an item of a delivery order when created with a delivery order"""
     class Meta:
         model = DeliveryOrderItem
+        # The field order is not present as the order is unknown has it is
+        # created at the same time.
         fields = ['url', 'dish', 'count']
 
+
 class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
+    """Serialization of a DeliveryOrder model"""
     owner = serializers.HyperlinkedRelatedField(read_only=True, view_name='user-detail')
     fullname = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
     email = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
@@ -104,6 +110,7 @@ class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedMod
         fields = ['url', 'owner', 'fullname', 'email', 'address', 'phone_number', 'date', 'time', 'items']
 
     def create(self, validated_data):
+        # After validation, the order is created then each of its item in the for loop
         items_data = validated_data.pop('items')
         order = DeliveryOrder.objects.create(**validated_data)
         for item_data in items_data:
@@ -132,6 +139,7 @@ class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedMod
                 raise serializers.ValidationError(
                     "Same day reservations must be made one hours early")
 
+        # Validation that the items can be served at this date and time
         for item in data['items']:
             dish = item['dish']
             if dish.type == Dish.DAILY_SPECIAL:
@@ -166,6 +174,7 @@ class DeliveryOrderSerializer(BookingSerializerMixin, serializers.HyperlinkedMod
 
 
 class TableBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
+    """Serialization of a TableBooking model"""
     owner = serializers.HyperlinkedRelatedField(read_only=True, view_name='user-detail')
     fullname = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
     email = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
@@ -175,7 +184,7 @@ class TableBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedMode
         fields = ['url', 'owner', 'fullname', 'email', 'phone_number', 'date', 'time', 'guest_count', 'vip']
 
     def validate(self, data):
-        # Validation of the date and time
+        # Validation of the date and time, the booking must be made at least 2 hours in advance.
         if data['date'] == datetime.date.today():
             limit = datetime.datetime.now() + datetime.timedelta(hours=2)
             time_limit = limit.time()
@@ -203,6 +212,7 @@ class TableBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedMode
 
 
 class EventPreBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
+    """Serialization of the EventPreBooking model"""
     owner = serializers.HyperlinkedRelatedField(read_only=True, view_name='user-detail')
     fullname = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
     email = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
@@ -224,8 +234,8 @@ class EventPreBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedM
         return value
 
 
-
 class CookingLessonBookingSerializer(BookingSerializerMixin, serializers.HyperlinkedModelSerializer):
+    """Serialization of the CookingLessonBooking model"""
     owner = serializers.HyperlinkedRelatedField(read_only=True, view_name='user-detail')
     fullname = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
     email = ReadWriteSerializerMethodField(deserializer_field=serializers.CharField())
@@ -240,9 +250,8 @@ class CookingLessonBookingSerializer(BookingSerializerMixin, serializers.Hyperli
         return value
 
 
-
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    # delivery_orders = serializers.ReadOnlyField()
+    """Serialization of a user as displayed by the /api/users route"""
     table_bookings = TableBookingSerializer(many=True, read_only=True)
 
     class Meta:
@@ -251,6 +260,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProfileUserSerializer(serializers.HyperlinkedModelSerializer):
+    """Serialization of a user profile, it includes all the booking made by the user"""
     table_bookings = TableBookingSerializer(many=True, read_only=True)
     delivery_orders = DeliveryOrderSerializer(many=True, read_only=True)
     cooking_lessons = CookingLessonBookingSerializer(many=True, read_only=True)
@@ -266,8 +276,3 @@ class ProfileUserSerializer(serializers.HyperlinkedModelSerializer):
                   'events'
         ]
 
-
-
-class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField(required=True)
-    password = serializers.CharField(required=True)
