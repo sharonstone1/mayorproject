@@ -7,11 +7,12 @@ import './assets/restaurant.css'
 import UniqueId from 'vue-unique-id'
 import PortalVue from 'portal-vue'
 
-// Vue.config.productionTip = false
+// Configure vue
 Vue.config.devtools = true
 Vue.use(UniqueId)
 Vue.use(PortalVue)
 
+// Create the application instance of vue
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App),
@@ -19,10 +20,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-// /* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   template: '<App/>',
-//   components: { App }
-// }).$mount('#app')

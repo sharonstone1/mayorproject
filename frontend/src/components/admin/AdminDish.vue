@@ -1,3 +1,5 @@
+<!-- Manage the restaurant menu -->
+
 <template>
   <div>
     <div v-for="(dishCategory, categoryName) in dishes" :key="categoryName">
@@ -28,6 +30,7 @@
 
             <SelectInput :id="`servingTimeInput-${index}-${dishCategory.name}`" label="Serving Time" :options="servingTimes" v-model="dish.serving_time"/>
 
+            <!-- Upload control of the associated image -->
             <div class="form-group row">
               <label :for="`imageInput-${index}-${dishCategory.name}`" class="col-sm-2 col-form-label">
                 Image

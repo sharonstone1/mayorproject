@@ -1,3 +1,5 @@
+<!-- Delivery details management, the user or admin can add or remove item in the basket -->
+
 <template>
   <div class="container">
     <form v-for="(item,index) in items"
@@ -73,9 +75,6 @@ export default {
         .catch(function (error) {
           console.log(error)
         })
-    },
-    getDishName (item) {
-      return item.url
     },
     onItemAdded (item) {
       const app = this

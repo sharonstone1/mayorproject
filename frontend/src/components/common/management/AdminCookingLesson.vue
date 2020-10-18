@@ -1,3 +1,5 @@
+<!--Management of cooking lessons booked -->
+
 <template>
   <div class="container">
     <form v-for="booking in bookings"

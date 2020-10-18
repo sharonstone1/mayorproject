@@ -1,3 +1,5 @@
+<!-- Delivery order management -->
+
 <template>
   <div class="container">
     <form v-for="(order,index) in bookings"
@@ -62,7 +64,6 @@
 import RestaurantApi from '@/RestaurantApi'
 import DeliveryDetails from '@/components/common/management/DeliveryDetails'
 import Modal from '@/components/common/Modal'
-import IdGenerator from '@/IdGenerator'
 import { Portal, PortalTarget } from 'portal-vue'
 
 export default {
@@ -101,9 +102,6 @@ export default {
     },
     removeOrderFromView (index) {
       this.bookings.splice(index, 1)
-    },
-    getModalId (order) {
-      return IdGenerator.fromURL(order.url, 'modal-details')
     }
   }
 }

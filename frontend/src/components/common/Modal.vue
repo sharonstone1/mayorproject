@@ -1,3 +1,5 @@
+<!-- Component that wrap a bootstrap modal. The slot modal-footer can be used to put components into the footer-->
+
 <template>
   <div class="container">
     <div class="modal fade" :id="modalId" tabindex="-1" aria-hidden="true">

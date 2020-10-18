@@ -1,3 +1,5 @@
+<!-- Selection of dishes the user can order, it depend on the date and time the order is delivered -->
+
 <template>
   <form class="form" @submit.prevent="addDeliveryItem()">
     <div class="form-group row">

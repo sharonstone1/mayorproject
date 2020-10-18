@@ -1,7 +1,9 @@
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 p{
     text-align: justify;
 }
@@ -17,10 +19,12 @@ p{
     width: 650px;
 }
 
+/* Helps with navbar positioning */
 body {
     padding-top: 70px;
 }
 
+/*Correct positioning when clicking on a navbar link*/
 *[id]:before {
   display: block;
   content: " ";

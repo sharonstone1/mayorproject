@@ -1,3 +1,5 @@
+<!-- Administration of events pre booking -->
+
 <template>
   <div class="container">
     <form v-for="booking in bookings"

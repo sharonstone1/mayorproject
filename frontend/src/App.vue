@@ -293,6 +293,7 @@ export default {
   name: 'App',
   data: function () {
     return {
+      // Configuration of the navbar, it contains the name of the link and the id of the link.
       navigation: [
         { name: 'Home', id: '#welcome' },
         {
@@ -353,10 +354,16 @@ export default {
     }
   },
   methods: {
+    // The first thing the client does is get all the dishes served by the restaurant.
     fetchDishes () {
       const app = this
       RestaurantApi.getDishes()
         .then(function (response) {
+          // When received, we filter the list of dishes into menus:
+          //   - lunchSpecials
+          //   - dinnerSpecials
+          //   - restaurantMenu (always served)
+          // The restaurant menu is divided into starters, mains, sides and dessert
           const dishes = response.data
 
           app.menus.dishes = dishes
@@ -378,6 +385,7 @@ export default {
     }
   },
   mounted: function () {
+    // Executed when the application is mounted into the dom.
     this.fetchDishes()
     const app = this
     EventBus.on(EventBus.DISHES_UPDATES, function () {

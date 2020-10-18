@@ -1,3 +1,5 @@
+<!-- Administration of table booking -->
+
 <template>
   <div class="container">
     <form v-for="booking in bookings"
@@ -19,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <template v-for="booking in bookings">
+        <template v-for="(booking, index) in bookings">
           <tr :key="booking.url">
             <td>{{ booking.fullname }}</td>
             <td><input type="date" v-model="booking.date" :form="`form-${booking.url}`"></td>
@@ -35,7 +37,7 @@
               <button class="btn btn-primary" :form="`form-${booking.url}`">Update</button>
             </td>
             <td>
-              <button class="btn btn-warning">Cancel</button>
+              <button class="btn btn-warning" @click="deleteBooking(booking, index)">Cancel</button>
             </td>
           </tr>
         </template>
@@ -59,12 +61,21 @@ export default {
       client.put(booking.url, booking)
         .then(function (response) {
           if (response.data.date !== app.date) {
-            // TODO: hook
             console.log('element must be removed from the view!')
           }
         })
         .catch(function (error) {
           console.log(`failure ${error} while updating resource: ${booking.url}`)
+        })
+    },
+    deleteBooking (booking, index) {
+      const app = this
+      RestaurantApi.client().delete(booking.url)
+        .then(function (response) {
+          app.bookings.splice(index, 1)
+        })
+        .catch(function (error) {
+          console.log(`failed to delete ${booking.url}: ${error}`)
         })
     }
   }

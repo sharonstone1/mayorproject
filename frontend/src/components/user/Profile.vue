@@ -31,10 +31,10 @@
 import EventBus from '@/EventBus'
 import RestaurantApi from '@/RestaurantApi'
 import Modal from '@/components/common/Modal'
-import AdminTableBooking from '@/components/common/management/TableBookingBase'
-import AdminDelivery from '@/components/common/management/DeliveryBookingBase'
-import AdminCookingLesson from '@/components/common/management/CookingLessonBase'
-import AdminEvents from '@/components/common/management/EventsBookingBase'
+import AdminTableBooking from '@/components/common/management/AdminTableBooking'
+import AdminDelivery from '@/components/common/management/AdminDelivery'
+import AdminCookingLesson from '@/components/common/management/AdminCookingLesson'
+import AdminEvents from '@/components/common/management/AdminEvents'
 import { Portal, PortalTarget } from 'portal-vue'
 
 export default {
