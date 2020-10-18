@@ -1,1 +1,2782 @@
-[{"model": "api.dish", "pk": 5, "fields": {"title": "carre d'agneau de lait", "price": 30.0, "description": "leg of lamps, garlic, salt, pepper, dried, fresh rosemary, olive oil", "type": "special", "day": "MO", "serving_time": "lunch", "image": "dishes/images/618e38c4-5724-4fcb-ba42-3a953b3f1277.jpg"}}, {"model": "api.dish", "pk": 6, "fields": {"title": "gigot d'agneau", "price": 35.0, "description": "salt, pepper, olive oil, garlic, femme", "type": "special", "day": "TU", "serving_time": "lunch", "image": "dishes/images/0878ac42-3cc8-4faa-92b0-594a69b82b3c.jpg"}}, {"model": "api.dish", "pk": 7, "fields": {"title": "chicken steak", "price": 25.0, "description": "chicken breats, ginger, paste, garlic paste, onions, black peper powder, coriander leaves, salt, oil", "type": "special", "day": "WE", "serving_time": "lunch", "image": "dishes/images/62406fb9-bf40-4a43-9efc-c9e42e4cf8a4.jpg"}}, {"model": "api.dish", "pk": 8, "fields": {"title": "legume smoky chicken", "price": 25.0, "description": "thym, salt, smoky chicken, oil, pepper, soja sauce", "type": "special", "day": "TH", "serving_time": "lunch", "image": "dishes/images/aab543e3-ec79-425f-b93c-729d544a2b91.jpg"}}, {"model": "api.dish", "pk": 9, "fields": {"title": "saint jacques shell", "price": 45.0, "description": "butter, salt, pepper, garlic, saint jacques shell", "type": "special", "day": "FR", "serving_time": "lunch", "image": "dishes/images/36ded60c-e037-4e3e-9423-9b4a7d45a92c.jpg"}}, {"model": "api.dish", "pk": 10, "fields": {"title": "magret de canard", "price": 45.0, "description": "salt, peper,garlic", "type": "special", "day": "SA", "serving_time": "lunch", "image": "dishes/images/1e38657d-d9ad-4117-8162-abd240aa3bb1.jpg"}}, {"model": "api.dish", "pk": 11, "fields": {"title": "pave de saumon a la creme fraiche", "price": 35.0, "description": "salmon, onion, olive oil, pepper, creme fraiche, butter, salt, white wine", "type": "special", "day": "SU", "serving_time": "lunch", "image": "dishes/images/a9acd777-51ac-4c92-a8b3-32eded46307d.jpg"}}, {"model": "api.dish", "pk": 12, "fields": {"title": "anguilla de la veille de noel", "price": 25.0, "description": "carrotte, garlic, onions, pepper, butter, shallot, anguilla", "type": "special", "day": "MO", "serving_time": "dinner", "image": "dishes/images/b4e158b6-9c7b-4f09-a16b-2b6cf9cf49d5.jpg"}}, {"model": "api.dish", "pk": 13, "fields": {"title": "brochette d'anguilles", "price": 25.0, "description": "anguilla, salt, onions, oil,pepper, skewer", "type": "special", "day": "TU", "serving_time": "dinner", "image": "dishes/images/76f4b583-74f7-4a13-93dd-d8c7b719ad66.jpg"}}, {"model": "api.dish", "pk": 14, "fields": {"title": "aubergines aux crevettes", "price": 25.0, "description": "aubergine, prawn, pepper, salt, white wine, onions, garlic", "type": "special", "day": "WE", "serving_time": "dinner", "image": "dishes/images/04694103-2508-4441-b4bf-2fecc0a67949.jpg"}}, {"model": "api.dish", "pk": 15, "fields": {"title": "veau aux haricots", "price": 30.0, "description": "bean, pepper, onions, salt, oil, tomato, calf", "type": "special", "day": "TH", "serving_time": "dinner", "image": "dishes/images/e1ff7bf8-b137-4263-802d-0918a775e967.jpg"}}, {"model": "api.dish", "pk": 16, "fields": {"title": "rognon de veau a la moutarde", "price": 30.0, "description": "calf kidney, salt, oil, pepper, moutard, garlic, creme fraiche, butter, white wine", "type": "special", "day": "FR", "serving_time": "dinner", "image": "dishes/images/91b70b82-9ba1-4d1b-b94c-168b75863f9c.jpg"}}, {"model": "api.dish", "pk": 17, "fields": {"title": "petit roti de boeuf au four", "price": 35.0, "description": "beef, oil, pepper, salt, garlic, thym,", "type": "special", "day": "SA", "serving_time": "dinner", "image": "dishes/images/377dc46c-e6e6-4277-b8fb-d3dcd341088d.jpg"}}, {"model": "api.dish", "pk": 18, "fields": {"title": "bifteck beure maitre d'hotel", "price": 35.0, "description": "butter, steak, salt, parsley, lettuce, lemon, pepper", "type": "special", "day": "SU", "serving_time": "dinner", "image": "dishes/images/15d6bdd9-8561-4207-8fc8-ba7a2d7d70b7.jpg"}}, {"model": "api.dish", "pk": 19, "fields": {"title": "ceasar salade a la crevette", "price": 15.0, "description": "lettuce, egg, moutard, bread, parsley, grated parmesan, onions, salt, pepper, oil, lemon", "type": "starter", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 20, "fields": {"title": "salade Grecque traditionnelle", "price": 12.0, "description": "lettuce, oil, salt, pepper, onions, lemon, tomato, green pepper", "type": "starter", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 21, "fields": {"title": "salade aux pommes plus lardons", "price": 11.0, "description": "lettuce, potato, bacon, onions, salt, vinegar", "type": "starter", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 22, "fields": {"title": "salade de lentilles facile", "price": 10.0, "description": "lens, salt, pepper, parsley, lettuce,onions, oil", "type": "starter", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 23, "fields": {"title": "calmard marines, poels", "price": 35.0, "description": "squids, butter, salt, pepper, onions", "type": "main", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 24, "fields": {"title": "burger", "price": 20.0, "description": "steak, salt, pepper, oil, bread burger,butter", "type": "main", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 25, "fields": {"title": "steak de veau", "price": 40.0, "description": "steak, butter, pepper, oil, onion,", "type": "main", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 26, "fields": {"title": "brochette de lamps", "price": 30.0, "description": "lamb, pepper, green pepper, oil, onion, garlic", "type": "main", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 27, "fields": {"title": "Frites", "price": 3.0, "description": "Potato", "type": "side", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 28, "fields": {"title": "Pasta", "price": 10.0, "description": "Wheat flour, water", "type": "side", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 29, "fields": {"title": "Gratin de pomme de terre", "price": 12.0, "description": "Potato, Cream", "type": "side", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 30, "fields": {"title": "Rice", "price": 10.0, "description": "Rice", "type": "side", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 31, "fields": {"title": "Vanilla ice cream", "price": 10.0, "description": "Ice cream, vanilla and peanuts", "type": "dessert", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 32, "fields": {"title": "Chocolate cake", "price": 12.0, "description": "Chocolate, Egg yolk, Wheat floor", "type": "dessert", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 33, "fields": {"title": "Apple pie", "price": 11.0, "description": "Apple, Wheat floor, egg", "type": "dessert", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.dish", "pk": 34, "fields": {"title": "Creme brulee", "price": 10.0, "description": "Egg, sugar", "type": "dessert", "day": "*", "serving_time": "*", "image": ""}}, {"model": "api.deliveryorder", "pk": 1, "fields": {"fullname": "", "email": "", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-22", "time": "19:10:00"}}, {"model": "api.deliveryorder", "pk": 4, "fields": {"fullname": "toto", "email": "marthe.ekoule@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-09", "time": "14:51:00"}}, {"model": "api.deliveryorder", "pk": 5, "fields": {"fullname": "", "email": "", "owner": 14, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-28", "time": "14:27:00"}}, {"model": "api.deliveryorder", "pk": 6, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-26", "time": "20:34:00"}}, {"model": "api.deliveryorder", "pk": 7, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-30", "time": "19:59:00"}}, {"model": "api.deliveryorder", "pk": 8, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-30", "time": "20:00:00"}}, {"model": "api.deliveryorder", "pk": 9, "fields": {"fullname": "Marthe Coubard", "email": "marthe.ekoule@gmail.com", "owner": 1, "phone_number": "+447403753994", "address": "12 Kent way", "date": "2020-10-10", "time": "19:21:00"}}, {"model": "api.deliveryorder", "pk": 10, "fields": {"fullname": "brice", "email": "marthe.ekoule@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-05", "time": "15:26:00"}}, {"model": "api.deliveryorder", "pk": 11, "fields": {"fullname": "willy dubois", "email": "willy.dubois@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-26", "time": "14:51:00"}}, {"model": "api.deliveryorder", "pk": 12, "fields": {"fullname": "stephanie water", "email": "stephanie.water@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-19", "time": "14:47:00"}}, {"model": "api.deliveryorder", "pk": 13, "fields": {"fullname": "stephanie water", "email": "stephanie.water@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-19", "time": "15:52:00"}}, {"model": "api.deliveryorder", "pk": 14, "fields": {"fullname": "joanne bill", "email": "joanne.bill@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-30", "time": "20:40:00"}}, {"model": "api.deliveryorder", "pk": 15, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-12", "time": "19:15:00"}}, {"model": "api.deliveryorder", "pk": 16, "fields": {"fullname": "", "email": "", "owner": 21, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-11-01", "time": "14:25:00"}}, {"model": "api.deliveryorderitem", "pk": 1, "fields": {"dish": 25, "count": 2, "order": 1}}, {"model": "api.deliveryorderitem", "pk": 22, "fields": {"dish": 9, "count": 6, "order": 4}}, {"model": "api.deliveryorderitem", "pk": 23, "fields": {"dish": 34, "count": 2, "order": 4}}, {"model": "api.deliveryorderitem", "pk": 24, "fields": {"dish": 27, "count": 3, "order": 4}}, {"model": "api.deliveryorderitem", "pk": 30, "fields": {"dish": 19, "count": 5, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 31, "fields": {"dish": 24, "count": 2, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 32, "fields": {"dish": 27, "count": 4, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 33, "fields": {"dish": 31, "count": 3, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 35, "fields": {"dish": 21, "count": 8, "order": 6}}, {"model": "api.deliveryorderitem", "pk": 36, "fields": {"dish": 30, "count": 3, "order": 6}}, {"model": "api.deliveryorderitem", "pk": 38, "fields": {"dish": 29, "count": 2, "order": 7}}, {"model": "api.deliveryorderitem", "pk": 39, "fields": {"dish": 24, "count": 2, "order": 8}}, {"model": "api.deliveryorderitem", "pk": 40, "fields": {"dish": 21, "count": 4, "order": 8}}, {"model": "api.deliveryorderitem", "pk": 41, "fields": {"dish": 33, "count": 2, "order": 8}}, {"model": "api.deliveryorderitem", "pk": 49, "fields": {"dish": 28, "count": 2, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 50, "fields": {"dish": 29, "count": 2, "order": 5}}, {"model": "api.deliveryorderitem", "pk": 63, "fields": {"dish": 28, "count": 4, "order": 9}}, {"model": "api.deliveryorderitem", "pk": 64, "fields": {"dish": 33, "count": 3, "order": 9}}, {"model": "api.deliveryorderitem", "pk": 66, "fields": {"dish": 17, "count": 1, "order": 9}}, {"model": "api.deliveryorderitem", "pk": 67, "fields": {"dish": 25, "count": 3, "order": 1}}, {"model": "api.deliveryorderitem", "pk": 68, "fields": {"dish": 25, "count": 3, "order": 1}}, {"model": "api.deliveryorderitem", "pk": 69, "fields": {"dish": 27, "count": 3, "order": 7}}, {"model": "api.deliveryorderitem", "pk": 70, "fields": {"dish": 19, "count": 3, "order": 10}}, {"model": "api.deliveryorderitem", "pk": 71, "fields": {"dish": 24, "count": 3, "order": 10}}, {"model": "api.deliveryorderitem", "pk": 72, "fields": {"dish": 31, "count": 3, "order": 10}}, {"model": "api.deliveryorderitem", "pk": 73, "fields": {"dish": 20, "count": 4, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 74, "fields": {"dish": 25, "count": 1, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 75, "fields": {"dish": 26, "count": 4, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 76, "fields": {"dish": 30, "count": 4, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 77, "fields": {"dish": 32, "count": 4, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 78, "fields": {"dish": 33, "count": 3, "order": 11}}, {"model": "api.deliveryorderitem", "pk": 79, "fields": {"dish": 23, "count": 3, "order": 12}}, {"model": "api.deliveryorderitem", "pk": 80, "fields": {"dish": 19, "count": 3, "order": 12}}, {"model": "api.deliveryorderitem", "pk": 84, "fields": {"dish": 19, "count": 2, "order": 14}}, {"model": "api.deliveryorderitem", "pk": 85, "fields": {"dish": 31, "count": 2, "order": 14}}, {"model": "api.deliveryorderitem", "pk": 86, "fields": {"dish": 24, "count": 2, "order": 14}}, {"model": "api.deliveryorderitem", "pk": 87, "fields": {"dish": 27, "count": 2, "order": 14}}, {"model": "api.deliveryorderitem", "pk": 94, "fields": {"dish": 31, "count": 4, "order": 13}}, {"model": "api.deliveryorderitem", "pk": 95, "fields": {"dish": 21, "count": 4, "order": 13}}, {"model": "api.deliveryorderitem", "pk": 96, "fields": {"dish": 24, "count": 4, "order": 13}}, {"model": "api.deliveryorderitem", "pk": 97, "fields": {"dish": 33, "count": 2, "order": 9}}, {"model": "api.deliveryorderitem", "pk": 99, "fields": {"dish": 19, "count": 2, "order": 15}}, {"model": "api.deliveryorderitem", "pk": 100, "fields": {"dish": 23, "count": 2, "order": 15}}, {"model": "api.deliveryorderitem", "pk": 101, "fields": {"dish": 31, "count": 2, "order": 15}}, {"model": "api.deliveryorderitem", "pk": 102, "fields": {"dish": 12, "count": 2, "order": 15}}, {"model": "api.deliveryorderitem", "pk": 103, "fields": {"dish": 19, "count": 4, "order": 16}}, {"model": "api.deliveryorderitem", "pk": 104, "fields": {"dish": 23, "count": 4, "order": 16}}, {"model": "api.deliveryorderitem", "pk": 105, "fields": {"dish": 31, "count": 4, "order": 16}}, {"model": "api.deliveryorderitem", "pk": 106, "fields": {"dish": 27, "count": 4, "order": 16}}, {"model": "api.deliveryorderitem", "pk": 107, "fields": {"dish": 11, "count": 4, "order": 16}}, {"model": "api.tablebooking", "pk": 8, "fields": {"fullname": "Sydney Sophia Coubard", "email": "sydney.coubard@gmail.com", "owner": 2, "phone_number": "+447403753994", "date": "2020-09-26", "time": "14:12:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 9, "fields": {"fullname": "Marthe Coubard", "email": "marthe.ekoule@gmail.com", "owner": 1, "phone_number": "+447403753994", "date": "2020-10-08", "time": "18:08:00", "guest_count": 3, "vip": false}}, {"model": "api.tablebooking", "pk": 10, "fields": {"fullname": "smith", "email": "smith.john@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-09-24", "time": "13:48:00", "guest_count": 3, "vip": false}}, {"model": "api.tablebooking", "pk": 11, "fields": {"fullname": "", "email": "", "owner": 14, "phone_number": "+447403753994", "date": "2020-09-27", "time": "19:27:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 12, "fields": {"fullname": "brice", "email": "marthe.ekoule@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-10-05", "time": "12:25:00", "guest_count": 3, "vip": false}}, {"model": "api.tablebooking", "pk": 13, "fields": {"fullname": "", "email": "", "owner": 6, "phone_number": "+447403753994", "date": "2020-10-22", "time": "12:00:00", "guest_count": 3, "vip": false}}, {"model": "api.tablebooking", "pk": 14, "fields": {"fullname": "willy dubois", "email": "willy.dubois@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-10-26", "time": "13:49:00", "guest_count": 3, "vip": false}}, {"model": "api.tablebooking", "pk": 15, "fields": {"fullname": "willy dubois", "email": "willy.dubois@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-10-31", "time": "19:50:00", "guest_count": 4, "vip": false}}, {"model": "api.tablebooking", "pk": 16, "fields": {"fullname": "stephanie water", "email": "stephanie.water@gamil.com", "owner": 1, "phone_number": "+447403753994", "date": "2020-11-07", "time": "19:35:00", "guest_count": 4, "vip": false}}, {"model": "api.tablebooking", "pk": 17, "fields": {"fullname": "stephanie water", "email": "stephanie.water@gmail.com", "owner": 1, "phone_number": "+447403753994", "date": "2020-10-24", "time": "13:37:00", "guest_count": 6, "vip": false}}, {"model": "api.tablebooking", "pk": 18, "fields": {"fullname": "stephanie water", "email": "stepahnie.water@gmail.com", "owner": 1, "phone_number": "+447403753994", "date": "2020-10-23", "time": "19:38:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 19, "fields": {"fullname": "joanne bill", "email": "joanne.bill@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-10-19", "time": "14:38:00", "guest_count": 2, "vip": true}}, {"model": "api.tablebooking", "pk": 20, "fields": {"fullname": "john white", "email": "john.white@gmail.com", "owner": null, "phone_number": "+447403753994", "date": "2020-10-19", "time": "19:12:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 21, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "date": "2020-10-19", "time": "20:16:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 22, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "date": "2020-10-26", "time": "14:16:00", "guest_count": 2, "vip": false}}, {"model": "api.tablebooking", "pk": 23, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "date": "2020-10-31", "time": "20:16:00", "guest_count": 4, "vip": false}}, {"model": "api.tablebooking", "pk": 24, "fields": {"fullname": "", "email": "", "owner": 21, "phone_number": "+447403753994", "date": "2020-10-31", "time": "14:27:00", "guest_count": 4, "vip": false}}, {"model": "api.cookinglessonbooking", "pk": 1, "fields": {"fullname": "", "email": "", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-30", "type": "stream", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 2, "fields": {"fullname": "Sydney Sophia Coubard", "email": "sydney.coubard@gmail.com", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-01", "type": "live", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 4, "fields": {"fullname": "", "email": "", "owner": 14, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-09-30", "type": "live", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 5, "fields": {"fullname": "", "email": "", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-11-06", "type": "live", "time": "morning"}}, {"model": "api.cookinglessonbooking", "pk": 6, "fields": {"fullname": "Marthe Coubard", "email": "marthe.ekoule@gmail.com", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-17", "type": "stream", "time": "morning"}}, {"model": "api.cookinglessonbooking", "pk": 7, "fields": {"fullname": "brice", "email": "marthe.ekoule@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-05", "type": "stream", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 8, "fields": {"fullname": "willy dubois", "email": "willy.dubois@gmail.com", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-17", "type": "stream", "time": "morning"}}, {"model": "api.cookinglessonbooking", "pk": 9, "fields": {"fullname": "joanne bill", "email": "joanne.bill@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-14", "type": "stream", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 10, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-17", "type": "live", "time": "afternoon"}}, {"model": "api.cookinglessonbooking", "pk": 11, "fields": {"fullname": "", "email": "", "owner": 21, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-24", "type": "stream", "time": "morning"}}, {"model": "api.eventprebooking", "pk": 1, "fields": {"fullname": "", "email": "", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-23", "time": "16:08:00"}}, {"model": "api.eventprebooking", "pk": 2, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-11", "time": "17:42:00"}}, {"model": "api.eventprebooking", "pk": 3, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-10", "time": "15:24:00"}}, {"model": "api.eventprebooking", "pk": 4, "fields": {"fullname": "Sydney Sophia Coubard", "email": "sydney.coubard@gmail.com", "owner": 2, "phone_number": "+447403753994", "address": "12 Kent Way", "date": "2020-10-17", "time": "14:00:00"}}, {"model": "api.eventprebooking", "pk": 5, "fields": {"fullname": "", "email": "", "owner": 2, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-09", "time": "16:51:00"}}, {"model": "api.eventprebooking", "pk": 6, "fields": {"fullname": "", "email": "", "owner": 14, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-16", "time": "14:29:00"}}, {"model": "api.eventprebooking", "pk": 7, "fields": {"fullname": "brice", "email": "marthe.ekoule@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-16", "time": "15:30:00"}}, {"model": "api.eventprebooking", "pk": 8, "fields": {"fullname": "willy dubois", "email": "willy.dubois@gmail.com", "owner": 1, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-30", "time": "14:22:00"}}, {"model": "api.eventprebooking", "pk": 9, "fields": {"fullname": "stepahnie water", "email": "stephanie.watre@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-23", "time": "14:55:00"}}, {"model": "api.eventprebooking", "pk": 10, "fields": {"fullname": "joanne bill", "email": "joanne.bill@gmail.com", "owner": null, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-24", "time": "15:44:00"}}, {"model": "api.eventprebooking", "pk": 11, "fields": {"fullname": "", "email": "", "owner": 20, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-25", "time": "16:17:00"}}, {"model": "api.eventprebooking", "pk": 12, "fields": {"fullname": "", "email": "", "owner": 21, "phone_number": "+447403753994", "address": "12 kent way", "date": "2020-10-30", "time": "15:25:00"}}, {"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2020-09-20T18:17:21.577Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "Claude", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2020-09-20T18:17:21.590Z", "user": 1, "content_type": 10, "object_id": "4", "object_repr": "toto", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2020-09-26T16:48:25.640Z", "user": 1, "content_type": 10, "object_id": "6", "object_repr": "willy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2020-09-26T16:51:18.852Z", "user": 1, "content_type": 10, "object_id": "6", "object_repr": "willy", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2020-09-26T16:51:57.287Z", "user": 1, "content_type": 10, "object_id": "7", "object_repr": "stephanie", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2020-09-26T16:58:47.184Z", "user": 1, "content_type": 10, "object_id": "7", "object_repr": "stephanie", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2020-09-26T17:01:44.764Z", "user": 1, "content_type": 10, "object_id": "8", "object_repr": "brice", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2020-09-26T17:07:25.954Z", "user": 1, "content_type": 10, "object_id": "8", "object_repr": "brice", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2020-09-26T17:09:41.986Z", "user": 1, "content_type": 10, "object_id": "9", "object_repr": "rose", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2020-09-26T17:10:39.033Z", "user": 1, "content_type": 10, "object_id": "9", "object_repr": "rose", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2020-09-26T17:11:06.375Z", "user": 1, "content_type": 10, "object_id": "8", "object_repr": "brice", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2020-09-26T17:11:21.622Z", "user": 1, "content_type": 10, "object_id": "9", "object_repr": "rose", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2020-09-26T17:12:36.663Z", "user": 1, "content_type": 10, "object_id": "10", "object_repr": "sophie", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2020-09-26T17:13:39.266Z", "user": 1, "content_type": 10, "object_id": "10", "object_repr": "sophie", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2020-09-26T17:14:39.980Z", "user": 1, "content_type": 10, "object_id": "11", "object_repr": "georges", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2020-09-26T17:15:32.512Z", "user": 1, "content_type": 10, "object_id": "11", "object_repr": "georges", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2020-09-26T17:17:52.860Z", "user": 1, "content_type": 10, "object_id": "12", "object_repr": "michael", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2020-09-26T17:19:05.195Z", "user": 1, "content_type": 10, "object_id": "12", "object_repr": "michael", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2020-09-26T17:20:04.185Z", "user": 1, "content_type": 10, "object_id": "13", "object_repr": "laura", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2020-09-26T17:20:56.620Z", "user": 1, "content_type": 10, "object_id": "13", "object_repr": "laura", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2020-09-26T17:22:16.112Z", "user": 1, "content_type": 10, "object_id": "13", "object_repr": "laura", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2020-09-26T17:23:02.951Z", "user": 1, "content_type": 10, "object_id": "14", "object_repr": "adrian", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2020-09-26T17:23:42.013Z", "user": 1, "content_type": 10, "object_id": "14", "object_repr": "adrian", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2020-10-02T00:11:51.747Z", "user": 1, "content_type": 10, "object_id": "13", "object_repr": "laura", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2020-10-02T00:12:32.893Z", "user": 1, "content_type": 10, "object_id": "7", "object_repr": "stephanie", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2020-10-02T00:12:47.562Z", "user": 1, "content_type": 10, "object_id": "6", "object_repr": "willy", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add delivery order", "content_type": 1, "codename": "add_deliveryorder"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change delivery order", "content_type": 1, "codename": "change_deliveryorder"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete delivery order", "content_type": 1, "codename": "delete_deliveryorder"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view delivery order", "content_type": 1, "codename": "view_deliveryorder"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add dish", "content_type": 2, "codename": "add_dish"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change dish", "content_type": 2, "codename": "change_dish"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete dish", "content_type": 2, "codename": "delete_dish"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view dish", "content_type": 2, "codename": "view_dish"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add table booking", "content_type": 3, "codename": "add_tablebooking"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change table booking", "content_type": 3, "codename": "change_tablebooking"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete table booking", "content_type": 3, "codename": "delete_tablebooking"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view table booking", "content_type": 3, "codename": "view_tablebooking"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add event pre booking", "content_type": 4, "codename": "add_eventprebooking"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change event pre booking", "content_type": 4, "codename": "change_eventprebooking"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete event pre booking", "content_type": 4, "codename": "delete_eventprebooking"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view event pre booking", "content_type": 4, "codename": "view_eventprebooking"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add delivery order item", "content_type": 5, "codename": "add_deliveryorderitem"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change delivery order item", "content_type": 5, "codename": "change_deliveryorderitem"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete delivery order item", "content_type": 5, "codename": "delete_deliveryorderitem"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view delivery order item", "content_type": 5, "codename": "view_deliveryorderitem"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add cooking lesson booking", "content_type": 6, "codename": "add_cookinglessonbooking"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change cooking lesson booking", "content_type": 6, "codename": "change_cookinglessonbooking"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete cooking lesson booking", "content_type": 6, "codename": "delete_cookinglessonbooking"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view cooking lesson booking", "content_type": 6, "codename": "view_cookinglessonbooking"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add log entry", "content_type": 7, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change log entry", "content_type": 7, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete log entry", "content_type": 7, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view log entry", "content_type": 7, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add permission", "content_type": 8, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change permission", "content_type": 8, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete permission", "content_type": 8, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view permission", "content_type": 8, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add group", "content_type": 9, "codename": "add_group"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change group", "content_type": 9, "codename": "change_group"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete group", "content_type": 9, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view group", "content_type": 9, "codename": "view_group"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add user", "content_type": 10, "codename": "add_user"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change user", "content_type": 10, "codename": "change_user"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete user", "content_type": 10, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view user", "content_type": 10, "codename": "view_user"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add content type", "content_type": 11, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change content type", "content_type": 11, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete content type", "content_type": 11, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view content type", "content_type": 11, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add session", "content_type": 12, "codename": "add_session"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change session", "content_type": 12, "codename": "change_session"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete session", "content_type": 12, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view session", "content_type": 12, "codename": "view_session"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=", "last_login": "2020-10-11T15:29:47.488Z", "is_superuser": true, "username": "marthe", "first_name": "Marthe", "last_name": "Coubard", "email": "marthe.ekoule@gmail.com", "is_staff": true, "is_active": true, "date_joined": "2020-09-13T22:47:27.902Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$216000$6paqXmQRE1R0$HaowMZwpiHF3vcPzmE4eSXH+L3gqBVLwDtiJb3OeuOg=", "last_login": "2020-10-11T15:29:59.346Z", "is_superuser": false, "username": "Sydney", "first_name": "Sydney Sophia", "last_name": "Coubard", "email": "sydney.coubard@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-20T16:53:03.151Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 3, "fields": {"password": "pbkdf2_sha256$216000$sK5UQzdtga0u$38Rh04eXJJudXwG8u8+kXqCLAdqVPeo2z2Vt5uzbjWk=", "last_login": "2020-09-20T18:16:42.007Z", "is_superuser": false, "username": "Vincent", "first_name": "Vincent", "last_name": "Coubard", "email": "vincent.coubard@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-20T18:12:03.144Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$216000$NKAiu9fEXx7i$dDGV9tEWhcq8BwY5GvNetgYeRZNWJIovvjZKG+vfJwM=", "last_login": "2020-10-10T20:50:51.324Z", "is_superuser": true, "username": "willy", "first_name": "willy", "last_name": "dubois", "email": "willy.dubois@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T16:48:25Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 7, "fields": {"password": "pbkdf2_sha256$216000$0gmT89Cvwtfq$VJslFPedRwprP8m0Mh/mlzWa31zDM4SO3Q/Es8VXLVE=", "last_login": null, "is_superuser": true, "username": "stephanie", "first_name": "stephanie", "last_name": "water", "email": "stephanie.water@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T16:51:57Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 8, "fields": {"password": "pbkdf2_sha256$216000$B9kzu20mBQBM$t518n0XENQsTxJ9xdYilrFa8Zlzw6js5/KmfXtGfONs=", "last_login": "2020-10-02T00:32:10.762Z", "is_superuser": false, "username": "brice", "first_name": "brice", "last_name": "chapel", "email": "brice.chapet@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:01:44Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 9, "fields": {"password": "pbkdf2_sha256$216000$ifIdPD0jstK3$Kj6Ea1zXLyHq7WYR6E1+GMeYmcVLCWRDR55Rn44hajY=", "last_login": "2020-10-02T00:01:15.879Z", "is_superuser": false, "username": "rose", "first_name": "rose", "last_name": "white", "email": "rose.white@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:09:41Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 10, "fields": {"password": "pbkdf2_sha256$216000$DzyX1hPz8i4G$gUv/bhXBeUmYvlpJpS5kvHQ58Ko22xDZkds7nYkgGS4=", "last_login": null, "is_superuser": false, "username": "sophie", "first_name": "sophie", "last_name": "smith", "email": "sophie.smith@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:12:36Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 11, "fields": {"password": "pbkdf2_sha256$216000$c6OIA4gi1QMW$n2BeXFEGw6GZCsXassFJYS9YFn/Aisumc0FMpbpa7kA=", "last_login": null, "is_superuser": false, "username": "georges", "first_name": "georges", "last_name": "wasp", "email": "georges.wasp@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:14:39Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 12, "fields": {"password": "pbkdf2_sha256$216000$Mzb8vCnR9WIM$Gj7QB2FjctyqV298CwBCSyLxMwV+4WeRC/bZ5d1JR2U=", "last_login": null, "is_superuser": false, "username": "michael", "first_name": "michael", "last_name": "toto", "email": "michael.toto@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:17:52Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 13, "fields": {"password": "pbkdf2_sha256$216000$MoX4rJfvaaT0$H67PHy1o3NR7yl+Mf0U0qOHkQVuAIRvALd4JaWc0ksE=", "last_login": null, "is_superuser": true, "username": "laura", "first_name": "laura", "last_name": "stone", "email": "laura.stone@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:20:03Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 14, "fields": {"password": "pbkdf2_sha256$216000$vSgoQdvizjYF$Elcofzsq2FE8UFe75e7YdZKbHbtGqX9cEQHdlTVW6oE=", "last_login": "2020-09-26T17:26:58.906Z", "is_superuser": false, "username": "adrian", "first_name": "adrian", "last_name": "pascal", "email": "adrian.pascal@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-09-26T17:23:02Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 15, "fields": {"password": "pbkdf2_sha256$216000$S1bPLCtNMhk2$qlfzPeASdYEnpHb9utZecnng5bIfr/R0ki/iEHaaHRU=", "last_login": "2020-10-10T20:19:09.930Z", "is_superuser": false, "username": "hjhrjke", "first_name": "ghjre", "last_name": "ghfrek", "email": "hgjrhejk@hgrjhek.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-10T20:19:09.458Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 16, "fields": {"password": "pbkdf2_sha256$216000$6q0A65zMAgiH$R86hwzUVpEzmVQV2crH6p3SYos4FC0ruTFpBNv1gXVg=", "last_login": "2020-10-10T21:28:23.371Z", "is_superuser": false, "username": "joanne", "first_name": "joanne", "last_name": "bill", "email": "joanne.bill@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-10T20:47:20.424Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 17, "fields": {"password": "pbkdf2_sha256$216000$nfeMc655OUSE$2xtSR4HV/4JtMtxnifSMJXj9gYGLqv3CtfGPohkaUok=", "last_login": "2020-10-10T21:24:44.091Z", "is_superuser": false, "username": "Toto", "first_name": "hgvrehi", "last_name": "jvhrevgre", "email": "hgjrheikuh@bhgjfkd.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-10T21:24:43.589Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 18, "fields": {"password": "pbkdf2_sha256$216000$D4SgEEWFARDZ$rNc3tHtCQxub9ASBYFmHM/y0Xp4rhh1e8VO65UbFy6o=", "last_login": "2020-10-10T21:26:20.253Z", "is_superuser": false, "username": "hjkghrtek", "first_name": "jgrkhnh", "last_name": "ljrhev krevlre", "email": "hjghrjek@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-10T21:26:19.784Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 19, "fields": {"password": "pbkdf2_sha256$216000$APuEA4HQz1ob$FsQdboWRwVUxQYux0Sm0q/BnlugzmSmW/sTlENH4RUU=", "last_login": "2020-10-10T21:27:21.454Z", "is_superuser": false, "username": "hgfrvkvrkje", "first_name": "hgvrjk jvre", "last_name": "vjrhejkvr ejk", "email": "bhrjk@hjkrhhjvrgke.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-10T21:27:20.967Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 20, "fields": {"password": "pbkdf2_sha256$216000$K0PKgUCNQ4La$+htJVZSLLU7xDt1Jupd6680w8HATvk0bYGYhdVlLzio=", "last_login": "2020-10-11T15:15:09.287Z", "is_superuser": false, "username": "john", "first_name": "john", "last_name": "white", "email": "john.white@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-11T15:15:08.827Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 21, "fields": {"password": "pbkdf2_sha256$216000$LTV4QG5sMEvp$glCFAdcbkYKSJ1/y7P8CzBt7jTCCpJ/W8vjQsMkDbM8=", "last_login": "2020-10-11T15:24:35.101Z", "is_superuser": false, "username": "brian", "first_name": "brian", "last_name": "miller", "email": "brian.miller@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2020-10-11T15:24:34.653Z", "groups": [], "user_permissions": []}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "api", "model": "deliveryorder"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "api", "model": "dish"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "api", "model": "tablebooking"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "api", "model": "eventprebooking"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "api", "model": "deliveryorderitem"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "api", "model": "cookinglessonbooking"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "sessions.session", "pk": "cuidgevco0jrahuxqzy8jchpxxyj5xlh", "fields": {"session_data": ".eJxVjDsOwjAQBe_iGllef2NK-pzBWn8WB5AjxUmFuDuylALaNzPvzQIeew1HL1tYMrsyYJffLWJ6ljZAfmC7rzytbd-WyIfCT9r5vObyup3u30HFXkcNKAUkXTJGq6zxZLJD7ZWBNHnhRXGR5GSMpkQueStASoUEChEUEPt8Ad6RN5Q:1kKpTU:dxDsqEaSxa4jr_5gkIaZgM6T8EPwH_V-fGV_KZNziYk", "expire_date": "2020-10-06T21:05:20.473Z"}}, {"model": "sessions.session", "pk": "jdmatbedx5c85xtmdmonkhknwhjjvuj1", "fields": {"session_data": ".eJxVjMsOwiAQRf-FtSGAPF267zeQgRmkamhS2pXx35WkC13ee07Oi0XYtxr3TmuckV2YYqffL0F-UBsA79BuC89L29Y58aHwg3Y-LUjP6-H-BSr0OrIZQwkOQGppiwLQpEoS2qM23hYRvtOhL8lZdOlM0geVrDAmEyiymb0_9yk4cA:1kRdIN:eB0wQ49Km8-CM1n4kLAl2gQ_wLVDChYroquY2qaFqEw", "expire_date": "2020-10-25T15:29:59.356Z"}}]
+[
+  {
+    "model": "api.dish",
+    "pk": 5,
+    "fields": {
+      "title": "carre d'agneau de lait",
+      "price": 30.0,
+      "description": "leg of lamps, garlic, salt, pepper, dried, fresh rosemary, olive oil",
+      "type": "special",
+      "day": "MO",
+      "serving_time": "lunch",
+      "image": "dishes/images/618e38c4-5724-4fcb-ba42-3a953b3f1277.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 6,
+    "fields": {
+      "title": "gigot d'agneau",
+      "price": 35.0,
+      "description": "salt, pepper, olive oil, garlic, femme",
+      "type": "special",
+      "day": "TU",
+      "serving_time": "lunch",
+      "image": "dishes/images/0878ac42-3cc8-4faa-92b0-594a69b82b3c.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 7,
+    "fields": {
+      "title": "chicken steak",
+      "price": 25.0,
+      "description": "chicken breats, ginger, paste, garlic paste, onions, black peper powder, coriander leaves, salt, oil",
+      "type": "special",
+      "day": "WE",
+      "serving_time": "lunch",
+      "image": "dishes/images/62406fb9-bf40-4a43-9efc-c9e42e4cf8a4.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 8,
+    "fields": {
+      "title": "legume smoky chicken",
+      "price": 25.0,
+      "description": "thym, salt, smoky chicken, oil, pepper, soja sauce",
+      "type": "special",
+      "day": "TH",
+      "serving_time": "lunch",
+      "image": "dishes/images/aab543e3-ec79-425f-b93c-729d544a2b91.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 9,
+    "fields": {
+      "title": "saint jacques shell",
+      "price": 45.0,
+      "description": "butter, salt, pepper, garlic, saint jacques shell",
+      "type": "special",
+      "day": "FR",
+      "serving_time": "lunch",
+      "image": "dishes/images/36ded60c-e037-4e3e-9423-9b4a7d45a92c.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 10,
+    "fields": {
+      "title": "magret de canard",
+      "price": 45.0,
+      "description": "salt, peper,garlic",
+      "type": "special",
+      "day": "SA",
+      "serving_time": "lunch",
+      "image": "dishes/images/1e38657d-d9ad-4117-8162-abd240aa3bb1.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 11,
+    "fields": {
+      "title": "pave de saumon a la creme fraiche",
+      "price": 35.0,
+      "description": "salmon, onion, olive oil, pepper, creme fraiche, butter, salt, white wine",
+      "type": "special",
+      "day": "SU",
+      "serving_time": "lunch",
+      "image": "dishes/images/a9acd777-51ac-4c92-a8b3-32eded46307d.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 12,
+    "fields": {
+      "title": "anguilla de la veille de noel",
+      "price": 25.0,
+      "description": "carrotte, garlic, onions, pepper, butter, shallot, anguilla",
+      "type": "special",
+      "day": "MO",
+      "serving_time": "dinner",
+      "image": "dishes/images/b4e158b6-9c7b-4f09-a16b-2b6cf9cf49d5.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 13,
+    "fields": {
+      "title": "brochette d'anguilles",
+      "price": 25.0,
+      "description": "anguilla, salt, onions, oil,pepper, skewer",
+      "type": "special",
+      "day": "TU",
+      "serving_time": "dinner",
+      "image": "dishes/images/76f4b583-74f7-4a13-93dd-d8c7b719ad66.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 14,
+    "fields": {
+      "title": "aubergines aux crevettes",
+      "price": 25.0,
+      "description": "aubergine, prawn, pepper, salt, white wine, onions, garlic",
+      "type": "special",
+      "day": "WE",
+      "serving_time": "dinner",
+      "image": "dishes/images/04694103-2508-4441-b4bf-2fecc0a67949.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 15,
+    "fields": {
+      "title": "veau aux haricots",
+      "price": 30.0,
+      "description": "bean, pepper, onions, salt, oil, tomato, calf",
+      "type": "special",
+      "day": "TH",
+      "serving_time": "dinner",
+      "image": "dishes/images/e1ff7bf8-b137-4263-802d-0918a775e967.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 16,
+    "fields": {
+      "title": "rognon de veau a la moutarde",
+      "price": 30.0,
+      "description": "calf kidney, salt, oil, pepper, moutard, garlic, creme fraiche, butter, white wine",
+      "type": "special",
+      "day": "FR",
+      "serving_time": "dinner",
+      "image": "dishes/images/91b70b82-9ba1-4d1b-b94c-168b75863f9c.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 17,
+    "fields": {
+      "title": "petit roti de boeuf au four",
+      "price": 35.0,
+      "description": "beef, oil, pepper, salt, garlic, thym,",
+      "type": "special",
+      "day": "SA",
+      "serving_time": "dinner",
+      "image": "dishes/images/377dc46c-e6e6-4277-b8fb-d3dcd341088d.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 18,
+    "fields": {
+      "title": "bifteck beure maitre d'hotel",
+      "price": 35.0,
+      "description": "butter, steak, salt, parsley, lettuce, lemon, pepper",
+      "type": "special",
+      "day": "SU",
+      "serving_time": "dinner",
+      "image": "dishes/images/15d6bdd9-8561-4207-8fc8-ba7a2d7d70b7.jpg"
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 19,
+    "fields": {
+      "title": "ceasar salade a la crevette",
+      "price": 15.0,
+      "description": "lettuce, egg, moutard, bread, parsley, grated parmesan, onions, salt, pepper, oil, lemon",
+      "type": "starter",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 20,
+    "fields": {
+      "title": "salade Grecque traditionnelle",
+      "price": 12.0,
+      "description": "lettuce, oil, salt, pepper, onions, lemon, tomato, green pepper",
+      "type": "starter",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 21,
+    "fields": {
+      "title": "salade aux pommes plus lardons",
+      "price": 11.0,
+      "description": "lettuce, potato, bacon, onions, salt, vinegar",
+      "type": "starter",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 22,
+    "fields": {
+      "title": "salade de lentilles facile",
+      "price": 10.0,
+      "description": "lens, salt, pepper, parsley, lettuce,onions, oil",
+      "type": "starter",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 23,
+    "fields": {
+      "title": "calmard marines, poels",
+      "price": 35.0,
+      "description": "squids, butter, salt, pepper, onions",
+      "type": "main",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 24,
+    "fields": {
+      "title": "burger",
+      "price": 20.0,
+      "description": "steak, salt, pepper, oil, bread burger,butter",
+      "type": "main",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 25,
+    "fields": {
+      "title": "steak de veau",
+      "price": 40.0,
+      "description": "steak, butter, pepper, oil, onion,",
+      "type": "main",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 26,
+    "fields": {
+      "title": "brochette de lamps",
+      "price": 30.0,
+      "description": "lamb, pepper, green pepper, oil, onion, garlic",
+      "type": "main",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 27,
+    "fields": {
+      "title": "Frites",
+      "price": 3.0,
+      "description": "Potato",
+      "type": "side",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 28,
+    "fields": {
+      "title": "Pasta",
+      "price": 10.0,
+      "description": "Wheat flour, water",
+      "type": "side",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 29,
+    "fields": {
+      "title": "Gratin de pomme de terre",
+      "price": 12.0,
+      "description": "Potato, Cream",
+      "type": "side",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 30,
+    "fields": {
+      "title": "Rice",
+      "price": 10.0,
+      "description": "Rice",
+      "type": "side",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 31,
+    "fields": {
+      "title": "Vanilla ice cream",
+      "price": 10.0,
+      "description": "Ice cream, vanilla and peanuts",
+      "type": "dessert",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 32,
+    "fields": {
+      "title": "Chocolate cake",
+      "price": 12.0,
+      "description": "Chocolate, Egg yolk, Wheat floor",
+      "type": "dessert",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 33,
+    "fields": {
+      "title": "Apple pie",
+      "price": 11.0,
+      "description": "Apple, Wheat floor, egg",
+      "type": "dessert",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.dish",
+    "pk": 34,
+    "fields": {
+      "title": "Creme brulee",
+      "price": 10.0,
+      "description": "Egg, sugar",
+      "type": "dessert",
+      "day": "*",
+      "serving_time": "*",
+      "image": ""
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 1,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-22",
+      "time": "19:10:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 4,
+    "fields": {
+      "fullname": "toto",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-09",
+      "time": "14:51:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 5,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 14,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-28",
+      "time": "14:27:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 6,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-26",
+      "time": "20:34:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 7,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-30",
+      "time": "19:59:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 8,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-30",
+      "time": "20:00:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 9,
+    "fields": {
+      "fullname": "Marthe Coubard",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 Kent way",
+      "date": "2020-10-10",
+      "time": "19:21:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 10,
+    "fields": {
+      "fullname": "brice",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-05",
+      "time": "15:26:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 11,
+    "fields": {
+      "fullname": "willy dubois",
+      "email": "willy.dubois@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-26",
+      "time": "14:51:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 12,
+    "fields": {
+      "fullname": "stephanie water",
+      "email": "stephanie.water@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-19",
+      "time": "14:47:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 13,
+    "fields": {
+      "fullname": "stephanie water",
+      "email": "stephanie.water@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-19",
+      "time": "15:52:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 14,
+    "fields": {
+      "fullname": "joanne bill",
+      "email": "joanne.bill@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-30",
+      "time": "20:40:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 15,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-12",
+      "time": "19:15:00"
+    }
+  },
+  {
+    "model": "api.deliveryorder",
+    "pk": 16,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 21,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-11-01",
+      "time": "14:25:00"
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 1,
+    "fields": {
+      "dish": 25,
+      "count": 2,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 22,
+    "fields": {
+      "dish": 9,
+      "count": 6,
+      "order": 4
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 23,
+    "fields": {
+      "dish": 34,
+      "count": 2,
+      "order": 4
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 24,
+    "fields": {
+      "dish": 27,
+      "count": 3,
+      "order": 4
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 30,
+    "fields": {
+      "dish": 19,
+      "count": 5,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 31,
+    "fields": {
+      "dish": 24,
+      "count": 2,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 32,
+    "fields": {
+      "dish": 27,
+      "count": 4,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 33,
+    "fields": {
+      "dish": 31,
+      "count": 3,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 35,
+    "fields": {
+      "dish": 21,
+      "count": 8,
+      "order": 6
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 36,
+    "fields": {
+      "dish": 30,
+      "count": 3,
+      "order": 6
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 38,
+    "fields": {
+      "dish": 29,
+      "count": 2,
+      "order": 7
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 39,
+    "fields": {
+      "dish": 24,
+      "count": 2,
+      "order": 8
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 40,
+    "fields": {
+      "dish": 21,
+      "count": 4,
+      "order": 8
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 41,
+    "fields": {
+      "dish": 33,
+      "count": 2,
+      "order": 8
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 49,
+    "fields": {
+      "dish": 28,
+      "count": 2,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 50,
+    "fields": {
+      "dish": 29,
+      "count": 2,
+      "order": 5
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 63,
+    "fields": {
+      "dish": 28,
+      "count": 4,
+      "order": 9
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 64,
+    "fields": {
+      "dish": 33,
+      "count": 3,
+      "order": 9
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 66,
+    "fields": {
+      "dish": 17,
+      "count": 1,
+      "order": 9
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 67,
+    "fields": {
+      "dish": 25,
+      "count": 3,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 68,
+    "fields": {
+      "dish": 25,
+      "count": 3,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 69,
+    "fields": {
+      "dish": 27,
+      "count": 3,
+      "order": 7
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 70,
+    "fields": {
+      "dish": 19,
+      "count": 3,
+      "order": 10
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 71,
+    "fields": {
+      "dish": 24,
+      "count": 3,
+      "order": 10
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 72,
+    "fields": {
+      "dish": 31,
+      "count": 3,
+      "order": 10
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 73,
+    "fields": {
+      "dish": 20,
+      "count": 4,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 74,
+    "fields": {
+      "dish": 25,
+      "count": 1,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 75,
+    "fields": {
+      "dish": 26,
+      "count": 4,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 76,
+    "fields": {
+      "dish": 30,
+      "count": 4,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 77,
+    "fields": {
+      "dish": 32,
+      "count": 4,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 78,
+    "fields": {
+      "dish": 33,
+      "count": 3,
+      "order": 11
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 79,
+    "fields": {
+      "dish": 23,
+      "count": 3,
+      "order": 12
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 80,
+    "fields": {
+      "dish": 19,
+      "count": 3,
+      "order": 12
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 84,
+    "fields": {
+      "dish": 19,
+      "count": 2,
+      "order": 14
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 85,
+    "fields": {
+      "dish": 31,
+      "count": 2,
+      "order": 14
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 86,
+    "fields": {
+      "dish": 24,
+      "count": 2,
+      "order": 14
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 87,
+    "fields": {
+      "dish": 27,
+      "count": 2,
+      "order": 14
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 94,
+    "fields": {
+      "dish": 31,
+      "count": 4,
+      "order": 13
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 95,
+    "fields": {
+      "dish": 21,
+      "count": 4,
+      "order": 13
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 96,
+    "fields": {
+      "dish": 24,
+      "count": 4,
+      "order": 13
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 97,
+    "fields": {
+      "dish": 33,
+      "count": 2,
+      "order": 9
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 99,
+    "fields": {
+      "dish": 19,
+      "count": 2,
+      "order": 15
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 100,
+    "fields": {
+      "dish": 23,
+      "count": 2,
+      "order": 15
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 101,
+    "fields": {
+      "dish": 31,
+      "count": 2,
+      "order": 15
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 102,
+    "fields": {
+      "dish": 12,
+      "count": 2,
+      "order": 15
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 103,
+    "fields": {
+      "dish": 19,
+      "count": 4,
+      "order": 16
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 104,
+    "fields": {
+      "dish": 23,
+      "count": 4,
+      "order": 16
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 105,
+    "fields": {
+      "dish": 31,
+      "count": 4,
+      "order": 16
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 106,
+    "fields": {
+      "dish": 27,
+      "count": 4,
+      "order": 16
+    }
+  },
+  {
+    "model": "api.deliveryorderitem",
+    "pk": 107,
+    "fields": {
+      "dish": 11,
+      "count": 4,
+      "order": 16
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 8,
+    "fields": {
+      "fullname": "Sydney Sophia Coubard",
+      "email": "sydney.coubard@gmail.com",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "date": "2020-09-26",
+      "time": "14:12:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 9,
+    "fields": {
+      "fullname": "Marthe Coubard",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "date": "2020-10-08",
+      "time": "18:08:00",
+      "guest_count": 3,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 10,
+    "fields": {
+      "fullname": "smith",
+      "email": "smith.john@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-09-24",
+      "time": "13:48:00",
+      "guest_count": 3,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 11,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 14,
+      "phone_number": "+447403753994",
+      "date": "2020-09-27",
+      "time": "19:27:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 12,
+    "fields": {
+      "fullname": "brice",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-10-05",
+      "time": "12:25:00",
+      "guest_count": 3,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 13,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 6,
+      "phone_number": "+447403753994",
+      "date": "2020-10-22",
+      "time": "12:00:00",
+      "guest_count": 3,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 14,
+    "fields": {
+      "fullname": "willy dubois",
+      "email": "willy.dubois@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-10-26",
+      "time": "13:49:00",
+      "guest_count": 3,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 15,
+    "fields": {
+      "fullname": "willy dubois",
+      "email": "willy.dubois@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-10-31",
+      "time": "19:50:00",
+      "guest_count": 4,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 16,
+    "fields": {
+      "fullname": "stephanie water",
+      "email": "stephanie.water@gamil.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "date": "2020-11-07",
+      "time": "19:35:00",
+      "guest_count": 4,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 17,
+    "fields": {
+      "fullname": "stephanie water",
+      "email": "stephanie.water@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "date": "2020-10-24",
+      "time": "13:37:00",
+      "guest_count": 6,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 18,
+    "fields": {
+      "fullname": "stephanie water",
+      "email": "stepahnie.water@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "date": "2020-10-23",
+      "time": "19:38:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 19,
+    "fields": {
+      "fullname": "joanne bill",
+      "email": "joanne.bill@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-10-19",
+      "time": "14:38:00",
+      "guest_count": 2,
+      "vip": true
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 20,
+    "fields": {
+      "fullname": "john white",
+      "email": "john.white@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "date": "2020-10-19",
+      "time": "19:12:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 21,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "date": "2020-10-19",
+      "time": "20:16:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 22,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "date": "2020-10-26",
+      "time": "14:16:00",
+      "guest_count": 2,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 23,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "date": "2020-10-31",
+      "time": "20:16:00",
+      "guest_count": 4,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.tablebooking",
+    "pk": 24,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 21,
+      "phone_number": "+447403753994",
+      "date": "2020-10-31",
+      "time": "14:27:00",
+      "guest_count": 4,
+      "vip": false
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 1,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-30",
+      "type": "stream",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 2,
+    "fields": {
+      "fullname": "Sydney Sophia Coubard",
+      "email": "sydney.coubard@gmail.com",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-01",
+      "type": "live",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 4,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 14,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-09-30",
+      "type": "live",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 5,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-11-06",
+      "type": "live",
+      "time": "morning"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 6,
+    "fields": {
+      "fullname": "Marthe Coubard",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-17",
+      "type": "stream",
+      "time": "morning"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 7,
+    "fields": {
+      "fullname": "brice",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-05",
+      "type": "stream",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 8,
+    "fields": {
+      "fullname": "willy dubois",
+      "email": "willy.dubois@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-17",
+      "type": "stream",
+      "time": "morning"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 9,
+    "fields": {
+      "fullname": "joanne bill",
+      "email": "joanne.bill@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-14",
+      "type": "stream",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 10,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-17",
+      "type": "live",
+      "time": "afternoon"
+    }
+  },
+  {
+    "model": "api.cookinglessonbooking",
+    "pk": 11,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 21,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-24",
+      "type": "stream",
+      "time": "morning"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 1,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-23",
+      "time": "16:08:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 2,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-11",
+      "time": "17:42:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 3,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-10",
+      "time": "15:24:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 4,
+    "fields": {
+      "fullname": "Sydney Sophia Coubard",
+      "email": "sydney.coubard@gmail.com",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 Kent Way",
+      "date": "2020-10-17",
+      "time": "14:00:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 5,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 2,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-09",
+      "time": "16:51:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 6,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 14,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-16",
+      "time": "14:29:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 7,
+    "fields": {
+      "fullname": "brice",
+      "email": "marthe.ekoule@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-16",
+      "time": "15:30:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 8,
+    "fields": {
+      "fullname": "willy dubois",
+      "email": "willy.dubois@gmail.com",
+      "owner": 1,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-30",
+      "time": "14:22:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 9,
+    "fields": {
+      "fullname": "stepahnie water",
+      "email": "stephanie.watre@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-23",
+      "time": "14:55:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 10,
+    "fields": {
+      "fullname": "joanne bill",
+      "email": "joanne.bill@gmail.com",
+      "owner": null,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-24",
+      "time": "15:44:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 11,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 20,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-25",
+      "time": "16:17:00"
+    }
+  },
+  {
+    "model": "api.eventprebooking",
+    "pk": 12,
+    "fields": {
+      "fullname": "",
+      "email": "",
+      "owner": 21,
+      "phone_number": "+447403753994",
+      "address": "12 kent way",
+      "date": "2020-10-30",
+      "time": "15:25:00"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-09-20T18:17:21.577Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Claude",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-09-20T18:17:21.590Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "toto",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-09-26T16:48:25.640Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "willy",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2020-09-26T16:51:18.852Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "willy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2020-09-26T16:51:57.287Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "stephanie",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2020-09-26T16:58:47.184Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "stephanie",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"Staff status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2020-09-26T17:01:44.764Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "brice",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2020-09-26T17:07:25.954Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "brice",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2020-09-26T17:09:41.986Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "rose",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2020-09-26T17:10:39.033Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "rose",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2020-09-26T17:11:06.375Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "brice",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2020-09-26T17:11:21.622Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "rose",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2020-09-26T17:12:36.663Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "sophie",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2020-09-26T17:13:39.266Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "sophie",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2020-09-26T17:14:39.980Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "11",
+      "object_repr": "georges",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2020-09-26T17:15:32.512Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "11",
+      "object_repr": "georges",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2020-09-26T17:17:52.860Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "12",
+      "object_repr": "michael",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2020-09-26T17:19:05.195Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "12",
+      "object_repr": "michael",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2020-09-26T17:20:04.185Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "13",
+      "object_repr": "laura",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2020-09-26T17:20:56.620Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "13",
+      "object_repr": "laura",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2020-09-26T17:22:16.112Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "13",
+      "object_repr": "laura",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2020-09-26T17:23:02.951Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "14",
+      "object_repr": "adrian",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2020-09-26T17:23:42.013Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "14",
+      "object_repr": "adrian",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2020-10-02T00:11:51.747Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "13",
+      "object_repr": "laura",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2020-10-02T00:12:32.893Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "stephanie",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2020-10-02T00:12:47.562Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "willy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\", \"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add delivery order",
+      "content_type": 1,
+      "codename": "add_deliveryorder"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change delivery order",
+      "content_type": 1,
+      "codename": "change_deliveryorder"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete delivery order",
+      "content_type": 1,
+      "codename": "delete_deliveryorder"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view delivery order",
+      "content_type": 1,
+      "codename": "view_deliveryorder"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add dish",
+      "content_type": 2,
+      "codename": "add_dish"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change dish",
+      "content_type": 2,
+      "codename": "change_dish"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete dish",
+      "content_type": 2,
+      "codename": "delete_dish"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view dish",
+      "content_type": 2,
+      "codename": "view_dish"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add table booking",
+      "content_type": 3,
+      "codename": "add_tablebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change table booking",
+      "content_type": 3,
+      "codename": "change_tablebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete table booking",
+      "content_type": 3,
+      "codename": "delete_tablebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view table booking",
+      "content_type": 3,
+      "codename": "view_tablebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add event pre booking",
+      "content_type": 4,
+      "codename": "add_eventprebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change event pre booking",
+      "content_type": 4,
+      "codename": "change_eventprebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete event pre booking",
+      "content_type": 4,
+      "codename": "delete_eventprebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view event pre booking",
+      "content_type": 4,
+      "codename": "view_eventprebooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add delivery order item",
+      "content_type": 5,
+      "codename": "add_deliveryorderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change delivery order item",
+      "content_type": 5,
+      "codename": "change_deliveryorderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete delivery order item",
+      "content_type": 5,
+      "codename": "delete_deliveryorderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view delivery order item",
+      "content_type": 5,
+      "codename": "view_deliveryorderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add cooking lesson booking",
+      "content_type": 6,
+      "codename": "add_cookinglessonbooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change cooking lesson booking",
+      "content_type": 6,
+      "codename": "change_cookinglessonbooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete cooking lesson booking",
+      "content_type": 6,
+      "codename": "delete_cookinglessonbooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view cooking lesson booking",
+      "content_type": 6,
+      "codename": "view_cookinglessonbooking"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 7,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 7,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 7,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 7,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 8,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 8,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 8,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 8,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 9,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 9,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 9,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 9,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 10,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 10,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 10,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 10,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 11,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 11,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 11,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 11,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 12,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 12,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 12,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 12,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-11T15:29:47.488Z",
+      "is_superuser": true,
+      "username": "marthe",
+      "first_name": "Marthe",
+      "last_name": "Coubard",
+      "email": "marthe.ekoule@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-09-13T22:47:27.902Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-11T15:29:59.346Z",
+      "is_superuser": false,
+      "username": "Sydney",
+      "first_name": "Sydney Sophia",
+      "last_name": "Coubard",
+      "email": "sydney.coubard@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-20T16:53:03.151Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-09-20T18:16:42.007Z",
+      "is_superuser": false,
+      "username": "Vincent",
+      "first_name": "Vincent",
+      "last_name": "Coubard",
+      "email": "vincent.coubard@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-20T18:12:03.144Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T20:50:51.324Z",
+      "is_superuser": true,
+      "username": "willy",
+      "first_name": "willy",
+      "last_name": "dubois",
+      "email": "willy.dubois@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T16:48:25Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "stephanie",
+      "first_name": "stephanie",
+      "last_name": "water",
+      "email": "stephanie.water@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T16:51:57Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-02T00:32:10.762Z",
+      "is_superuser": false,
+      "username": "brice",
+      "first_name": "brice",
+      "last_name": "chapel",
+      "email": "brice.chapet@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:01:44Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-02T00:01:15.879Z",
+      "is_superuser": false,
+      "username": "rose",
+      "first_name": "rose",
+      "last_name": "white",
+      "email": "rose.white@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:09:41Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "sophie",
+      "first_name": "sophie",
+      "last_name": "smith",
+      "email": "sophie.smith@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:12:36Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "georges",
+      "first_name": "georges",
+      "last_name": "wasp",
+      "email": "georges.wasp@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:14:39Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "michael",
+      "first_name": "michael",
+      "last_name": "toto",
+      "email": "michael.toto@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:17:52Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "laura",
+      "first_name": "laura",
+      "last_name": "stone",
+      "email": "laura.stone@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:20:03Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-09-26T17:26:58.906Z",
+      "is_superuser": false,
+      "username": "adrian",
+      "first_name": "adrian",
+      "last_name": "pascal",
+      "email": "adrian.pascal@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-09-26T17:23:02Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T20:19:09.930Z",
+      "is_superuser": false,
+      "username": "hjhrjke",
+      "first_name": "ghjre",
+      "last_name": "ghfrek",
+      "email": "hgjrhejk@hgrjhek.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-10T20:19:09.458Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T21:28:23.371Z",
+      "is_superuser": false,
+      "username": "joanne",
+      "first_name": "joanne",
+      "last_name": "bill",
+      "email": "joanne.bill@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-10T20:47:20.424Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T21:24:44.091Z",
+      "is_superuser": false,
+      "username": "Toto",
+      "first_name": "hgvrehi",
+      "last_name": "jvhrevgre",
+      "email": "hgjrheikuh@bhgjfkd.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-10T21:24:43.589Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T21:26:20.253Z",
+      "is_superuser": false,
+      "username": "hjkghrtek",
+      "first_name": "jgrkhnh",
+      "last_name": "ljrhev krevlre",
+      "email": "hjghrjek@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-10T21:26:19.784Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-10T21:27:21.454Z",
+      "is_superuser": false,
+      "username": "hgfrvkvrkje",
+      "first_name": "hgvrjk jvre",
+      "last_name": "vjrhejkvr ejk",
+      "email": "bhrjk@hjkrhhjvrgke.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-10T21:27:20.967Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-11T15:15:09.287Z",
+      "is_superuser": false,
+      "username": "john",
+      "first_name": "john",
+      "last_name": "white",
+      "email": "john.white@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-11T15:15:08.827Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$B1kPKiGNcoaC$RlKK75ryOjg8cfk7THvLPNGPrNn7PE+UjBkXZZeB0N4=",
+      "last_login": "2020-10-11T15:24:35.101Z",
+      "is_superuser": false,
+      "username": "brian",
+      "first_name": "brian",
+      "last_name": "miller",
+      "email": "brian.miller@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-10-11T15:24:34.653Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "api",
+      "model": "deliveryorder"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "api",
+      "model": "dish"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "api",
+      "model": "tablebooking"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "api",
+      "model": "eventprebooking"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "api",
+      "model": "deliveryorderitem"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "api",
+      "model": "cookinglessonbooking"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "cuidgevco0jrahuxqzy8jchpxxyj5xlh",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGllef2NK-pzBWn8WB5AjxUmFuDuylALaNzPvzQIeew1HL1tYMrsyYJffLWJ6ljZAfmC7rzytbd-WyIfCT9r5vObyup3u30HFXkcNKAUkXTJGq6zxZLJD7ZWBNHnhRXGR5GSMpkQueStASoUEChEUEPt8Ad6RN5Q:1kKpTU:dxDsqEaSxa4jr_5gkIaZgM6T8EPwH_V-fGV_KZNziYk",
+      "expire_date": "2020-10-06T21:05:20.473Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jdmatbedx5c85xtmdmonkhknwhjjvuj1",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSGAPF267zeQgRmkamhS2pXx35WkC13ee07Oi0XYtxr3TmuckV2YYqffL0F-UBsA79BuC89L29Y58aHwg3Y-LUjP6-H-BSr0OrIZQwkOQGppiwLQpEoS2qM23hYRvtOhL8lZdOlM0geVrDAmEyiymb0_9yk4cA:1kRdIN:eB0wQ49Km8-CM1n4kLAl2gQ_wLVDChYroquY2qaFqEw",
+      "expire_date": "2020-10-25T15:29:59.356Z"
+    }
+  }
+]
