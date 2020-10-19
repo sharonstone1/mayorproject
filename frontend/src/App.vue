@@ -187,7 +187,7 @@
             <img src="static/media//kitchen-class.jpg">
           </div>
           <div class="col-lg-6">
-<!--            <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>-->
+         <iframe src="static/media/sample of cooking_lesson.mp4"></iframe>
           </div>
         </div>
         <br>
