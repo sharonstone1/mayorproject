@@ -171,3 +171,6 @@ REST_REGISTRATION = {
 # Path for dishes pictures uploaded by an administrator
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Default region for phone numbers
+PHONENUMBER_DEFAULT_REGION = 'GB'
